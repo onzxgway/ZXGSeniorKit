@@ -1,3 +1,61 @@
-PODFILE CHECKSUM: 37d7bde0c8eaba1a67dac96081ee05457ac5b6cd
+PODS:
+  - AFNetworking (3.2.0):
+    - AFNetworking/NSURLSession (= 3.2.0)
+    - AFNetworking/Reachability (= 3.2.0)
+    - AFNetworking/Security (= 3.2.0)
+    - AFNetworking/Serialization (= 3.2.0)
+    - AFNetworking/UIKit (= 3.2.0)
+  - AFNetworking/NSURLSession (3.2.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.0)
+  - AFNetworking/Security (3.2.0)
+  - AFNetworking/Serialization (3.2.0)
+  - AFNetworking/UIKit (3.2.0):
+    - AFNetworking/NSURLSession
+  - FMDB (2.7.2):
+    - FMDB/standard (= 2.7.2)
+  - FMDB/standard (2.7.2)
+  - Masonry (1.1.0)
+  - NJKWebViewProgress (0.2.3):
+    - NJKWebViewProgress/Core (= 0.2.3)
+    - NJKWebViewProgress/ProgressView (= 0.2.3)
+  - NJKWebViewProgress/Core (0.2.3)
+  - NJKWebViewProgress/ProgressView (0.2.3)
+  - SDWebImage (4.3.3):
+    - SDWebImage/Core (= 4.3.3)
+  - SDWebImage/Core (4.3.3)
+  - ZXGCommontKit (042014):
+    - AFNetworking (~> 3.0)
+    - FMDB (~> 2.7.2)
+    - Masonry (~> 1.1.0)
+    - NJKWebViewProgress (~> 0.2.3)
+    - SDWebImage (~> 4.3.3)
+
+DEPENDENCIES:
+  - ZXGCommontKit (from `../ZXGCommontKit`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - FMDB
+    - Masonry
+    - NJKWebViewProgress
+    - SDWebImage
+
+EXTERNAL SOURCES:
+  ZXGCommontKit:
+    :path: "../ZXGCommontKit"
+
+SPEC CHECKSUMS:
+  AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
+  FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
+  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
+  ZXGCommontKit: 75eae2397fefb62685b726ca8831e4e0e3b68deb
+
+PODFILE CHECKSUM: 2100e9454ab0e2814e4f672f0fc8c6d24f3fb99e
 
 COCOAPODS: 1.5.0
