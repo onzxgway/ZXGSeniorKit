@@ -18,12 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //
     UIActivityIndicatorView *iv = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     [iv startAnimating];
     [iv setHidesWhenStopped:YES];
     self.navigationItem.titleView = iv;
     
-    
+    //
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [iv stopAnimating];
         [self prepareData];
@@ -52,6 +53,10 @@
     
     [self.dataSource addObjectsFromArray:@[m1, m2, m3, m4]];
     [self.tableView reloadData];
+}
+
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
+    return [UIImage imageNamed:@"empty_placeholder"];
 }
 
 - (UITableViewStyle)tableViewStyle {
