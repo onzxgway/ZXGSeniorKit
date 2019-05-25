@@ -9,6 +9,7 @@
 #import "RuntimeOverviewController.h"
 #import "EMBaseTableViewCellModel.h"
 #import "RTOverviewViewController.h"
+#import "RTIsaViewController.h"
 
 @interface RuntimeOverviewController ()
 
@@ -41,9 +42,14 @@
     m1.cellModelArray = @[i1].mutableCopy;
     
     EMBaseTableViewSectionModel *m2 = [EMBaseTableViewSectionModel new];
-    EMBaseTableViewCellModel *i2 = [EMBaseTableViewCellModel new];
-    i2.rowHeight = 88.f;
-    m2.cellModelArray = @[i2,i2,i2].mutableCopy;
+    EMBaseTableViewCellModel *i21 = [EMBaseTableViewCellModel new];
+    i21.rowHeight = 44.f;
+    i21.title = @"isa指针";
+    i21.targetClass = RTIsaViewController.class;
+    EMBaseTableViewCellModel *i22 = [EMBaseTableViewCellModel new];
+    i22.title = @"类";
+    i22.targetClass = RTIsaViewController.class;
+    m2.cellModelArray = @[i21, i22].mutableCopy;
     
     EMBaseTableViewSectionModel *m3 = [EMBaseTableViewSectionModel new];
     EMBaseTableViewCellModel *i3 = [EMBaseTableViewCellModel new];

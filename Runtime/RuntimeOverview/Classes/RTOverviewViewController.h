@@ -10,4 +10,8 @@
 
 @interface RTOverviewViewController : RuntimeBaseViewController
 
+@property (nonatomic, strong) UILabel *titleLab;
+@property (nonatomic, strong) UILabel *descLab;
+@property (nonatomic, strong) UILabel *detailLab;
+
 @end
