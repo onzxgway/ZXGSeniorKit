@@ -10,7 +10,10 @@
 
 @interface EMBaseTableViewCellModel : NSObject <EMBaseTableViewCellModelAble>
 
-@property (nonatomic) Class cellClass;                  // cell类
-@property (nonatomic) CGFloat rowHeight;                // cell行高
+@property (nonatomic) Class cellClass;
+@property (nonatomic) CGFloat rowHeight;
+
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic) Class targetClass;
 
 @end

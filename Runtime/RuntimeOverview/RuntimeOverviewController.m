@@ -8,6 +8,7 @@
 
 #import "RuntimeOverviewController.h"
 #import "EMBaseTableViewCellModel.h"
+#import "RTOverviewViewController.h"
 
 @interface RuntimeOverviewController ()
 
@@ -25,7 +26,7 @@
     self.navigationItem.titleView = iv;
     
     //
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [iv stopAnimating];
         [self prepareData];
     });
@@ -35,8 +36,9 @@
     
     EMBaseTableViewSectionModel *m1 = [EMBaseTableViewSectionModel new];
     EMBaseTableViewCellModel *i1 = [EMBaseTableViewCellModel new];
-    m1.cellModelArray = @[i1,i1,i1,i1].mutableCopy;
-    
+    i1.title = @"概述";
+    i1.targetClass = RTOverviewViewController.class;
+    m1.cellModelArray = @[i1].mutableCopy;
     
     EMBaseTableViewSectionModel *m2 = [EMBaseTableViewSectionModel new];
     EMBaseTableViewCellModel *i2 = [EMBaseTableViewCellModel new];
@@ -53,6 +55,25 @@
     
     [self.dataSource addObjectsFromArray:@[m1, m2, m3, m4]];
     [self.tableView reloadData];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    
+    EMBaseTableViewSectionModel *secModel = [self.dataSource objectAtIndex:indexPath.section];
+    EMBaseTableViewCellModel *cellModel = [secModel.cellModelArray objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = cellModel.title;
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    EMBaseTableViewSectionModel *secModel = [self.dataSource objectAtIndex:indexPath.section];
+    EMBaseTableViewCellModel *cellModel = [secModel.cellModelArray objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:[cellModel.targetClass new] animated:YES];
+    
 }
 
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
