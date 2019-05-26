@@ -10,6 +10,7 @@
 #import "EMBaseTableViewCellModel.h"
 #import "RTOverviewViewController.h"
 #import "RTIsaViewController.h"
+#import "RTClassViewController.h"
 
 @interface RuntimeOverviewController ()
 
@@ -35,11 +36,14 @@
 
 - (void)prepareData {
     
+    
     EMBaseTableViewSectionModel *m1 = [EMBaseTableViewSectionModel new];
     EMBaseTableViewCellModel *i1 = [EMBaseTableViewCellModel new];
     i1.title = @"概述";
     i1.targetClass = RTOverviewViewController.class;
     m1.cellModelArray = @[i1].mutableCopy;
+    
+    
     
     EMBaseTableViewSectionModel *m2 = [EMBaseTableViewSectionModel new];
     EMBaseTableViewCellModel *i21 = [EMBaseTableViewCellModel new];
@@ -47,17 +51,23 @@
     i21.title = @"isa指针";
     i21.targetClass = RTIsaViewController.class;
     EMBaseTableViewCellModel *i22 = [EMBaseTableViewCellModel new];
-    i22.title = @"类";
-    i22.targetClass = RTIsaViewController.class;
+    i22.title = @"Class";
+    i22.targetClass = RTClassViewController.class;
     m2.cellModelArray = @[i21, i22].mutableCopy;
+    
+    
     
     EMBaseTableViewSectionModel *m3 = [EMBaseTableViewSectionModel new];
     EMBaseTableViewCellModel *i3 = [EMBaseTableViewCellModel new];
     m3.cellModelArray = @[i3,i3].mutableCopy;
     
+    
+    
     EMBaseTableViewSectionModel *m4 = [EMBaseTableViewSectionModel new];
     EMBaseTableViewCellModel *i4 = [EMBaseTableViewCellModel new];
     m4.cellModelArray = @[i4].mutableCopy;
+    
+    
     
     [self.dataSource addObjectsFromArray:@[m1, m2, m3, m4]];
     [self.tableView reloadData];
