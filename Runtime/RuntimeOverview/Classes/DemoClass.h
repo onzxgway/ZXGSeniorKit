@@ -18,4 +18,6 @@
 
 - (void)iCanDoIt;
 
++ (void)testMethod;
+
 @end

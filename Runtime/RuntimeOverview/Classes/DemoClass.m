@@ -18,6 +18,8 @@
 
 - (void)iCanDoIt {}
 
++ (void)testMethod {}
+
 - (void)privateMethod:(nonnull NSString *)aCoder {
     
 }

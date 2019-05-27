@@ -42,22 +42,28 @@
     unsigned int outCountM = 0;
     unsigned int outCountP = 0;
     unsigned int outCountPL = 0;
-    Ivar *ivars = class_copyIvarList(DemoClass.class, &outCountV);      // 获取成员变量
-    Method *methods = class_copyMethodList(DemoClass.class, &outCountM);    // 获取成员函数
-    objc_property_t *pts = class_copyPropertyList(DemoClass.class, &outCountPL);    // 获取属性
+    Ivar *ivars = class_copyIvarList(DemoClass.class, &outCountV);      // 获取成员变量 (公 + 私)
+    Method *methods = class_copyMethodList(DemoClass.class, &outCountM);    // 获取成员实例方法
+    objc_property_t *pts = class_copyPropertyList(DemoClass.class, &outCountPL);    // 获取属性 (公 + 私)
     Protocol __unsafe_unretained **pros = class_copyProtocolList(DemoClass.class, &outCountP); // 获取协议
     for (int i = 0; i < outCountV; ++i) {
         Ivar ivar = ivars[i];
-        NSLog(@"ivar:%s", ivar_getName(ivar));
+        const char * name = ivar_getName(ivar);
+        const char * type = ivar_getTypeEncoding(ivar); // @"NSNumber"
+        NSLog(@"ivar:%s__%s", name, type);
     }
     for (int i = 0; i < outCountPL; ++i) {
         objc_property_t pt = pts[i];
-        NSLog(@"objc_property_t:%s", property_getName(pt));
+        const char * name = property_getName(pt);       // 获取属性名
+        const char * type = property_getAttributes(pt); // 获取属性特性描述字符串 T@"NSString",C,N,V_name  T@"NSNumber",R,N,V_height
+        NSLog(@"property:%s__%s", name, type);
     }
     for (int i = 0; i < outCountM; ++i) {
         Method method = methods[i];
         SEL name = method_getName(method);
-        NSLog(@"method:%s", sel_getName(name));
+        NSLog(@"method:%s__%s", sel_getName(name), method_getTypeEncoding(method));
+        // v16@0:8
+        // v：代表 void    @：代表OC对象  : ：代表 SEL
     }
     for (int i = 0; i < outCountP; ++i) {
         Protocol *p = pros[i];
@@ -81,10 +87,10 @@
         const char * _Nonnull name  OBJC2_UNAVAILABLE;  // 类的名称
         long version                OBJC2_UNAVAILABLE;
         long info                   OBJC2_UNAVAILABLE;
-        long instance_size          OBJC2_UNAVAILABLE;
+        long instance_size          OBJC2_UNAVAILABLE;  // 类的实例大小
         struct objc_ivar_list * _Nullable ivars OBJC2_UNAVAILABLE;  // 类成员变量列表
         struct objc_method_list * _Nullable * _Nullable methodLists OBJC2_UNAVAILABLE;  // 类成员函数列表
-        struct objc_cache * _Nonnull cache OBJC2_UNAVAILABLE;
+        struct objc_cache * _Nonnull cache OBJC2_UNAVAILABLE;   // 缓存调用过的方法
         struct objc_protocol_list * _Nullable protocols OBJC2_UNAVAILABLE;  // 类成员协议列表
 #endif
     } OBJC2_UNAVAILABLE;
