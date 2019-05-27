@@ -28,7 +28,9 @@
 }
 
 - (void)testClassStruct {
-    
+    NSLog(@"元类 isa: %@", NSStringFromClass(object_getClass(DemoClass.class)));
+    NSLog(@"根元类 isa: %@", NSStringFromClass(object_getClass(object_getClass(DemoClass.class))));
+    NSLog(@"根元类 isa: %@", NSStringFromClass(object_getClass(object_getClass(object_getClass(DemoClass.class)))));
     NSLog(@"super_class: %@", NSStringFromClass(class_getSuperclass(DemoClass.class)));
     NSLog(@"name: %s", class_getName(DemoClass.class));
     

@@ -17,6 +17,7 @@
 		0413CF522297E4E3007A7661 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0413CF512297E4E3007A7661 /* README.md */; };
 		044ADAF1229AAD2B00803109 /* RTClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044ADAF0229AAD2B00803109 /* RTClassViewController.m */; };
 		044ADAF4229AB5D400803109 /* DemoClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 044ADAF3229AB5D400803109 /* DemoClass.m */; };
+		044ADAF9229B87FB00803109 /* one.png in Resources */ = {isa = PBXBuildFile; fileRef = 044ADAF8229B87FB00803109 /* one.png */; };
 		045271F32299443600038414 /* RTOverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045271F22299443600038414 /* RTOverviewViewController.m */; };
 		045271F6229976DA00038414 /* RTIsaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045271F5229976DA00038414 /* RTIsaViewController.m */; };
 		049439CD229802A3003A3704 /* EMBaseTableViewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 049439CC229802A3003A3704 /* EMBaseTableViewCellModel.m */; };
@@ -42,6 +43,7 @@
 		044ADAF0229AAD2B00803109 /* RTClassViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTClassViewController.m; sourceTree = "<group>"; };
 		044ADAF2229AB5D400803109 /* DemoClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoClass.h; sourceTree = "<group>"; };
 		044ADAF3229AB5D400803109 /* DemoClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoClass.m; sourceTree = "<group>"; };
+		044ADAF8229B87FB00803109 /* one.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = one.png; sourceTree = "<group>"; };
 		045271F12299443600038414 /* RTOverviewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTOverviewViewController.h; sourceTree = "<group>"; };
 		045271F22299443600038414 /* RTOverviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTOverviewViewController.m; sourceTree = "<group>"; };
 		045271F4229976DA00038414 /* RTIsaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTIsaViewController.h; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				0413CF3F2297D344007A7661 /* Info.plist */,
 				0413CF402297D344007A7661 /* main.m */,
 				0413CF452297D78C007A7661 /* PrefixHeader.pch */,
+				044ADAF5229B876D00803109 /* 截图 */,
 				0413CF512297E4E3007A7661 /* README.md */,
 			);
 			path = RuntimeOverview;
@@ -112,6 +115,14 @@
 				0413CF482297DC64007A7661 /* RuntimeBaseViewController.m */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		044ADAF5229B876D00803109 /* 截图 */ = {
+			isa = PBXGroup;
+			children = (
+				044ADAF8229B87FB00803109 /* one.png */,
+			);
+			path = "截图";
 			sourceTree = "<group>";
 		};
 		045271F02299440300038414 /* Classes */ = {
@@ -205,6 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				044ADAF9229B87FB00803109 /* one.png in Resources */,
 				0413CF3E2297D344007A7661 /* LaunchScreen.storyboard in Resources */,
 				0413CF3B2297D344007A7661 /* Assets.xcassets in Resources */,
 				0413CF522297E4E3007A7661 /* README.md in Resources */,
