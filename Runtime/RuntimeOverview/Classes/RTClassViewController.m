@@ -97,6 +97,57 @@
     
 }
 
+- (void)IvarStruct {
+    
+    struct objc_ivar {
+        char * _Nullable ivar_name OBJC2_UNAVAILABLE;   // 成员变量名称
+        char * _Nullable ivar_type OBJC2_UNAVAILABLE;   // 成员变量类型
+        int ivar_offset OBJC2_UNAVAILABLE;              // 成员变量偏移
+#ifdef __LP64__
+        int space OBJC2_UNAVAILABLE;
+#endif
+    } OBJC2_UNAVAILABLE;
+
+}
+
+- (void)IvarListStruct {
+    
+//    struct objc_ivar_list {
+//        int ivar_count OBJC2_UNAVAILABLE;
+//#ifdef __LP64__
+//        int space OBJC2_UNAVAILABLE;
+//#endif
+//        /* variable length structure */
+//        struct objc_ivar ivar_list[1] OBJC2_UNAVAILABLE;
+//    } OBJC2_UNAVAILABLE;
+    
+}
+
+- (void)MethodStruct {
+    
+    struct objc_method {
+        SEL _Nonnull method_name OBJC2_UNAVAILABLE;        // 方法名称
+        char * _Nullable method_types OBJC2_UNAVAILABLE;   // 方法编码
+        IMP _Nonnull method_imp  OBJC2_UNAVAILABLE;        // 方法地址
+    } OBJC2_UNAVAILABLE;
+    
+}
+
+- (void)MethodListStruct {
+    
+//    struct objc_method_list {
+//        struct objc_method_list * _Nullable obsolete OBJC2_UNAVAILABLE;
+//
+//        int method_coun OBJC2_UNAVAILABLE;
+//#ifdef __LP64__
+//        int space                                                OBJC2_UNAVAILABLE;
+//#endif
+//        /* variable length structure */
+//        struct objc_method method_list[1] OBJC2_UNAVAILABLE;
+//    } OBJC2_UNAVAILABLE;
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
