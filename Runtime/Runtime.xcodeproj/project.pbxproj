@@ -22,6 +22,7 @@
 		044ADAFF229C09E300803109 /* MethodCalledController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044ADAFE229C09E300803109 /* MethodCalledController.m */; };
 		045271F32299443600038414 /* RTOverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045271F22299443600038414 /* RTOverviewViewController.m */; };
 		045271F6229976DA00038414 /* RTIsaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045271F5229976DA00038414 /* RTIsaViewController.m */; };
+		0480C78A229D415800E83FE0 /* AddMemberController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480C789229D415800E83FE0 /* AddMemberController.m */; };
 		049439CD229802A3003A3704 /* EMBaseTableViewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 049439CC229802A3003A3704 /* EMBaseTableViewCellModel.m */; };
 		B40DC5DA07F3B9DD10782576 /* libPods-RuntimeOverview.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BC073E80004D4B44DB183A /* libPods-RuntimeOverview.a */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,8 @@
 		045271F22299443600038414 /* RTOverviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTOverviewViewController.m; sourceTree = "<group>"; };
 		045271F4229976DA00038414 /* RTIsaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTIsaViewController.h; sourceTree = "<group>"; };
 		045271F5229976DA00038414 /* RTIsaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTIsaViewController.m; sourceTree = "<group>"; };
+		0480C788229D415800E83FE0 /* AddMemberController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddMemberController.h; sourceTree = "<group>"; };
+		0480C789229D415800E83FE0 /* AddMemberController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddMemberController.m; sourceTree = "<group>"; };
 		049439CB229802A3003A3704 /* EMBaseTableViewCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EMBaseTableViewCellModel.h; sourceTree = "<group>"; };
 		049439CC229802A3003A3704 /* EMBaseTableViewCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EMBaseTableViewCellModel.m; sourceTree = "<group>"; };
 		15F1E09AB5B13D00D56139F5 /* Pods-RuntimeOverview.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RuntimeOverview.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-RuntimeOverview/Pods-RuntimeOverview.debug.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 				044ADAFB229BCB6600803109 /* SELIMPMethodController.m */,
 				044ADAFD229C09E300803109 /* MethodCalledController.h */,
 				044ADAFE229C09E300803109 /* MethodCalledController.m */,
+				0480C788229D415800E83FE0 /* AddMemberController.h */,
+				0480C789229D415800E83FE0 /* AddMemberController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 				044ADAF4229AB5D400803109 /* DemoClass.m in Sources */,
 				0413CF412297D344007A7661 /* main.m in Sources */,
 				044ADAFF229C09E300803109 /* MethodCalledController.m in Sources */,
+				0480C78A229D415800E83FE0 /* AddMemberController.m in Sources */,
 				044ADAFC229BCB6600803109 /* SELIMPMethodController.m in Sources */,
 				0413CF332297D343007A7661 /* AppDelegate.m in Sources */,
 			);

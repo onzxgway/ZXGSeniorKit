@@ -13,6 +13,7 @@
 #import "RTClassViewController.h"
 #import "SELIMPMethodController.h"
 #import "MethodCalledController.h"
+#import "AddMemberController.h"
 
 @interface RuntimeOverviewController ()
 
@@ -66,8 +67,8 @@
     i21.title = @"方法调用(消息发送)流程";
     i21.targetClass = MethodCalledController.class;
     EMBaseTableViewCellModel *i22 = [EMBaseTableViewCellModel new];
-    i22.title = @"";
-    i22.targetClass = RTClassViewController.class;
+    i22.title = @"类添加成员";
+    i22.targetClass = AddMemberController.class;
     m2.cellModelArray = @[i21, i22].mutableCopy;
     
     
