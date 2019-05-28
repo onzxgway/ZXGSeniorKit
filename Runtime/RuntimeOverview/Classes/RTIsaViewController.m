@@ -7,6 +7,7 @@
 //
 
 #import "RTIsaViewController.h"
+#import <objc/message.h>
 
 @interface RTIsaViewController ()
 
@@ -23,7 +24,63 @@
     self.detailLab.text = nil;
     
     [self ClassStruct];
+    [self testFunc];
 }
+
+// 动态创建类
+- (void)testFunc {
+    
+    // 创建一个UIView的子类CustomView。
+    Class cusV = objc_allocateClassPair(UIView.class, "CustomView", 0);
+    
+    // 为CustomView类添加report方法
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored  "-Wundeclared-selector"
+    class_addMethod(cusV, @selector(report), (IMP)report, "v@:");
+#pragma clang diagnostic pop
+    
+    // 注册该类
+    objc_registerClassPair(cusV);
+    
+    
+    // 创建CustomView实例
+    id obj =  [[cusV alloc] init];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored  "-Wundeclared-selector"
+    [obj performSelectorOnMainThread:@selector(report) withObject:nil waitUntilDone:NO];
+#pragma clang diagnostic pop
+    
+}
+
+void report(id self, SEL _cmd) {
+    NSLog(@"This object is %@", self);
+    NSLog(@"Class is %@, and super is %@.", [self class], [self superclass]);
+    
+    Class curClass = [self class];
+    for (int i = 0; i < 5; ++i) {
+        NSLog(@"Following the isa pointer %d times gives %p.", i, curClass);
+        curClass = object_getClass(curClass);
+    }
+    
+    NSLog(@"NSObject Class is %p.", [NSObject class]);
+    NSLog(@"NSObject meta class is %p.", object_getClass([NSObject class]));
+}
+
+/**
+ This object is <CustomView: 0x7ff7b4716000; frame = (0 0; 0 0); layer = <CALayer: 0x604000432ae0>>
+ 
+ Class is CustomView, and super is UIView.
+ Following the isa pointer 0 times gives 0x604000254dc0.
+ Following the isa pointer 1 times gives 0x604000254a00.
+ Following the isa pointer 2 times gives 0x109cb5e58.
+ Following the isa pointer 3 times gives 0x109cb5e58.
+ Following the isa pointer 4 times gives 0x109cb5e58.
+ 
+ NSObject Class is 0x109cb5ea8.
+ NSObject meta class is 0x109cb5e58.
+ 
+ 打印结果，完美的证明了 one.png 图所示内容。
+ */
 
 - (void)ClassStruct {
     
