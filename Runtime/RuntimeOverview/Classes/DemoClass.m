@@ -16,7 +16,9 @@
 
 @implementation DemoClass
 
-- (void)iCanDoIt {}
+- (void)iCanDoIt {
+    NSLog(@"original iCanDoIt.");
+}
 
 + (void)testMethod {}
 

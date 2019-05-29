@@ -14,6 +14,7 @@
 #import "SELIMPMethodController.h"
 #import "MethodCalledController.h"
 #import "AddMemberController.h"
+#import "ExChangeMethodController.h"
 
 @interface RuntimeOverviewController ()
 
@@ -66,10 +67,13 @@
     i21.rowHeight = 44.f;
     i21.title = @"方法调用(消息发送)流程";
     i21.targetClass = MethodCalledController.class;
+    EMBaseTableViewCellModel *i23 = [EMBaseTableViewCellModel new];
+    i23.title = @"方法交换";
+    i23.targetClass = ExChangeMethodController.class;
     EMBaseTableViewCellModel *i22 = [EMBaseTableViewCellModel new];
     i22.title = @"类添加成员";
     i22.targetClass = AddMemberController.class;
-    m2.cellModelArray = @[i21, i22].mutableCopy;
+    m2.cellModelArray = @[i21, i23, i22].mutableCopy;
     
     
     EMBaseTableViewSectionModel *m3 = [EMBaseTableViewSectionModel new];

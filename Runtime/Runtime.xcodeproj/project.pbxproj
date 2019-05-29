@@ -22,6 +22,8 @@
 		044ADAFF229C09E300803109 /* MethodCalledController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044ADAFE229C09E300803109 /* MethodCalledController.m */; };
 		045271F32299443600038414 /* RTOverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045271F22299443600038414 /* RTOverviewViewController.m */; };
 		045271F6229976DA00038414 /* RTIsaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045271F5229976DA00038414 /* RTIsaViewController.m */; };
+		04636477229E1F8A0067D1A1 /* DemoClass+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 04636476229E1F8A0067D1A1 /* DemoClass+Test.m */; };
+		0463647A229E43D90067D1A1 /* ExChangeMethodController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04636479229E43D90067D1A1 /* ExChangeMethodController.m */; };
 		0480C78A229D415800E83FE0 /* AddMemberController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480C789229D415800E83FE0 /* AddMemberController.m */; };
 		049439CD229802A3003A3704 /* EMBaseTableViewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 049439CC229802A3003A3704 /* EMBaseTableViewCellModel.m */; };
 		B40DC5DA07F3B9DD10782576 /* libPods-RuntimeOverview.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BC073E80004D4B44DB183A /* libPods-RuntimeOverview.a */; };
@@ -55,6 +57,10 @@
 		045271F22299443600038414 /* RTOverviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTOverviewViewController.m; sourceTree = "<group>"; };
 		045271F4229976DA00038414 /* RTIsaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTIsaViewController.h; sourceTree = "<group>"; };
 		045271F5229976DA00038414 /* RTIsaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTIsaViewController.m; sourceTree = "<group>"; };
+		04636475229E1F8A0067D1A1 /* DemoClass+Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DemoClass+Test.h"; sourceTree = "<group>"; };
+		04636476229E1F8A0067D1A1 /* DemoClass+Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DemoClass+Test.m"; sourceTree = "<group>"; };
+		04636478229E43D90067D1A1 /* ExChangeMethodController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExChangeMethodController.h; sourceTree = "<group>"; };
+		04636479229E43D90067D1A1 /* ExChangeMethodController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExChangeMethodController.m; sourceTree = "<group>"; };
 		0480C788229D415800E83FE0 /* AddMemberController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddMemberController.h; sourceTree = "<group>"; };
 		0480C789229D415800E83FE0 /* AddMemberController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddMemberController.m; sourceTree = "<group>"; };
 		049439CB229802A3003A3704 /* EMBaseTableViewCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EMBaseTableViewCellModel.h; sourceTree = "<group>"; };
@@ -145,12 +151,16 @@
 				044ADAF0229AAD2B00803109 /* RTClassViewController.m */,
 				044ADAF2229AB5D400803109 /* DemoClass.h */,
 				044ADAF3229AB5D400803109 /* DemoClass.m */,
+				04636475229E1F8A0067D1A1 /* DemoClass+Test.h */,
+				04636476229E1F8A0067D1A1 /* DemoClass+Test.m */,
 				044ADAFA229BCB6600803109 /* SELIMPMethodController.h */,
 				044ADAFB229BCB6600803109 /* SELIMPMethodController.m */,
 				044ADAFD229C09E300803109 /* MethodCalledController.h */,
 				044ADAFE229C09E300803109 /* MethodCalledController.m */,
 				0480C788229D415800E83FE0 /* AddMemberController.h */,
 				0480C789229D415800E83FE0 /* AddMemberController.m */,
+				04636478229E43D90067D1A1 /* ExChangeMethodController.h */,
+				04636479229E43D90067D1A1 /* ExChangeMethodController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -290,6 +300,7 @@
 				0413CF362297D343007A7661 /* RuntimeOverviewController.m in Sources */,
 				0413CF492297DC64007A7661 /* RuntimeBaseViewController.m in Sources */,
 				045271F6229976DA00038414 /* RTIsaViewController.m in Sources */,
+				0463647A229E43D90067D1A1 /* ExChangeMethodController.m in Sources */,
 				044ADAF1229AAD2B00803109 /* RTClassViewController.m in Sources */,
 				044ADAF4229AB5D400803109 /* DemoClass.m in Sources */,
 				0413CF412297D344007A7661 /* main.m in Sources */,
@@ -297,6 +308,7 @@
 				0480C78A229D415800E83FE0 /* AddMemberController.m in Sources */,
 				044ADAFC229BCB6600803109 /* SELIMPMethodController.m in Sources */,
 				0413CF332297D343007A7661 /* AppDelegate.m in Sources */,
+				04636477229E1F8A0067D1A1 /* DemoClass+Test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

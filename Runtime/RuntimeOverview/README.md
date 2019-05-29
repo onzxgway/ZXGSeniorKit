@@ -18,3 +18,8 @@
     #pragma clang diagnostic ignored  "警告类型"
     
     #pragma clang diagnostic pop
+    
+    
+5. runtime给类添加成员、属性
+    非动态创建的类， 可以添加成员方法、属性，不可以添加成员变量
+    动态创建的类， 可以添加成员方法、成员变量、属性
