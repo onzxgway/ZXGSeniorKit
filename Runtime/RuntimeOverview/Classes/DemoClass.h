@@ -30,4 +30,6 @@
 
 + (void)testMethod;
 
+- (void)tryDoIt:(NSString *)things; // 该方法有声明，没实现
+
 @end

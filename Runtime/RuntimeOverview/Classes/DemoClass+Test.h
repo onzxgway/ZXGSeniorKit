@@ -10,4 +10,6 @@
 
 @interface DemoClass (Test)
 
+- (void)custom_addObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(nullable void *)context;
+
 @end

@@ -8,8 +8,17 @@
 
 #import "DemoClass+Test.h"
 #import <objc/runtime.h>
+#import "KVODemoClass.h"
 
 @implementation DemoClass (Test)
+
+
+- (void)custom_addObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(nullable void *)context {
+    
+    objc_setAssociatedObject(self, (__bridge const void *)(keyPath), observer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);// 把观察者保存到当前对象
+    object_setClass(self, [KVODemoClass class]); // 修改对象isa指针
+    
+}
 
 + (void)load {
     

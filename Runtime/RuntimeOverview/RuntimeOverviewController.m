@@ -15,6 +15,8 @@
 #import "MethodCalledController.h"
 #import "AddMemberController.h"
 #import "ExChangeMethodController.h"
+#import "ApplyViewController.h"
+#import "KVOViewController.h"
 
 @interface RuntimeOverviewController ()
 
@@ -78,13 +80,15 @@
     
     EMBaseTableViewSectionModel *m3 = [EMBaseTableViewSectionModel new];
     EMBaseTableViewCellModel *i3 = [EMBaseTableViewCellModel new];
-    i3.title = @"";
-    i3.targetClass = SELIMPMethodController.class;
+    i3.title = @"应用场景";
+    i3.targetClass = ApplyViewController.class;
     m3.cellModelArray = @[i3].mutableCopy;
     
     
     EMBaseTableViewSectionModel *m4 = [EMBaseTableViewSectionModel new];
     EMBaseTableViewCellModel *i4 = [EMBaseTableViewCellModel new];
+    i4.title = @"KVO底层实现";
+    i4.targetClass = KVOViewController.class;
     m4.cellModelArray = @[i4].mutableCopy;
     
     

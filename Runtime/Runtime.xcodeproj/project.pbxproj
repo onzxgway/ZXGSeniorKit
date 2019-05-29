@@ -24,6 +24,15 @@
 		045271F6229976DA00038414 /* RTIsaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045271F5229976DA00038414 /* RTIsaViewController.m */; };
 		04636477229E1F8A0067D1A1 /* DemoClass+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 04636476229E1F8A0067D1A1 /* DemoClass+Test.m */; };
 		0463647A229E43D90067D1A1 /* ExChangeMethodController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04636479229E43D90067D1A1 /* ExChangeMethodController.m */; };
+		0463647D229EA1830067D1A1 /* ApplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0463647C229EA1830067D1A1 /* ApplyViewController.m */; };
+		04636480229EA2B30067D1A1 /* KVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0463647F229EA2B30067D1A1 /* KVOViewController.m */; };
+		04636483229EA4520067D1A1 /* KVODemoClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 04636482229EA4520067D1A1 /* KVODemoClass.m */; };
+		0463648C229EB4770067D1A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0463648B229EB4770067D1A1 /* AppDelegate.m */; };
+		0463648F229EB4770067D1A1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0463648E229EB4770067D1A1 /* ViewController.m */; };
+		04636492229EB4770067D1A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04636490229EB4770067D1A1 /* Main.storyboard */; };
+		04636494229EB4790067D1A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04636493229EB4790067D1A1 /* Assets.xcassets */; };
+		04636497229EB4790067D1A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04636495229EB4790067D1A1 /* LaunchScreen.storyboard */; };
+		0463649A229EB4790067D1A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04636499229EB4790067D1A1 /* main.m */; };
 		0480C78A229D415800E83FE0 /* AddMemberController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480C789229D415800E83FE0 /* AddMemberController.m */; };
 		049439CD229802A3003A3704 /* EMBaseTableViewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 049439CC229802A3003A3704 /* EMBaseTableViewCellModel.m */; };
 		B40DC5DA07F3B9DD10782576 /* libPods-RuntimeOverview.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BC073E80004D4B44DB183A /* libPods-RuntimeOverview.a */; };
@@ -61,6 +70,22 @@
 		04636476229E1F8A0067D1A1 /* DemoClass+Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DemoClass+Test.m"; sourceTree = "<group>"; };
 		04636478229E43D90067D1A1 /* ExChangeMethodController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExChangeMethodController.h; sourceTree = "<group>"; };
 		04636479229E43D90067D1A1 /* ExChangeMethodController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExChangeMethodController.m; sourceTree = "<group>"; };
+		0463647B229EA1830067D1A1 /* ApplyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplyViewController.h; sourceTree = "<group>"; };
+		0463647C229EA1830067D1A1 /* ApplyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplyViewController.m; sourceTree = "<group>"; };
+		0463647E229EA2B30067D1A1 /* KVOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVOViewController.h; sourceTree = "<group>"; };
+		0463647F229EA2B30067D1A1 /* KVOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVOViewController.m; sourceTree = "<group>"; };
+		04636481229EA4520067D1A1 /* KVODemoClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVODemoClass.h; sourceTree = "<group>"; };
+		04636482229EA4520067D1A1 /* KVODemoClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVODemoClass.m; sourceTree = "<group>"; };
+		04636488229EB4770067D1A1 /* RuntimeApplyScene.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RuntimeApplyScene.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0463648A229EB4770067D1A1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0463648B229EB4770067D1A1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0463648D229EB4770067D1A1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0463648E229EB4770067D1A1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		04636491229EB4770067D1A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04636493229EB4790067D1A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04636496229EB4790067D1A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		04636498229EB4790067D1A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04636499229EB4790067D1A1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0480C788229D415800E83FE0 /* AddMemberController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddMemberController.h; sourceTree = "<group>"; };
 		0480C789229D415800E83FE0 /* AddMemberController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddMemberController.m; sourceTree = "<group>"; };
 		049439CB229802A3003A3704 /* EMBaseTableViewCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EMBaseTableViewCellModel.h; sourceTree = "<group>"; };
@@ -79,6 +104,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04636485229EB4770067D1A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -86,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				0413CF302297D343007A7661 /* RuntimeOverview */,
+				04636489229EB4770067D1A1 /* RuntimeApplyScene */,
 				0413CF132297D1E1007A7661 /* Products */,
 				B5A9C03A98F81CEED861E095 /* Pods */,
 				D4B57617E8642916B534BF8E /* Frameworks */,
@@ -96,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				0413CF2F2297D343007A7661 /* RuntimeOverview.app */,
+				04636488229EB4770067D1A1 /* RuntimeApplyScene.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,6 +185,8 @@
 				044ADAF0229AAD2B00803109 /* RTClassViewController.m */,
 				044ADAF2229AB5D400803109 /* DemoClass.h */,
 				044ADAF3229AB5D400803109 /* DemoClass.m */,
+				04636481229EA4520067D1A1 /* KVODemoClass.h */,
+				04636482229EA4520067D1A1 /* KVODemoClass.m */,
 				04636475229E1F8A0067D1A1 /* DemoClass+Test.h */,
 				04636476229E1F8A0067D1A1 /* DemoClass+Test.m */,
 				044ADAFA229BCB6600803109 /* SELIMPMethodController.h */,
@@ -161,8 +197,28 @@
 				0480C789229D415800E83FE0 /* AddMemberController.m */,
 				04636478229E43D90067D1A1 /* ExChangeMethodController.h */,
 				04636479229E43D90067D1A1 /* ExChangeMethodController.m */,
+				0463647B229EA1830067D1A1 /* ApplyViewController.h */,
+				0463647C229EA1830067D1A1 /* ApplyViewController.m */,
+				0463647E229EA2B30067D1A1 /* KVOViewController.h */,
+				0463647F229EA2B30067D1A1 /* KVOViewController.m */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		04636489229EB4770067D1A1 /* RuntimeApplyScene */ = {
+			isa = PBXGroup;
+			children = (
+				0463648A229EB4770067D1A1 /* AppDelegate.h */,
+				0463648B229EB4770067D1A1 /* AppDelegate.m */,
+				0463648D229EB4770067D1A1 /* ViewController.h */,
+				0463648E229EB4770067D1A1 /* ViewController.m */,
+				04636490229EB4770067D1A1 /* Main.storyboard */,
+				04636493229EB4790067D1A1 /* Assets.xcassets */,
+				04636495229EB4790067D1A1 /* LaunchScreen.storyboard */,
+				04636498229EB4790067D1A1 /* Info.plist */,
+				04636499229EB4790067D1A1 /* main.m */,
+			);
+			path = RuntimeApplyScene;
 			sourceTree = "<group>";
 		};
 		B5A9C03A98F81CEED861E095 /* Pods */ = {
@@ -204,6 +260,23 @@
 			productReference = 0413CF2F2297D343007A7661 /* RuntimeOverview.app */;
 			productType = "com.apple.product-type.application";
 		};
+		04636487229EB4770067D1A1 /* RuntimeApplyScene */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0463649B229EB4790067D1A1 /* Build configuration list for PBXNativeTarget "RuntimeApplyScene" */;
+			buildPhases = (
+				04636484229EB4770067D1A1 /* Sources */,
+				04636485229EB4770067D1A1 /* Frameworks */,
+				04636486229EB4770067D1A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RuntimeApplyScene;
+			productName = RuntimeApplyScene;
+			productReference = 04636488229EB4770067D1A1 /* RuntimeApplyScene.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -214,6 +287,9 @@
 				ORGANIZATIONNAME = "朱献国";
 				TargetAttributes = {
 					0413CF2E2297D343007A7661 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					04636487229EB4770067D1A1 = {
 						CreatedOnToolsVersion = 9.3;
 					};
 				};
@@ -232,6 +308,7 @@
 			projectRoot = "";
 			targets = (
 				0413CF2E2297D343007A7661 /* RuntimeOverview */,
+				04636487229EB4770067D1A1 /* RuntimeApplyScene */,
 			);
 		};
 /* End PBXProject section */
@@ -246,6 +323,16 @@
 				0413CF3B2297D344007A7661 /* Assets.xcassets in Resources */,
 				0413CF522297E4E3007A7661 /* README.md in Resources */,
 				0413CF392297D343007A7661 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04636486229EB4770067D1A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04636497229EB4790067D1A1 /* LaunchScreen.storyboard in Resources */,
+				04636494229EB4790067D1A1 /* Assets.xcassets in Resources */,
+				04636492229EB4770067D1A1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +384,9 @@
 			files = (
 				049439CD229802A3003A3704 /* EMBaseTableViewCellModel.m in Sources */,
 				045271F32299443600038414 /* RTOverviewViewController.m in Sources */,
+				0463647D229EA1830067D1A1 /* ApplyViewController.m in Sources */,
 				0413CF362297D343007A7661 /* RuntimeOverviewController.m in Sources */,
+				04636483229EA4520067D1A1 /* KVODemoClass.m in Sources */,
 				0413CF492297DC64007A7661 /* RuntimeBaseViewController.m in Sources */,
 				045271F6229976DA00038414 /* RTIsaViewController.m in Sources */,
 				0463647A229E43D90067D1A1 /* ExChangeMethodController.m in Sources */,
@@ -307,8 +396,19 @@
 				044ADAFF229C09E300803109 /* MethodCalledController.m in Sources */,
 				0480C78A229D415800E83FE0 /* AddMemberController.m in Sources */,
 				044ADAFC229BCB6600803109 /* SELIMPMethodController.m in Sources */,
+				04636480229EA2B30067D1A1 /* KVOViewController.m in Sources */,
 				0413CF332297D343007A7661 /* AppDelegate.m in Sources */,
 				04636477229E1F8A0067D1A1 /* DemoClass+Test.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04636484229EB4770067D1A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0463648F229EB4770067D1A1 /* ViewController.m in Sources */,
+				0463649A229EB4790067D1A1 /* main.m in Sources */,
+				0463648C229EB4770067D1A1 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +427,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				0413CF3D2297D344007A7661 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		04636490229EB4770067D1A1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04636491229EB4770067D1A1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		04636495229EB4790067D1A1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04636496229EB4790067D1A1 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -484,6 +600,38 @@
 			};
 			name = Release;
 		};
+		0463649C229EB4790067D1A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RuntimeApplyScene/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "---.RuntimeApplyScene";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0463649D229EB4790067D1A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RuntimeApplyScene/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "---.RuntimeApplyScene";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -501,6 +649,15 @@
 			buildConfigurations = (
 				0413CF432297D344007A7661 /* Debug */,
 				0413CF442297D344007A7661 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0463649B229EB4790067D1A1 /* Build configuration list for PBXNativeTarget "RuntimeApplyScene" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0463649C229EB4790067D1A1 /* Debug */,
+				0463649D229EB4790067D1A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

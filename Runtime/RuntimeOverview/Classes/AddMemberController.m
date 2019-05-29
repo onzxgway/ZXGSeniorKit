@@ -28,16 +28,16 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    [self addMethod]; // 给动态创建的类 添加成员
-//    [self addMember]; // 给类 添加成员
+    [self addMember]; // 给类 添加成员
     
-    DemoClass *obj = [[DemoClass alloc] init];
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored  "-Wundeclared-selector"
-    [obj performSelector:@selector(iCanDoIt) withObject:nil afterDelay:0];
-#pragma clang diagnostic pop
+//    DemoClass *obj = [[DemoClass alloc] init];
+//#pragma clang diagnostic push
+//#pragma clang diagnostic ignored  "-Wundeclared-selector"
+//    [obj performSelector:@selector(iCanDoIt) withObject:nil afterDelay:0];
+//#pragma clang diagnostic pop
 }
 
-// 给动态创建的类 添加成员
+// 给类 添加成员
 // 需求：给 DemoClass，添加成员、属性
 - (void)addMember {
     Class clazz = DemoClass.class;
@@ -58,7 +58,7 @@
     DemoClass *obj = [[DemoClass alloc] init];
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored  "-Wundeclared-selector"
-    [obj performSelector:@selector(showSex) withObject:@"kobe" afterDelay:0];
+    [obj performSelector:@selector(showSex) withObject:@"kobe" afterDelay:0]; 
 #pragma clang diagnostic pop
     
     // 2.为DemoClass类添加和已存在方法同名的方法  肯定添加失败
@@ -69,6 +69,8 @@
 #pragma clang diagnostic pop
     NSLog(@"%@", resO ? @"同名Method 添加成功": @"同名Method 添加失败");
     
+    // 3.为DemoClass类添加tryDoIt成员方法实现部分
+    [obj tryDoIt:@"Learning"];
 }
 
 - (void)eatWithPersonName:(NSString *)name {
