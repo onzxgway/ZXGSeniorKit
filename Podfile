@@ -21,3 +21,17 @@ Runtime.each do |t|
         #pod 'MLeaksFinder'
     end
 end
+
+
+# target数组 如果有新的target直接加入该数组
+Thread = ['NSThread', 'NSOperation', 'GCD']
+Thread.each do |t|
+    target t do
+        project 'Thread/Thread.project'
+        totalPods
+        #pod 'AFNetworking', '~> 3.0'
+        #pod 'NJKWebViewProgress'
+        #pod 'MJRefresh'
+        #pod 'MLeaksFinder'
+    end
+end
