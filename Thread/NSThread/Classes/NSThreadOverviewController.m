@@ -36,6 +36,8 @@
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.titleLab.text = @"NSThread是pthread面向对象的封装。";
 
 //    [self classMethod];
     [self instanceMethod];

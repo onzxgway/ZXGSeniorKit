@@ -1,18 +1,18 @@
 //
-//  NSThreadBaseController.m
-//  NSThread
+//  NSOperationBaseController.m
+//  NSOperation
 //
 //  Created by 朱献国 on 2019/5/30.
 //  Copyright © 2019年 朱献国. All rights reserved.
 //
 
-#import "NSThreadBaseController.h"
+#import "NSOperationBaseController.h"
 
-@interface NSThreadBaseController ()
+@interface NSOperationBaseController ()
 
 @end
 
-@implementation NSThreadBaseController
+@implementation NSOperationBaseController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -21,7 +21,7 @@
 }
 
 - (void)totalInit {
-    self.navigationItem.title = @"NSThread";
+    self.navigationItem.title = @"NSOperation";
     self.view.backgroundColor = UIColorRandomColor;
 }
 

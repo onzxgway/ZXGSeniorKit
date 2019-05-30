@@ -48,20 +48,20 @@
     
     
     
-    EMBaseTableViewSectionModel *m2 = [EMBaseTableViewSectionModel new];
-    TestCellModel *i21 = [TestCellModel new];
-    i21.rowHeight = 44.f;
-    i21.title = @"方法调用(消息发送)流程";
-    i21.targetClass = NSThreadOverviewController.class;
+//    EMBaseTableViewSectionModel *m2 = [EMBaseTableViewSectionModel new];
+//    TestCellModel *i21 = [TestCellModel new];
+//    i21.rowHeight = 44.f;
+//    i21.title = @"方法调用(消息发送)流程";
+//    i21.targetClass = NSThreadOverviewController.class;
 //    TestCellModel *i23 = [TestCellModel new];
 //    i23.title = @"方法交换";
 //    i23.targetClass = ExChangeMethodController.class;
 //    TestCellModel *i22 = [TestCellModel new];
 //    i22.title = @"类添加成员";
 //    i22.targetClass = AddMemberController.class;
-    m2.cellModelArray = @[i21].mutableCopy;
+//    m2.cellModelArray = @[i21].mutableCopy;
     
-    [self.dataSource addObjectsFromArray:@[m1, m2]];
+    [self.dataSource addObjectsFromArray:@[m1]];
     [self.tableView reloadData];
 }
 
