@@ -35,6 +35,8 @@
 		04289E9222A01915008C8CFB /* NSInvocationOperationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04289E9122A01915008C8CFB /* NSInvocationOperationController.m */; };
 		04289E9522A01974008C8CFB /* NSCustomOperationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04289E9422A01974008C8CFB /* NSCustomOperationController.m */; };
 		04289E9822A019BF008C8CFB /* NSCustomOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04289E9722A019BF008C8CFB /* NSCustomOperation.m */; };
+		0464772422A3E08E00212E05 /* NSOperationQueueController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0464772322A3E08E00212E05 /* NSOperationQueueController.m */; };
+		0464772722A4BEB200212E05 /* NSOperationOtherController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0464772622A4BEB200212E05 /* NSOperationOtherController.m */; };
 		2157DB8784C6A84F0DE10A80 /* libPods-GCD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C77ADD4B72C69B3F8FF2A194 /* libPods-GCD.a */; };
 		A1468950608AFC8DB064DB5E /* libPods-NSOperation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2081A4274283DA6B7855B4BA /* libPods-NSOperation.a */; };
 		FE255D038C12C23A161409CB /* libPods-NSThread.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97988147DF3EDF916A03C65B /* libPods-NSThread.a */; };
@@ -93,6 +95,10 @@
 		04289E9422A01974008C8CFB /* NSCustomOperationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSCustomOperationController.m; sourceTree = "<group>"; };
 		04289E9622A019BF008C8CFB /* NSCustomOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSCustomOperation.h; sourceTree = "<group>"; };
 		04289E9722A019BF008C8CFB /* NSCustomOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSCustomOperation.m; sourceTree = "<group>"; };
+		0464772222A3E08E00212E05 /* NSOperationQueueController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSOperationQueueController.h; sourceTree = "<group>"; };
+		0464772322A3E08E00212E05 /* NSOperationQueueController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSOperationQueueController.m; sourceTree = "<group>"; };
+		0464772522A4BEB200212E05 /* NSOperationOtherController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSOperationOtherController.h; sourceTree = "<group>"; };
+		0464772622A4BEB200212E05 /* NSOperationOtherController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSOperationOtherController.m; sourceTree = "<group>"; };
 		2081A4274283DA6B7855B4BA /* libPods-NSOperation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NSOperation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54D84F3301091A67CB496CA5 /* Pods-NSThread.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NSThread.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-NSThread/Pods-NSThread.debug.xcconfig"; sourceTree = "<group>"; };
 		97988147DF3EDF916A03C65B /* libPods-NSThread.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NSThread.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,6 +220,10 @@
 				04289E9422A01974008C8CFB /* NSCustomOperationController.m */,
 				04289E9622A019BF008C8CFB /* NSCustomOperation.h */,
 				04289E9722A019BF008C8CFB /* NSCustomOperation.m */,
+				0464772222A3E08E00212E05 /* NSOperationQueueController.h */,
+				0464772322A3E08E00212E05 /* NSOperationQueueController.m */,
+				0464772522A4BEB200212E05 /* NSOperationOtherController.h */,
+				0464772622A4BEB200212E05 /* NSOperationOtherController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -529,8 +539,10 @@
 				04289E9822A019BF008C8CFB /* NSCustomOperation.m in Sources */,
 				04289E8F22A018DC008C8CFB /* NSBlockOperationController.m in Sources */,
 				04289E59229FDAEB008C8CFB /* main.m in Sources */,
+				0464772422A3E08E00212E05 /* NSOperationQueueController.m in Sources */,
 				04289E4B229FDAEB008C8CFB /* AppDelegate.m in Sources */,
 				04289E9222A01915008C8CFB /* NSInvocationOperationController.m in Sources */,
+				0464772722A4BEB200212E05 /* NSOperationOtherController.m in Sources */,
 				04289E8C22A01594008C8CFB /* NSOperationOverviewController.m in Sources */,
 				04289E8922A01577008C8CFB /* NSOperationBaseController.m in Sources */,
 				04289E8522A01525008C8CFB /* TestCellModel.m in Sources */,

@@ -118,10 +118,26 @@
         NSLog(@"%@ work C done.", [NSThread currentThread]);
     }];
     
+//    // 监听状态
+//    [one addObserver:self forKeyPath:@"isFinished" options:NSKeyValueObservingOptionNew context:nil];
+//    // 监听状态
+//    [two addObserver:self forKeyPath:@"isFinished" options:NSKeyValueObservingOptionNew context:nil];
+//    // 监听状态
+//    [three addObserver:self forKeyPath:@"isFinished" options:NSKeyValueObservingOptionNew context:nil];
+    
     [one start];
     [two start];
     [three start];
     
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    static int count = 0;
+    if ([keyPath isEqualToString:@"isFinished"] && [change valueForKey:NSKeyValueChangeNewKey]) {
+        count ++;
+        [self performDMehtod];
+        NSLog(@"%@ observeValueForKeyPath", [NSThread currentThread]);
+    }
 }
 
 - (void)performDMehtod {

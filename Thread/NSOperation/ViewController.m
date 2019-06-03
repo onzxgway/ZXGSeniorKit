@@ -12,6 +12,8 @@
 #import "NSBlockOperationController.h"
 #import "NSInvocationOperationController.h"
 #import "NSCustomOperationController.h"
+#import "NSOperationQueueController.h"
+#import "NSOperationOtherController.h"
 
 @interface ViewController ()
 
@@ -51,7 +53,21 @@
     i22.targetClass = NSCustomOperationController.class;
     m2.cellModelArray = @[i21, i23, i22].mutableCopy;
     
-    [self.dataSource addObjectsFromArray:@[m1, m2]];
+    EMBaseTableViewSectionModel *m3 = [EMBaseTableViewSectionModel new];
+    TestCellModel *i31 = [TestCellModel new];
+    i31.rowHeight = 44.f;
+    i31.title = @"NSOperationQueue";
+    i31.targetClass = NSOperationQueueController.class;
+    m3.cellModelArray = @[i31].mutableCopy;
+    
+    EMBaseTableViewSectionModel *m4 = [EMBaseTableViewSectionModel new];
+    TestCellModel *i41 = [TestCellModel new];
+    i41.rowHeight = 44.f;
+    i41.title = @"线程间通信、安全";
+    i41.targetClass = NSOperationOtherController.class;
+    m4.cellModelArray = @[i41].mutableCopy;
+    
+    [self.dataSource addObjectsFromArray:@[m1, m2, m3, m4]];
     [self.tableView reloadData];
 }
 
