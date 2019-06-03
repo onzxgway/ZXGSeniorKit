@@ -14,6 +14,7 @@
 #import "NSCustomOperationController.h"
 #import "NSOperationQueueController.h"
 #import "NSOperationOtherController.h"
+#import "NSDeadOperationController.h"
 
 @interface ViewController ()
 
@@ -62,10 +63,12 @@
     
     EMBaseTableViewSectionModel *m4 = [EMBaseTableViewSectionModel new];
     TestCellModel *i41 = [TestCellModel new];
-    i41.rowHeight = 44.f;
     i41.title = @"线程间通信、安全";
     i41.targetClass = NSOperationOtherController.class;
-    m4.cellModelArray = @[i41].mutableCopy;
+    TestCellModel *i42 = [TestCellModel new];
+    i42.title = @"线程僵死";
+    i42.targetClass = NSDeadOperationController.class;
+    m4.cellModelArray = @[i41, i42].mutableCopy;
     
     [self.dataSource addObjectsFromArray:@[m1, m2, m3, m4]];
     [self.tableView reloadData];
