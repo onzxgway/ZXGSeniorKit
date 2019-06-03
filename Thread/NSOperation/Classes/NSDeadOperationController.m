@@ -24,9 +24,12 @@
     [self method2];
 }
 
-#pragma mark - 需求一：NSThread在子线程去执行延时操作。
+#pragma mark - 需求一：在子线程去执行延时操作。
+// GCD 很容易实现 dispatch_after。
+// NSThread 实现
 - (void)method1 {
     [NSThread detachNewThreadSelector:@selector(ThreadOne) toTarget:self withObject:nil];
+    
 }
 
 // 该方式 endThread: 方法不会被执行。必须如下ThreadOne
@@ -42,7 +45,7 @@
     NSLog(@"finished thread");
 }
 
-// 该方式 endThread: 会被执行。但是线程对象会僵死。
+// 该方式 endThread: 会被执行。但是线程对象会僵尸。
 - (void)ThreadOne {
     NSLog(@"start thread");
     

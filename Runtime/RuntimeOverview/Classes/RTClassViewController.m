@@ -128,7 +128,7 @@
     struct objc_method {
         SEL _Nonnull method_name OBJC2_UNAVAILABLE;        // 方法名称
         char * _Nullable method_types OBJC2_UNAVAILABLE;   // 方法编码
-        IMP _Nonnull method_imp  OBJC2_UNAVAILABLE;        // 方法地址
+        IMP _Nonnull method_imp  OBJC2_UNAVAILABLE;        // 方法地址 函数实现体指针
     } OBJC2_UNAVAILABLE;
     
 }

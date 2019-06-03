@@ -66,7 +66,7 @@
     i41.title = @"线程间通信、安全";
     i41.targetClass = NSOperationOtherController.class;
     TestCellModel *i42 = [TestCellModel new];
-    i42.title = @"线程僵死";
+    i42.title = @"僵尸线程";
     i42.targetClass = NSDeadOperationController.class;
     m4.cellModelArray = @[i41, i42].mutableCopy;
     
