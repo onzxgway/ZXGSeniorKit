@@ -154,7 +154,7 @@
     [self.queue addOperation:blockOperation];
 }
 
-// 需求三： 方式二：使用操作依赖功能
+// 需求三： 方式二：使用操作依赖功能, 依赖的底层实现就是基于kvo的。
 - (void)doIt1 {
     // 任务
     NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
