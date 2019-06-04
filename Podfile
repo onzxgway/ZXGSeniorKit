@@ -35,3 +35,17 @@ Thread.each do |t|
         #pod 'MLeaksFinder'
     end
 end
+
+
+# target数组 如果有新的target直接加入该数组
+JJPlayer = ['JJPlayer']
+JJPlayer.each do |t|
+    target t do
+        project 'JJPlayer/JJPlayer.project'
+        totalPods
+        #pod 'AFNetworking', '~> 3.0'
+        #pod 'NJKWebViewProgress'
+        #pod 'MJRefresh'
+        #pod 'MLeaksFinder'
+    end
+end
