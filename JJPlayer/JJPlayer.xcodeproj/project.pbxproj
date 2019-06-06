@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04133A5622A7825700B92075 /* JJPlayerKVOObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 04133A5522A7825700B92075 /* JJPlayerKVOObserver.m */; };
+		04133A5922A7B6A700B92075 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04133A5822A7B6A700B92075 /* RootViewController.m */; };
+		04133A5C22A7B77800B92075 /* JJPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04133A5B22A7B77800B92075 /* JJPlayerManager.m */; };
+		04133A6022A7C19400B92075 /* JJPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04133A5F22A7C19400B92075 /* JJPlayerView.m */; };
+		04133A6322A8C2F700B92075 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 04133A6222A8C2F700B92075 /* README.md */; };
 		04FB21F022A6ACA1007EE8D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FB21EF22A6ACA1007EE8D9 /* AppDelegate.m */; };
 		04FB21F322A6ACA1007EE8D9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FB21F222A6ACA1007EE8D9 /* ViewController.m */; };
 		04FB21F622A6ACA1007EE8D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FB21F422A6ACA1007EE8D9 /* Main.storyboard */; };
@@ -18,6 +23,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04133A5422A7825700B92075 /* JJPlayerKVOObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJPlayerKVOObserver.h; sourceTree = "<group>"; };
+		04133A5522A7825700B92075 /* JJPlayerKVOObserver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJPlayerKVOObserver.m; sourceTree = "<group>"; };
+		04133A5722A7B6A700B92075 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		04133A5822A7B6A700B92075 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		04133A5A22A7B77800B92075 /* JJPlayerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJPlayerManager.h; sourceTree = "<group>"; };
+		04133A5B22A7B77800B92075 /* JJPlayerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJPlayerManager.m; sourceTree = "<group>"; };
+		04133A5D22A7BBF200B92075 /* JJPlayerMediaPlayAble.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJPlayerMediaPlayAble.h; sourceTree = "<group>"; };
+		04133A5E22A7C19400B92075 /* JJPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJPlayerView.h; sourceTree = "<group>"; };
+		04133A5F22A7C19400B92075 /* JJPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJPlayerView.m; sourceTree = "<group>"; };
+		04133A6122A8BF8200B92075 /* JJPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJPlayer.h; sourceTree = "<group>"; };
+		04133A6222A8C2F700B92075 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		04FB21EB22A6ACA0007EE8D9 /* JJPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JJPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04FB21EE22A6ACA1007EE8D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04FB21EF22A6ACA1007EE8D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -74,6 +90,8 @@
 				04FB21EF22A6ACA1007EE8D9 /* AppDelegate.m */,
 				04FB21F122A6ACA1007EE8D9 /* ViewController.h */,
 				04FB21F222A6ACA1007EE8D9 /* ViewController.m */,
+				04133A5722A7B6A700B92075 /* RootViewController.h */,
+				04133A5822A7B6A700B92075 /* RootViewController.m */,
 				04FB21F422A6ACA1007EE8D9 /* Main.storyboard */,
 				04FB21F722A6ACA2007EE8D9 /* Assets.xcassets */,
 				04FB21F922A6ACA2007EE8D9 /* LaunchScreen.storyboard */,
@@ -87,8 +105,17 @@
 		04FB220422A6AD39007EE8D9 /* JJPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				04133A6122A8BF8200B92075 /* JJPlayer.h */,
+				04133A5E22A7C19400B92075 /* JJPlayerView.h */,
+				04133A5F22A7C19400B92075 /* JJPlayerView.m */,
 				04FB220522A6AE73007EE8D9 /* JJPlayerPresentView.h */,
 				04FB220622A6AE73007EE8D9 /* JJPlayerPresentView.m */,
+				04133A5422A7825700B92075 /* JJPlayerKVOObserver.h */,
+				04133A5522A7825700B92075 /* JJPlayerKVOObserver.m */,
+				04133A5A22A7B77800B92075 /* JJPlayerManager.h */,
+				04133A5B22A7B77800B92075 /* JJPlayerManager.m */,
+				04133A5D22A7BBF200B92075 /* JJPlayerMediaPlayAble.h */,
+				04133A6222A8C2F700B92075 /* README.md */,
 			);
 			path = JJPlayer;
 			sourceTree = "<group>";
@@ -171,6 +198,7 @@
 			files = (
 				04FB21FB22A6ACA2007EE8D9 /* LaunchScreen.storyboard in Resources */,
 				04FB21F822A6ACA2007EE8D9 /* Assets.xcassets in Resources */,
+				04133A6322A8C2F700B92075 /* README.md in Resources */,
 				04FB21F622A6ACA1007EE8D9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,7 +251,11 @@
 			files = (
 				04FB21F322A6ACA1007EE8D9 /* ViewController.m in Sources */,
 				04FB220722A6AE73007EE8D9 /* JJPlayerPresentView.m in Sources */,
+				04133A5922A7B6A700B92075 /* RootViewController.m in Sources */,
 				04FB21FE22A6ACA2007EE8D9 /* main.m in Sources */,
+				04133A5C22A7B77800B92075 /* JJPlayerManager.m in Sources */,
+				04133A6022A7C19400B92075 /* JJPlayerView.m in Sources */,
+				04133A5622A7825700B92075 /* JJPlayerKVOObserver.m in Sources */,
 				04FB21F022A6ACA1007EE8D9 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

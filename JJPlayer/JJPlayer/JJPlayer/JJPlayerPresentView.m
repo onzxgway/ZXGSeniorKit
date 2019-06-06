@@ -35,4 +35,13 @@
     self.playerLayer.player = _player;
 }
 
+- (void)setVideoGravity:(AVLayerVideoGravity)videoGravity {
+    if (videoGravity == self.videoGravity) return;
+    self.playerLayer.videoGravity = videoGravity;
+}
+
+- (AVLayerVideoGravity)videoGravity {
+    return self.playerLayer.videoGravity;
+}
+
 @end

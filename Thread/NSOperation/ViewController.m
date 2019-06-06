@@ -73,6 +73,8 @@
     [self.dataSource addObjectsFromArray:@[m1, m2, m3, m4]];
     [self.tableView reloadData];
 }
+- (IBAction)replay:(id)sender {
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
