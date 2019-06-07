@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalTime;
 @property (weak, nonatomic) IBOutlet UILabel *currentTime;
 @property (weak, nonatomic) IBOutlet UILabel *stateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bufferLabel;
 
 @property (nonatomic, strong) JJPlayerManager *playerManager;
 @end
@@ -80,6 +81,11 @@
     [self.playerManager setPlayerDidToEnd:^(id<JJPlayerMediaPlayAble> asset) {
         @strongify(self)
         self.stateLabel.text = @"播放结束";
+    }];
+    
+    [self.playerManager setPlayerBufferTimeChanged:^(id<JJPlayerMediaPlayAble> asset, NSTimeInterval bufferTime) {
+        @strongify(self)
+        self.bufferLabel.text = [NSString stringWithFormat:@"%lf", bufferTime];
     }];
     
     [self.view addSubview:self.playerManager.view];

@@ -19,13 +19,15 @@ typedef NS_ENUM(NSUInteger, JJPlayerPlayState) {
 @protocol JJPlayerMediaPlayAble <NSObject>
 
 @required
-/// The view must inherited `JJPlayerView`,this view deals with some gesture conflicts.
+// 视频页面控件必须继承自 JJPlayerView,因为该类处理了很多手势冲突.
 @property (nonatomic) JJPlayerView *view; // 视频页面
 
 @optional
 
-// 播放地址
+// 视频地址
 @property (nonatomic, strong) NSURL *assetURL;
+// 视频请求头 (可用于安全认证等)
+@property (nonatomic, strong) NSDictionary *requestHeader;
 
 // 是否自动播放, 默认是 YES.
 @property (nonatomic) BOOL shouldAutoPlay;
@@ -42,7 +44,7 @@ typedef NS_ENUM(NSUInteger, JJPlayerPlayState) {
 // 视频总时长.
 @property (nonatomic, readonly) NSTimeInterval totalTime;
 
-
+// 是否是播放就绪状态(调用play即可播放)
 @property (nonatomic, readonly) BOOL isPreparedToPlay;
 
 // 视频画面尺寸.
@@ -51,6 +53,11 @@ typedef NS_ENUM(NSUInteger, JJPlayerPlayState) {
 // 播放状态.
 @property (nonatomic, readonly) JJPlayerPlayState playState;
 
+// 已缓冲时长.
+@property (nonatomic, readonly) NSTimeInterval bufferTime;
+
+// 播放就绪状态回调.
+@property (nonatomic, copy) void(^playerPrepareToPlay)(id<JJPlayerMediaPlayAble> asset, NSURL *assetURL);
 
 // 播放时间相关回调.
 @property (nonatomic, copy) void(^playerPlayTimeChanged)(id<JJPlayerMediaPlayAble> asset, NSTimeInterval currentTime, NSTimeInterval duration);
@@ -61,11 +68,14 @@ typedef NS_ENUM(NSUInteger, JJPlayerPlayState) {
 // 视频画面尺寸变更回调.
 @property (nonatomic, copy) void(^presentationSizeChanged)(id<JJPlayerMediaPlayAble> asset, CGSize size);
 
-// 播放器播放状态改变回调.
+// 播放状态改变回调.
 @property (nonatomic, copy) void(^playerPlayStateChanged)(id<JJPlayerMediaPlayAble> asset, JJPlayerPlayState playState);
 
 // 播放器播放准备失败.
 @property (nonatomic, copy) void(^playerPlayFailed)(id<JJPlayerMediaPlayAble> asset, NSError *error);
+
+// 播放器缓冲增加回调.
+@property (nonatomic, copy) void(^playerBufferTimeChanged)(id<JJPlayerMediaPlayAble> asset, NSTimeInterval bufferTime);
 
 // Prepares the current queue for playback, interrupting any active (non-mixible) audio sessions.
 // 播放前准备

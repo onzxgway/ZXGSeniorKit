@@ -8,15 +8,14 @@
 
 #import "JJPlayerManager.h"
 
-static NSString *const kStatus                   = @"status";
-static NSString *const kLoadedTimeRanges         = @"loadedTimeRanges";
-static NSString *const kPlaybackBufferEmpty      = @"playbackBufferEmpty";
-static NSString *const kPlaybackLikelyToKeepUp   = @"playbackLikelyToKeepUp";
-static NSString *const kPresentationSize         = @"presentationSize";
+static NSString *const status                   = @"status";
+static NSString *const loadedTimeRanges         = @"loadedTimeRanges";
+static NSString *const playbackBufferEmpty      = @"playbackBufferEmpty";
+static NSString *const playbackLikelyToKeepUp   = @"playbackLikelyToKeepUp";
+static NSString *const presentationSize         = @"presentationSize";
 
 
 @interface JJPlayerManager ()
-
 @property (nonatomic) BOOL isPreparedToPlay;
 @property (nonatomic, strong) JJPlayerKVOObserver *KVOObserver;
 @property (nonatomic) BOOL isBuffering; // 是否正在缓冲.
@@ -38,6 +37,10 @@ static NSString *const kPresentationSize         = @"presentationSize";
 @synthesize presentationSizeChanged = _presentationSizeChanged;
 @synthesize playState = _playState;
 @synthesize playerPlayStateChanged = _playerPlayStateChanged;
+@synthesize bufferTime = _bufferTime;
+@synthesize playerBufferTimeChanged = _playerBufferTimeChanged;
+@synthesize requestHeader = _requestHeader;
+@synthesize playerPrepareToPlay = _playerPrepareToPlay;
 
 - (instancetype)init {
     self = [super init];
@@ -50,7 +53,7 @@ static NSString *const kPresentationSize         = @"presentationSize";
 #pragma mark - Private Methods
 - (void)createPlayer {
     // 0.初始化播放器
-    _asset = [AVURLAsset URLAssetWithURL:_assetURL options:nil];
+    _asset = [AVURLAsset URLAssetWithURL:_assetURL options:self.requestHeader];
     AVPlayerItem *_playerItem = [AVPlayerItem playerItemWithAsset:self.asset];
     _player = [AVPlayer playerWithPlayerItem:_playerItem];
     
@@ -97,29 +100,52 @@ static NSString *const kPresentationSize         = @"presentationSize";
     });
 }
 
+// 计算缓冲时长
+- (NSTimeInterval)availableDuration {
+    NSArray<NSValue *> *timeRangeArray = self.player.currentItem.loadedTimeRanges;
+    CMTime currentTime = [self.player currentTime];
+    BOOL foundRange = NO;
+    CMTimeRange aTimeRange = {0};
+    if (timeRangeArray.count) {
+        aTimeRange = [[timeRangeArray firstObject] CMTimeRangeValue]; // 本次缓冲时间范围
+        if (CMTimeRangeContainsTime(aTimeRange, currentTime)) {
+            foundRange = YES;
+        }
+    }
+    
+    if (foundRange) {
+        CMTime maxTime = CMTimeRangeGetEnd(aTimeRange);
+        NSTimeInterval playableDuration = CMTimeGetSeconds(maxTime);
+        if (playableDuration > 0) {
+            return playableDuration;
+        }
+    }
+    return 0;
+}
+
 #pragma mark - KVO
 - (void)itemObserving {
     // 0.监听AVPlayerItem的相关属性
     [_KVOObserver jj_removeAllObservers];
     _KVOObserver = [[JJPlayerKVOObserver alloc] initWithTarget:_player.currentItem];
     [_KVOObserver jj_addObserver:self
-                      forKeyPath:kStatus
-                         options:NSKeyValueObservingOptionNew
-                         context:nil]; // AVPlayerItem状态
-    [_KVOObserver jj_addObserver:self
-                      forKeyPath:kPlaybackBufferEmpty
+                      forKeyPath:status
                          options:NSKeyValueObservingOptionNew
                          context:nil];
     [_KVOObserver jj_addObserver:self
-                      forKeyPath:kPlaybackLikelyToKeepUp
+                      forKeyPath:playbackBufferEmpty
                          options:NSKeyValueObservingOptionNew
                          context:nil];
-//    [_KVOObserver jj_addObserver:self
-//                      forKeyPath:kLoadedTimeRanges
-//                         options:NSKeyValueObservingOptionNew
-//                         context:nil]; // 已经缓冲的进度
     [_KVOObserver jj_addObserver:self
-                      forKeyPath:kPresentationSize
+                      forKeyPath:playbackLikelyToKeepUp
+                         options:NSKeyValueObservingOptionNew
+                         context:nil];
+    [_KVOObserver jj_addObserver:self
+                      forKeyPath:loadedTimeRanges
+                         options:NSKeyValueObservingOptionNew
+                         context:nil]; // 已经缓冲的进度
+    [_KVOObserver jj_addObserver:self
+                      forKeyPath:presentationSize
                          options:NSKeyValueObservingOptionNew
                          context:nil];
     /**
@@ -153,8 +179,8 @@ static NSString *const kPresentationSize         = @"presentationSize";
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    // 当status等于AVPlayerStatusReadyToPlay时代表视频已经可以播放了。
-    if ([keyPath isEqualToString:kStatus]) {
+    // 当status等于AVPlayerStatusReadyToPlay时代表视频资源准备好了，已经可以播放了。
+    if ([keyPath isEqualToString:status]) {
         NSLog(@"=====status=====");
         AVPlayerItem *item = self.player.currentItem;
         if (item.status == AVPlayerItemStatusReadyToPlay) {
@@ -166,26 +192,30 @@ static NSString *const kPresentationSize         = @"presentationSize";
             if (self.playerPlayFailed) self.playerPlayFailed(self, error);
         }
     }
-    else if ([keyPath isEqualToString:kPlaybackBufferEmpty]) {
+    else if ([keyPath isEqualToString:playbackBufferEmpty]) {
         NSLog(@"=====playbackBufferEmpty=====");
         // 播放已消耗所有缓冲媒体，且播放将停止或结束
         if (self.player.currentItem.isPlaybackBufferEmpty) {
             [self bufferingSomeSeconds];
         }
     }
-    else if ([keyPath isEqualToString:kPlaybackLikelyToKeepUp]) {
+    else if ([keyPath isEqualToString:playbackLikelyToKeepUp]) {
         NSLog(@"=====playbackLikelyToKeepUp=====");
-        // 指示项目是否可能在不停顿的情况下完成
+        // 是否可能在不停顿的情况下完成
         if (self.player.currentItem.isPlaybackLikelyToKeepUp) {
 //            self.loadState = ZFPlayerLoadStatePlayable;
             if (self.playState == JJPlayerPlayStatePlaying) [self.player play];
         }
     }
-    else if ([keyPath isEqualToString:kLoadedTimeRanges]) {
+    else if ([keyPath isEqualToString:loadedTimeRanges]) {
         // 监听此属性可以在UI中更新缓冲进度
-//        NSLog(@"kLoadedTimeRanges=====%@", [change objectForKey:NSKeyValueChangeNewKey]);
+        NSTimeInterval bufferTime = [self availableDuration];
+        _bufferTime = bufferTime;
+        if (self.playerBufferTimeChanged) {
+            self.playerBufferTimeChanged(self, bufferTime);
+        }
     }
-    else if ([keyPath isEqualToString:kPresentationSize]) {
+    else if ([keyPath isEqualToString:presentationSize]) {
         NSLog(@"=====presentationSize=====");
         _presentationSize = self.player.currentItem.presentationSize;
         if (self.presentationSizeChanged) {
@@ -209,7 +239,7 @@ static NSString *const kPresentationSize         = @"presentationSize";
         [self play];
     }
 //    self.loadState = ZFPlayerLoadStatePrepare;
-//    if (self.playerPrepareToPlay) self.playerPrepareToPlay(self, self.assetURL);
+    if (self.playerPrepareToPlay) self.playerPrepareToPlay(self, self.assetURL);
     
 }
 
@@ -230,7 +260,7 @@ static NSString *const kPresentationSize         = @"presentationSize";
     self.playState = JJPlayerPlayStatePaused;
 }
 
-// 停止. 恢复初始设置，释放AVPlayer
+// 停止. 恢复初始设置，销毁AVPlayer.(销毁之前，先把currentItem置nil)
 //
 - (void)stop {
     
@@ -248,7 +278,6 @@ static NSString *const kPresentationSize         = @"presentationSize";
     
     _player = nil;
     _assetURL = nil;
-//    _playerItem = nil;
     _isPreparedToPlay = NO;
     
     self.playState = JJPlayerPlayStatePlayStopped;

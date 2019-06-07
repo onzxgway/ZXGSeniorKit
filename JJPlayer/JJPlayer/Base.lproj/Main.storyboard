@@ -77,7 +77,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQV-Qx-EwM">
-                                <rect key="frame" x="39" y="210" width="104" height="0.0"/>
+                                <rect key="frame" x="39" y="226" width="104" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="104" id="loG-7O-ZEc"/>
                                 </constraints>
@@ -103,28 +103,40 @@
                                     <action selector="replay:" destination="4X5-zS-gwS" eventType="touchUpInside" id="bmM-B5-rni"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="缓冲时间" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jn-9f-V8Q">
+                                <rect key="frame" x="39" y="187" width="104" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="104" id="poY-dv-Gz2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9wf-Np-Yt6" firstAttribute="top" secondItem="QuW-Fm-ZzH" secondAttribute="top" constant="35" id="2aT-6M-cx5"/>
+                            <constraint firstItem="TQV-Qx-EwM" firstAttribute="top" secondItem="4Jn-9f-V8Q" secondAttribute="bottom" constant="18" id="4ge-O3-snO"/>
                             <constraint firstItem="TQV-Qx-EwM" firstAttribute="leading" secondItem="ZGP-Nz-JRJ" secondAttribute="leading" id="96d-5A-prl"/>
                             <constraint firstItem="QZy-aS-v1Y" firstAttribute="top" secondItem="9wf-Np-Yt6" secondAttribute="top" id="LGw-gZ-wDq"/>
                             <constraint firstItem="9wf-Np-Yt6" firstAttribute="centerX" secondItem="g37-Eb-cSv" secondAttribute="centerX" id="PT3-AZ-VoQ"/>
                             <constraint firstItem="m3x-aW-tan" firstAttribute="centerX" secondItem="g37-Eb-cSv" secondAttribute="centerX" id="QEq-2D-sqx"/>
                             <constraint firstItem="scb-FI-jya" firstAttribute="top" secondItem="9wf-Np-Yt6" secondAttribute="top" id="XnX-F1-m2j"/>
+                            <constraint firstItem="4Jn-9f-V8Q" firstAttribute="top" secondItem="ZGP-Nz-JRJ" secondAttribute="bottom" constant="18" id="dot-Hd-fOf"/>
                             <constraint firstItem="QZy-aS-v1Y" firstAttribute="leading" secondItem="QuW-Fm-ZzH" secondAttribute="leading" constant="39" id="fGs-ol-QqY"/>
                             <constraint firstItem="ZGP-Nz-JRJ" firstAttribute="leading" secondItem="QZy-aS-v1Y" secondAttribute="leading" id="iI5-7u-Osy"/>
-                            <constraint firstItem="TQV-Qx-EwM" firstAttribute="top" secondItem="ZGP-Nz-JRJ" secondAttribute="bottom" constant="41" id="l3i-rJ-g2j"/>
                             <constraint firstItem="m3x-aW-tan" firstAttribute="top" secondItem="9wf-Np-Yt6" secondAttribute="bottom" constant="81" id="opa-Oq-7Gl"/>
                             <constraint firstItem="ZGP-Nz-JRJ" firstAttribute="top" secondItem="QZy-aS-v1Y" secondAttribute="bottom" constant="28" id="rB0-W0-jmX"/>
                             <constraint firstItem="ho1-rO-uEK" firstAttribute="leading" secondItem="scb-FI-jya" secondAttribute="leading" id="s67-M6-iWK"/>
                             <constraint firstItem="scb-FI-jya" firstAttribute="leading" secondItem="9wf-Np-Yt6" secondAttribute="trailing" constant="48.5" id="uUR-42-fG4"/>
+                            <constraint firstItem="4Jn-9f-V8Q" firstAttribute="leading" secondItem="ZGP-Nz-JRJ" secondAttribute="leading" id="yUA-ZF-nG9"/>
                             <constraint firstItem="ho1-rO-uEK" firstAttribute="top" secondItem="scb-FI-jya" secondAttribute="bottom" constant="26" id="zVQ-K9-cdf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QuW-Fm-ZzH"/>
                     </view>
                     <navigationItem key="navigationItem" id="46b-RO-eP0"/>
                     <connections>
+                        <outlet property="bufferLabel" destination="4Jn-9f-V8Q" id="1tA-ld-GlO"/>
                         <outlet property="currentTime" destination="ZGP-Nz-JRJ" id="2Qj-tD-Th9"/>
                         <outlet property="stateLabel" destination="TQV-Qx-EwM" id="RJn-Cv-RjF"/>
                         <outlet property="totalTime" destination="QZy-aS-v1Y" id="owm-rG-YmV"/>
