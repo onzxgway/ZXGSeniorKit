@@ -112,6 +112,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCH-8g-8NO">
+                                <rect key="frame" x="267" y="210" width="31" height="30"/>
+                                <state key="normal" title="stop">
+                                    <color key="titleColor" red="1" green="0.5295773345" blue="0.58753791499999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -121,7 +127,9 @@
                             <constraint firstItem="QZy-aS-v1Y" firstAttribute="top" secondItem="9wf-Np-Yt6" secondAttribute="top" id="LGw-gZ-wDq"/>
                             <constraint firstItem="9wf-Np-Yt6" firstAttribute="centerX" secondItem="g37-Eb-cSv" secondAttribute="centerX" id="PT3-AZ-VoQ"/>
                             <constraint firstItem="m3x-aW-tan" firstAttribute="centerX" secondItem="g37-Eb-cSv" secondAttribute="centerX" id="QEq-2D-sqx"/>
+                            <constraint firstItem="MCH-8g-8NO" firstAttribute="top" secondItem="m3x-aW-tan" secondAttribute="top" id="UEH-ru-nVK"/>
                             <constraint firstItem="scb-FI-jya" firstAttribute="top" secondItem="9wf-Np-Yt6" secondAttribute="top" id="XnX-F1-m2j"/>
+                            <constraint firstItem="MCH-8g-8NO" firstAttribute="trailing" secondItem="ho1-rO-uEK" secondAttribute="trailing" id="ZE2-Bh-7Hx"/>
                             <constraint firstItem="4Jn-9f-V8Q" firstAttribute="top" secondItem="ZGP-Nz-JRJ" secondAttribute="bottom" constant="18" id="dot-Hd-fOf"/>
                             <constraint firstItem="QZy-aS-v1Y" firstAttribute="leading" secondItem="QuW-Fm-ZzH" secondAttribute="leading" constant="39" id="fGs-ol-QqY"/>
                             <constraint firstItem="ZGP-Nz-JRJ" firstAttribute="leading" secondItem="QZy-aS-v1Y" secondAttribute="leading" id="iI5-7u-Osy"/>
@@ -139,6 +147,7 @@
                         <outlet property="bufferLabel" destination="4Jn-9f-V8Q" id="1tA-ld-GlO"/>
                         <outlet property="currentTime" destination="ZGP-Nz-JRJ" id="2Qj-tD-Th9"/>
                         <outlet property="stateLabel" destination="TQV-Qx-EwM" id="RJn-Cv-RjF"/>
+                        <outlet property="stopBtn" destination="MCH-8g-8NO" id="FFN-9f-PfN"/>
                         <outlet property="totalTime" destination="QZy-aS-v1Y" id="owm-rG-YmV"/>
                     </connections>
                 </viewController>

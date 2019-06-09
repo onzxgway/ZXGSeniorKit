@@ -16,14 +16,13 @@ static NSString *const presentationSize         = @"presentationSize";
 
 
 @interface JJPlayerManager ()
-@property (nonatomic) BOOL isPreparedToPlay;
-@property (nonatomic, strong) JJPlayerKVOObserver *KVOObserver;
 @property (nonatomic) BOOL isBuffering; // 是否正在缓冲.
 @end
 
 @implementation JJPlayerManager {
     id _timeObserver;
     id _didPlayToEndTimeObserver;
+    JJPlayerKVOObserver *_KVOObserver;
 }
 
 @synthesize assetURL = _assetURL;
@@ -41,26 +40,45 @@ static NSString *const presentationSize         = @"presentationSize";
 @synthesize playerBufferTimeChanged = _playerBufferTimeChanged;
 @synthesize requestHeader = _requestHeader;
 @synthesize playerPrepareToPlay = _playerPrepareToPlay;
+@synthesize playerLoadStateChanged = _playerLoadStateChanged;
+@synthesize loadState = _loadState;
+@synthesize playerReadyToPlay = _playerReadyToPlay;
+@synthesize volume = _volume;
+@synthesize muted = _muted;
+@synthesize rate = _rate;
+@synthesize currentTime = _currentTime;
+@synthesize totalTime = _totalTime;
+@synthesize seekTime = _seekTime;
+@synthesize isPreparedToPlay = _isPreparedToPlay;
 
 - (instancetype)init {
     self = [super init];
     if (self) {
         _shouldAutoPlay = YES;
+        _rate = 1.f;
     }
     return self;
 }
 
 #pragma mark - Private Methods
 - (void)createPlayer {
-    // 0.初始化播放器
+    // 0.根据url实例化播放器
     _asset = [AVURLAsset URLAssetWithURL:_assetURL options:self.requestHeader];
     AVPlayerItem *_playerItem = [AVPlayerItem playerItemWithAsset:self.asset];
     _player = [AVPlayer playerWithPlayerItem:_playerItem];
     
     // 1.播放画面添加到view上
-    JJPlayerPresentView *presentView = (JJPlayerPresentView *)self.view;
+    JJPlayerLayerView *presentView = (JJPlayerLayerView *)self.view;
     presentView.player = _player;
     self.videoGravity = AVLayerVideoGravityResizeAspect;
+    
+//    if (@available(iOS 9.0, *)) {
+//        _playerItem.canUseNetworkResourcesForLiveStreamingWhilePaused = NO;
+//    }
+//    if (@available(iOS 10.0, *)) {
+//        _playerItem.preferredForwardBufferDuration = 5;
+//        _player.automaticallyWaitsToMinimizeStalling = NO;
+//    }
     
     // 2._playerItem添加监听
     [self itemObserving];
@@ -73,7 +91,7 @@ static NSString *const presentationSize         = @"presentationSize";
         [self.player seekToTime:seekTime toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero completionHandler:completionHandler];
     }
     else {
-        
+        self.seekTime = time;
     }
     
 }
@@ -81,14 +99,14 @@ static NSString *const presentationSize         = @"presentationSize";
 // 缓冲较差时候回调这里
 - (void)bufferingSomeSeconds {
     // playbackBufferEmpty会反复进入，因此在bufferingOneSecond延时播放执行完之前再调用bufferingSomeSecond都忽略
-    if (_isBuffering || self.playState == JJPlayerPlayStatePlayStopped) return;
+    if (_isBuffering || self.playState == JJPlayerPlayStateUnknown || self.playState == JJPlayerPlayStateDidPlayToEnd) return;
     _isBuffering = YES;
     
     // 需要先暂停一小会之后再播放，否则网络状况不好的时候时间在走，声音播放不出来
     [self.player pause];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         // 如果此时用户已经暂停了，则不再需要开启播放了
-        if (self.playState == JJPlayerPlayStatePaused || self.playState == JJPlayerPlayStatePlayStopped) {
+        if (self.playState == JJPlayerPlayStatePaused || self.playState == JJPlayerPlayStateDidPlayToEnd) {
             self.isBuffering = NO;
             return;
         }
@@ -159,7 +177,12 @@ static NSString *const presentationSize         = @"presentationSize";
         @strongify(self)
         if (!self) return;
         
-//        NSLog(@"CMTime::%lf", CMTimeGetSeconds(time)); // 当前播放时间点
+        // 大于0才把状态改为可以播放，解决黑屏问题
+        if (CMTimeGetSeconds(time) > 0) { // && !self.isReadyToPlay
+//            self.isReadyToPlay = YES;
+            self.loadState = JJPlayerLoadStatePlaythroughOK;
+        }
+
         if (self.playerPlayTimeChanged) {
             self.playerPlayTimeChanged(self, self.currentTime, self.totalTime);
         }
@@ -170,7 +193,7 @@ static NSString *const presentationSize         = @"presentationSize";
         @strongify(self)
         if (!self) return;
         
-        self.playState = JJPlayerPlayStatePlayStopped;
+        self.playState = JJPlayerPlayStateDidPlayToEnd;
 
         if (self.playerDidToEnd) {
             self.playerDidToEnd(self);
@@ -179,52 +202,67 @@ static NSString *const presentationSize         = @"presentationSize";
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    // 当status等于AVPlayerStatusReadyToPlay时代表视频资源准备好了，已经可以播放了。
-    if ([keyPath isEqualToString:status]) {
-        NSLog(@"=====status=====");
-        AVPlayerItem *item = self.player.currentItem;
-        if (item.status == AVPlayerItemStatusReadyToPlay) {
-        
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        // 当status等于AVPlayerStatusReadyToPlay时代表视频资源准备好了，已经可以播放了。
+        if ([keyPath isEqualToString:status]) {
+            // 一个item实例只会调用一次
+            AVPlayerItem *item = self.player.currentItem;
+            if (item.status == AVPlayerItemStatusReadyToPlay) {
+                // 第一次初始化
+                if (self.loadState == JJPlayerLoadStatePrepare) {
+                    if (self.playerReadyToPlay) self.playerReadyToPlay(self, self.assetURL);
+                }
+                if (self.seekTime) {
+                    [self seekToTime:self.seekTime completionHandler:nil];
+                    self.seekTime = 0;
+                }
+                if (self.playState == JJPlayerPlayStatePlaying) [self play];
+                self.player.muted = self.muted;
+            }
+            else if (item.status == AVPlayerItemStatusFailed) {
+                self.playState = JJPlayerPlayStateFailed;
+                NSError *error = self.player.currentItem.error;
+                if (self.playerPlayFailed) self.playerPlayFailed(self, error);
+            }
         }
-        else if (item.status == AVPlayerItemStatusFailed){
-            self.playState = JJPlayerPlayStatePlayFailed;
-            NSError *error = self.player.currentItem.error;
-            if (self.playerPlayFailed) self.playerPlayFailed(self, error);
+        else if ([keyPath isEqualToString:playbackBufferEmpty]) {
+            // 播放已消耗所有缓冲媒体，且播放将停止或结束
+            if (self.player.currentItem.isPlaybackBufferEmpty) {
+                NSLog(@"=====playbackBufferEmpty=====");
+                self.loadState = JJPlayerLoadStateStalled;
+//                [self bufferingSomeSeconds];
+            }
         }
-    }
-    else if ([keyPath isEqualToString:playbackBufferEmpty]) {
-        NSLog(@"=====playbackBufferEmpty=====");
-        // 播放已消耗所有缓冲媒体，且播放将停止或结束
-        if (self.player.currentItem.isPlaybackBufferEmpty) {
-            [self bufferingSomeSeconds];
+        else if ([keyPath isEqualToString:playbackLikelyToKeepUp]) {
+            // 是否可能在不停顿的情况下完成   会多次调用
+            if (self.player.currentItem.isPlaybackLikelyToKeepUp) {
+                NSLog(@"=====playbackLikelyToKeepUp 真=====");
+                self.loadState = JJPlayerLoadStatePlayable;
+                if (self.playState == JJPlayerPlayStatePlaying) [self.player play];
+            }
+            else {
+                NSLog(@"=====playbackLikelyToKeepUp 假=====");
+            }
         }
-    }
-    else if ([keyPath isEqualToString:playbackLikelyToKeepUp]) {
-        NSLog(@"=====playbackLikelyToKeepUp=====");
-        // 是否可能在不停顿的情况下完成
-        if (self.player.currentItem.isPlaybackLikelyToKeepUp) {
-//            self.loadState = ZFPlayerLoadStatePlayable;
-            if (self.playState == JJPlayerPlayStatePlaying) [self.player play];
+        else if ([keyPath isEqualToString:loadedTimeRanges]) {
+            // 监听此属性可以在UI中更新缓冲进度  会多次调用
+            NSTimeInterval bufferTime = [self availableDuration];
+            self->_bufferTime = bufferTime;
+            if (self.playerBufferTimeChanged) {
+                self.playerBufferTimeChanged(self, bufferTime);
+            }
         }
-    }
-    else if ([keyPath isEqualToString:loadedTimeRanges]) {
-        // 监听此属性可以在UI中更新缓冲进度
-        NSTimeInterval bufferTime = [self availableDuration];
-        _bufferTime = bufferTime;
-        if (self.playerBufferTimeChanged) {
-            self.playerBufferTimeChanged(self, bufferTime);
+        else if ([keyPath isEqualToString:presentationSize]) {
+            self->_presentationSize = self.player.currentItem.presentationSize;
+            if (self.presentationSizeChanged) {
+                self.presentationSizeChanged(self, self->_presentationSize);
+            }
         }
-    }
-    else if ([keyPath isEqualToString:presentationSize]) {
-        NSLog(@"=====presentationSize=====");
-        _presentationSize = self.player.currentItem.presentationSize;
-        if (self.presentationSizeChanged) {
-            self.presentationSizeChanged(self, _presentationSize);
+        else {
+            [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
         }
-    }
-    else {
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-    }
+    });
     
 }
 
@@ -238,7 +276,7 @@ static NSString *const presentationSize         = @"presentationSize";
     if (_shouldAutoPlay) {
         [self play];
     }
-//    self.loadState = ZFPlayerLoadStatePrepare;
+    self.loadState = JJPlayerLoadStatePrepare;
     if (self.playerPrepareToPlay) self.playerPrepareToPlay(self, self.assetURL);
     
 }
@@ -250,6 +288,7 @@ static NSString *const presentationSize         = @"presentationSize";
     }
     else {
         [self.player play];
+        self.player.rate = _rate; // 注意更改播放速度要在视频开始播放之后才会生效
         self.playState = JJPlayerPlayStatePlaying;
     }
 }
@@ -258,11 +297,14 @@ static NSString *const presentationSize         = @"presentationSize";
 - (void)pause {
     [self.player pause];
     self.playState = JJPlayerPlayStatePaused;
+    [self.player.currentItem cancelPendingSeeks];
+    [self.asset cancelLoading];
 }
 
 // 停止. 恢复初始设置，销毁AVPlayer.(销毁之前，先把currentItem置nil)
-//
 - (void)stop {
+    
+    [self pause];
     
     // 移除所有监听
     [_KVOObserver jj_removeAllObservers];
@@ -280,11 +322,12 @@ static NSString *const presentationSize         = @"presentationSize";
     _assetURL = nil;
     _isPreparedToPlay = NO;
     
-    self.playState = JJPlayerPlayStatePlayStopped;
+    self.loadState = JJPlayerLoadStateUnknown;
+    self.playState = JJPlayerPlayStateUnknown;
     
-//    _currentTime = 0;
-//    _totalTime = 0;
-//    self->_bufferTime = 0;
+    _currentTime = 0;
+    _totalTime = 0;
+    _bufferTime = 0;
 }
 
 // 重播.
@@ -297,10 +340,35 @@ static NSString *const presentationSize         = @"presentationSize";
     
 }
 
+- (void)reloadPlayer {
+    self.seekTime = self.currentTime;
+    [self prepareToPlay];
+}
+
+- (UIImage *)frameImageAtCurrentTime {
+    
+    AVAssetImageGenerator *imageGenerator = [AVAssetImageGenerator assetImageGeneratorWithAsset:self.asset];
+    imageGenerator.requestedTimeToleranceBefore = kCMTimeZero;
+    imageGenerator.requestedTimeToleranceAfter = kCMTimeZero;
+    
+    CGImageRef cgImage = NULL;
+    CMTime expectedTime = self.player.currentItem.currentTime;
+    cgImage = [imageGenerator copyCGImageAtTime:expectedTime actualTime:NULL error:NULL];
+    
+    if (!cgImage) {
+        imageGenerator.requestedTimeToleranceBefore = kCMTimePositiveInfinity;
+        imageGenerator.requestedTimeToleranceAfter = kCMTimePositiveInfinity;
+        cgImage = [imageGenerator copyCGImageAtTime:expectedTime actualTime:NULL error:NULL];
+    }
+    
+    UIImage *image = [UIImage imageWithCGImage:cgImage];
+    return image;
+}
+
 #pragma mark - Getter
 - (JJPlayerView *)view {
     if (!_view) {
-        _view = [[JJPlayerPresentView alloc] init];
+        _view = [[JJPlayerLayerView alloc] init];
     }
     return _view;
 }
@@ -327,7 +395,7 @@ static NSString *const presentationSize         = @"presentationSize";
 - (void)setVideoGravity:(AVLayerVideoGravity)videoGravity {
     _videoGravity = videoGravity;
     
-    JJPlayerPresentView *presentView = (JJPlayerPresentView *)self.view;
+    JJPlayerLayerView *presentView = (JJPlayerLayerView *)self.view;
     if ([_videoGravity isEqualToString:AVLayerVideoGravityResizeAspect]) {
         presentView.videoGravity = AVLayerVideoGravityResizeAspect; // 不变形，填充不全，有黑边
     }
@@ -352,6 +420,30 @@ static NSString *const presentationSize         = @"presentationSize";
     _playState = playState;
     if (self.playerPlayStateChanged) {
         self.playerPlayStateChanged(self, _playState);
+    }
+}
+
+- (void)setLoadState:(JJPlayerLoadState)loadState {
+    _loadState = loadState;
+    if (self.playerLoadStateChanged) {
+        self.playerLoadStateChanged(self, _loadState);
+    }
+}
+
+- (void)setVolume:(float)volume {
+    _volume = MIN(MAX(0, volume), 1);
+    self.player.volume = volume;
+}
+
+- (void)setMuted:(BOOL)muted {
+    _muted = muted;
+    self.player.muted = muted;
+}
+
+- (void)setRate:(float)rate {
+    _rate = ((rate == 0) ? 1.f : rate);
+    if (self.player && fabsf(_player.rate) > 0.00001f) {
+        self.player.rate = rate;
     }
 }
 

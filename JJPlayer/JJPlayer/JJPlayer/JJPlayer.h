@@ -40,6 +40,6 @@
 #endif
 
 
-#import "JJPlayerPresentView.h"
+#import "JJPlayerLayerView.h"
 #import "JJPlayerKVOObserver.h"
 #import "JJPlayerMediaPlayAble.h"

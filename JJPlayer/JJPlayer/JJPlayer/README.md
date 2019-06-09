@@ -46,23 +46,3 @@
 
     1. 添加的监听(kvo、notification、[AVPlayer addPeriodicTimeObserverForInterval])结束的时候一定要移除掉。
     [AVPlaye addPeriodicTimeObserverForInterval:queue:usingBlock:] 文档中提到了 返回的对象要记录下来，结束的时候一定要移除掉，虽然不会奔溃，但是会占用大量内存。 
-
-    2.AVPlayerItem和AVPlayer都有status属性，而且都可以使用KVO监听的。
-        AVPlayerItem枚举类型如下：
-        typedef NS_ENUM(NSInteger, AVPlayerItemStatus) {
-            AVPlayerItemStatusUnknown,
-            AVPlayerItemStatusReadyToPlay,
-            AVPlayerItemStatusFailed
-        };  
-        而AVPlayer枚举类型如下：
-        typedef NS_ENUM(NSInteger, AVPlayerStatus) {
-            AVPlayerStatusUnknown,
-            AVPlayerStatusReadyToPlay,
-            AVPlayerStatusFailed
-        };
-        AVPlayerItemStatus代表当前播放资源的状态，
-        AVPlayerStatus代表当前播放器的状态。
-
-        注意：项目中遇到一个问题就是AVPlayer的status 为AVPlayerStatusReadyToPlay，但是视频就是播放不成功，后来将KVO的监听换成了AVPlayerItem，返回了AVPlayerItemStatusFailed。
-        所以编程的时候最好使用item的status会准确点。
-        

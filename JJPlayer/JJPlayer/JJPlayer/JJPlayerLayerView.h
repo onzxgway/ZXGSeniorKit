@@ -1,5 +1,5 @@
 //
-//  JJPlayerPresentView.h
+//  JJPlayerLayerView.h
 //  JJPlayer
 //
 //  Created by 朱献国 on 2019/6/4.
@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
  视频页面呈现控件
  在开发中单纯使用AVPlayer类是无法显示视频的，要将视频层添加至AVPlayerLayer中，这样才能将视频显示出来.
  */
-@interface JJPlayerPresentView : JJPlayerView
+@interface JJPlayerLayerView : JJPlayerView
 
 @property (nonatomic, strong) AVPlayer *player;
 

@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "JJPlayerManager.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface ViewController ()
 
@@ -15,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *currentTime;
 @property (weak, nonatomic) IBOutlet UILabel *stateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bufferLabel;
+@property (weak, nonatomic) IBOutlet UIButton *stopBtn;
 
 @property (nonatomic, strong) JJPlayerManager *playerManager;
 @end
@@ -43,10 +45,16 @@
     }
 }
 
+- (void)stop:(UIButton *)sender {
+    [self.playerManager stop];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self createPlayer];
+
+    [self.stopBtn addTarget:self action:@selector(stop:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -66,7 +74,7 @@
         *AVPlayerItem实例的属性监听。
      */
     self.playerManager = [[JJPlayerManager alloc] init];
-    self.playerManager.shouldAutoPlay = NO;
+//    self.playerManager.shouldAutoPlay = NO;
     
     self.playerManager.assetURL = [NSURL URLWithString:@"https://www.apple.com/105/media/cn/mac/family/2018/46c4b917_abfd_45a3_9b51_4e3054191797/films/bruce/mac-bruce-tpl-cn-2018_1280x720h.mp4"];
     

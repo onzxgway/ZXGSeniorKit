@@ -12,13 +12,14 @@
 		04133A5C22A7B77800B92075 /* JJPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04133A5B22A7B77800B92075 /* JJPlayerManager.m */; };
 		04133A6022A7C19400B92075 /* JJPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04133A5F22A7C19400B92075 /* JJPlayerView.m */; };
 		04133A6322A8C2F700B92075 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 04133A6222A8C2F700B92075 /* README.md */; };
+		043611B522AD1BD100240E85 /* JJPlayerManager.md in Resources */ = {isa = PBXBuildFile; fileRef = 043611B422AD1BD100240E85 /* JJPlayerManager.md */; };
 		04FB21F022A6ACA1007EE8D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FB21EF22A6ACA1007EE8D9 /* AppDelegate.m */; };
 		04FB21F322A6ACA1007EE8D9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FB21F222A6ACA1007EE8D9 /* ViewController.m */; };
 		04FB21F622A6ACA1007EE8D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FB21F422A6ACA1007EE8D9 /* Main.storyboard */; };
 		04FB21F822A6ACA2007EE8D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04FB21F722A6ACA2007EE8D9 /* Assets.xcassets */; };
 		04FB21FB22A6ACA2007EE8D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FB21F922A6ACA2007EE8D9 /* LaunchScreen.storyboard */; };
 		04FB21FE22A6ACA2007EE8D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FB21FD22A6ACA2007EE8D9 /* main.m */; };
-		04FB220722A6AE73007EE8D9 /* JJPlayerPresentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FB220622A6AE73007EE8D9 /* JJPlayerPresentView.m */; };
+		04FB220722A6AE73007EE8D9 /* JJPlayerLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FB220622A6AE73007EE8D9 /* JJPlayerLayerView.m */; };
 		3ACAAB62F61AE98B1E5F1E31 /* libPods-JJPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D60D47080AF9931F997D0D4F /* libPods-JJPlayer.a */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		04133A5F22A7C19400B92075 /* JJPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJPlayerView.m; sourceTree = "<group>"; };
 		04133A6122A8BF8200B92075 /* JJPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJPlayer.h; sourceTree = "<group>"; };
 		04133A6222A8C2F700B92075 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		043611B422AD1BD100240E85 /* JJPlayerManager.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = JJPlayerManager.md; sourceTree = "<group>"; };
 		04FB21EB22A6ACA0007EE8D9 /* JJPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JJPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04FB21EE22A6ACA1007EE8D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04FB21EF22A6ACA1007EE8D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -44,8 +46,8 @@
 		04FB21FA22A6ACA2007EE8D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04FB21FC22A6ACA2007EE8D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04FB21FD22A6ACA2007EE8D9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		04FB220522A6AE73007EE8D9 /* JJPlayerPresentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJPlayerPresentView.h; sourceTree = "<group>"; };
-		04FB220622A6AE73007EE8D9 /* JJPlayerPresentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJPlayerPresentView.m; sourceTree = "<group>"; };
+		04FB220522A6AE73007EE8D9 /* JJPlayerLayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJPlayerLayerView.h; sourceTree = "<group>"; };
+		04FB220622A6AE73007EE8D9 /* JJPlayerLayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJPlayerLayerView.m; sourceTree = "<group>"; };
 		04FB220822A6AF6B007EE8D9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		7BBD54FED76AA836E8D1D68F /* Pods-JJPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JJPlayer.release.xcconfig"; path = "../Pods/Target Support Files/Pods-JJPlayer/Pods-JJPlayer.release.xcconfig"; sourceTree = "<group>"; };
 		AE815FF5A175386301F5D943 /* Pods-JJPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JJPlayer.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-JJPlayer/Pods-JJPlayer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -108,14 +110,15 @@
 				04133A6122A8BF8200B92075 /* JJPlayer.h */,
 				04133A5E22A7C19400B92075 /* JJPlayerView.h */,
 				04133A5F22A7C19400B92075 /* JJPlayerView.m */,
-				04FB220522A6AE73007EE8D9 /* JJPlayerPresentView.h */,
-				04FB220622A6AE73007EE8D9 /* JJPlayerPresentView.m */,
+				04FB220522A6AE73007EE8D9 /* JJPlayerLayerView.h */,
+				04FB220622A6AE73007EE8D9 /* JJPlayerLayerView.m */,
 				04133A5422A7825700B92075 /* JJPlayerKVOObserver.h */,
 				04133A5522A7825700B92075 /* JJPlayerKVOObserver.m */,
 				04133A5A22A7B77800B92075 /* JJPlayerManager.h */,
 				04133A5B22A7B77800B92075 /* JJPlayerManager.m */,
 				04133A5D22A7BBF200B92075 /* JJPlayerMediaPlayAble.h */,
 				04133A6222A8C2F700B92075 /* README.md */,
+				043611B422AD1BD100240E85 /* JJPlayerManager.md */,
 			);
 			path = JJPlayer;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04FB21FB22A6ACA2007EE8D9 /* LaunchScreen.storyboard in Resources */,
+				043611B522AD1BD100240E85 /* JJPlayerManager.md in Resources */,
 				04FB21F822A6ACA2007EE8D9 /* Assets.xcassets in Resources */,
 				04133A6322A8C2F700B92075 /* README.md in Resources */,
 				04FB21F622A6ACA1007EE8D9 /* Main.storyboard in Resources */,
@@ -250,7 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04FB21F322A6ACA1007EE8D9 /* ViewController.m in Sources */,
-				04FB220722A6AE73007EE8D9 /* JJPlayerPresentView.m in Sources */,
+				04FB220722A6AE73007EE8D9 /* JJPlayerLayerView.m in Sources */,
 				04133A5922A7B6A700B92075 /* RootViewController.m in Sources */,
 				04FB21FE22A6ACA2007EE8D9 /* main.m in Sources */,
 				04133A5C22A7B77800B92075 /* JJPlayerManager.m in Sources */,
