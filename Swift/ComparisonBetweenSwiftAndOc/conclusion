@@ -1,0 +1,20 @@
+Swift 与 OC 比较：
+
+相同点：
+    1.注释是一样的，都分三种， *// 单行、* /**/ 多行、/***/ 文档注释。
+
+
+不同点：
+    1.console打印
+        Swift:  print()
+        OC:     NSLog()
+
+    2.字符串拼接
+        Swift:  "My name is \(value)"
+                支持多行字符串，声明方式 """  """
+        OC:     [NSString stringWithFormat:@"My name is %@", value]
+                不支持多行字符串
+
+    3.
+        Swift:  // MARK: - information
+        OC:     #pragma mark - information
