@@ -11,7 +11,7 @@
 		04C48D4822F2FA070062E4BF /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C48D4722F2FA070062E4BF /* PageViewController.swift */; };
 		04C48D4A22F2FA220062E4BF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C48D4922F2FA220062E4BF /* HomeViewController.swift */; };
 		04C48D4C22F30FAA0062E4BF /* HSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C48D4B22F30FAA0062E4BF /* HSecondViewController.swift */; };
-		04C48D4E22F324070062E4BF /* HSecondBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C48D4D22F324070062E4BF /* HSecondBaseController.swift */; };
+		04C48D4E22F324070062E4BF /* HSecondTwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C48D4D22F324070062E4BF /* HSecondTwoController.swift */; };
 		04C48D6B22F5250C0062E4BF /* MyFirstFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04C48D6822F523A90062E4BF /* MyFirstFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		04F3B03C22EC5BF5002FB0F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3B03B22EC5BF5002FB0F3 /* AppDelegate.swift */; };
 		04F3B03E22EC5BF5002FB0F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3B03D22EC5BF5002FB0F3 /* ViewController.swift */; };
@@ -51,7 +51,7 @@
 		04C48D4722F2FA070062E4BF /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		04C48D4922F2FA220062E4BF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		04C48D4B22F30FAA0062E4BF /* HSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSecondViewController.swift; sourceTree = "<group>"; };
-		04C48D4D22F324070062E4BF /* HSecondBaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSecondBaseController.swift; sourceTree = "<group>"; };
+		04C48D4D22F324070062E4BF /* HSecondTwoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSecondTwoController.swift; sourceTree = "<group>"; };
 		04C48D6822F523A90062E4BF /* MyFirstFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MyFirstFramework.framework; sourceTree = "<group>"; };
 		04F3B03922EC5BF5002FB0F3 /* Swift5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F3B03B22EC5BF5002FB0F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 				04C48D4722F2FA070062E4BF /* PageViewController.swift */,
 				04C48D4922F2FA220062E4BF /* HomeViewController.swift */,
 				04C48D4B22F30FAA0062E4BF /* HSecondViewController.swift */,
-				04C48D4D22F324070062E4BF /* HSecondBaseController.swift */,
+				04C48D4D22F324070062E4BF /* HSecondTwoController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -444,7 +444,7 @@
 				04C48D4A22F2FA220062E4BF /* HomeViewController.swift in Sources */,
 				04C48D4C22F30FAA0062E4BF /* HSecondViewController.swift in Sources */,
 				04F3B08D22EDBE51002FB0F3 /* CustomTabBarController.swift in Sources */,
-				04C48D4E22F324070062E4BF /* HSecondBaseController.swift in Sources */,
+				04C48D4E22F324070062E4BF /* HSecondTwoController.swift in Sources */,
 				04F3B08922EDBB17002FB0F3 /* AppDelegate.swift in Sources */,
 				04C48D4222F2F9180062E4BF /* BaseViewController.swift in Sources */,
 				04C48D4822F2FA070062E4BF /* PageViewController.swift in Sources */,

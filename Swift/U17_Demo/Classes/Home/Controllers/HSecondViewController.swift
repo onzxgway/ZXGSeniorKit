@@ -15,7 +15,7 @@ import MyFirstFramework
  */
 
 
-class HSecondViewController: PageViewController {
+class HSecondViewController: HomeViewController {
 
     // MARK: - Access modifier 访问权限修饰符
     /**
@@ -29,11 +29,9 @@ class HSecondViewController: PageViewController {
      
      open: 可以被任何人使用，包括inherit和override。
      */
-    
     private var desc: String = "☺️☺️"
     
     fileprivate var content: String = "🤩🤩"
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +42,11 @@ class HSecondViewController: PageViewController {
         print(f.a(orders: [1,2,3,4,5,6,7,8,9]))
         print(f.b(orders: [1,2,3,4,5,6,7,8,9]))
 //        print(f.c(orders: [1,2,3,4,5,6,7,8,9]))
+    }
+    
+    override func clicked() {
+        let ctrl = HSecondTwoController.init()
+        navigationController?.pushViewController(ctrl, animated: true)
     }
 
 }
