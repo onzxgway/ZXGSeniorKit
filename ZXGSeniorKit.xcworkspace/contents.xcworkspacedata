@@ -22,4 +22,10 @@
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Runtime/Runtime.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Swift/Swift.xcodeproj">
+   </FileRef>
 </Workspace>

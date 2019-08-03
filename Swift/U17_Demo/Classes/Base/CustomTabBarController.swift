@@ -16,8 +16,7 @@ class CustomTabBarController: UITabBarController {
         view.backgroundColor = UIColor.green
         /// 首页
         // 在对变量首次赋值的时候，会进行类型推断，之后该变量的类型保持不变。
-        let home = UIViewController()
-        home.view.backgroundColor = UIColor.orange
+        let home = HomeViewController.init()
         addChildViewController(home,
                                title: nil,
                                image: nil,

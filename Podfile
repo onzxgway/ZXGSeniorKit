@@ -63,3 +63,16 @@ Architecture.each do |t|
         #pod 'MLeaksFinder'
     end
 end
+
+# target数组 如果有新的target直接加入该数组
+Swift = ['U17_Demo']
+Swift.each do |t|
+    target t do
+        project 'Swift/Swift.project'
+        totalPods
+        #pod 'AFNetworking', '~> 3.0'
+        #pod 'NJKWebViewProgress'
+        #pod 'MJRefresh'
+        #pod 'MLeaksFinder'
+    end
+end
