@@ -69,6 +69,8 @@ class HSecondTwoController: HSecondViewController {
         // 访问父类private修饰的属性
 //        self.desc = "baba!"
 //        self.content = "dudu"
+        
+        temp()
     }
     
     
@@ -91,5 +93,40 @@ class HSecondTwoController: HSecondViewController {
         }
     }
     
+    
+    // MARK: - 可选类型
+    internal var opStr: String? = "haha"
+    internal var upStr: String?
+    internal var downStr: String! = "wuwu"
+    
+    func temp() {
+        // 1.手动强制解包
+//        print(opStr!) // 当你确定自定义的可选类型一定有值时，可以使用操作符(!)进行强制解析
+//        print(upStr!) // 可选值为nil时使用(!)进行强制解析，会有运行错误。
+        
+        // 2.自动解包
+//        print(downStr)
+        
+        // 3.可选绑定
+        /**
+            可选类型是否包含值，如果包含就把值赋给一个临时常量或者变量。
+            if let 和 guard 两种用法，意思相反。
+         */
+        
+        if let temp = opStr {
+            print(temp)
+        }
+        
+        guard upStr != nil else {
+            print("no value!")
+            return
+        }
+    }
+    
+    
+    override func clicked() {
+        let ctrl = HSecondThreeController.init()
+        navigationController?.pushViewController(ctrl, animated: true)
+    }
 }
 
