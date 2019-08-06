@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         let dicArr = [
             ["Enumeration": "EnumerationController"],
             ["Structures and Classes": "StructAndClassController"],
+            ["Properties": "PropertyController"],
             ["Subscripts": "SubscriptController"],
             ["Extensions": "ExtensionController"],
             ["Protocols": "ProtocolController"]
@@ -64,7 +65,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
         let clas: AnyClass
         // 由字符串转为类型的时候  如果类型是自定义的 需要在类型字符串前边加上你的项目的名字！
-        if let cla = NSClassFromString("Syntax." + (dic[Array(dic.keys)[0]] ?? "")) {
+        let name = dic[Array(dic.keys)[0]] ?? ""
+        if let cla = NSClassFromString("Syntax." + name) {
             clas = cla
         }
         else {
@@ -73,7 +75,11 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
         //        let cla: AnyClass = NSClassFromString(dic.values.first ?? "") ?? ClassAndStructController.self
         
-        navigationController?.pushViewController(clas.alloc() as! UIViewController, animated: true)
+        let ctrl = clas.alloc() as! UIViewController
+//        name.startIndex
+//        ctrl.navigationItem.title = name[..<(name.count - 10)]
+        
+        navigationController?.pushViewController(ctrl, animated: true)
     }
     
 }

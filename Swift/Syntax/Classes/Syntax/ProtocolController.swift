@@ -16,3 +16,30 @@ class ProtocolController: SyntaxBaseController {
     }
 
 }
+
+// MARK: - Protocols
+/*
+ 
+ */
+
+protocol FirstProtocol {
+    
+}
+
+protocol SecondProtocol {
+    
+}
+
+// 遵循多个协议时，各协议之间用逗号（,）分隔：
+struct Demo1: FirstProtocol, SecondProtocol {
+    
+}
+
+class SupClass {
+    
+}
+
+// 若一个拥有父类的类在遵循协议时，应该将父类名放在协议名之前，以逗号分隔：
+class DemoClass: SupClass, FirstProtocol, SecondProtocol {
+    
+}
