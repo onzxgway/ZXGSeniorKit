@@ -21,6 +21,7 @@
 		044B91F922F86FF700564D69 /* Swift和OC对比 in Resources */ = {isa = PBXBuildFile; fileRef = 044B91F822F86FF700564D69 /* Swift和OC对比 */; };
 		044BB53B22F5CCC90013D197 /* PrefixHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044BB53A22F5CCC90013D197 /* PrefixHeader.swift */; };
 		044D17CC22F9A3B600152B18 /* PropertyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D17CB22F9A3B600152B18 /* PropertyController.swift */; };
+		044F1D1D22FAE079004FFFF6 /* BasicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F1D1C22FAE079004FFFF6 /* BasicController.swift */; };
 		04C48D4222F2F9180062E4BF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C48D4122F2F9180062E4BF /* BaseViewController.swift */; };
 		04C48D4822F2FA070062E4BF /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C48D4722F2FA070062E4BF /* PageViewController.swift */; };
 		04C48D4A22F2FA220062E4BF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C48D4922F2FA220062E4BF /* HomeViewController.swift */; };
@@ -71,6 +72,7 @@
 		044B91F822F86FF700564D69 /* Swift和OC对比 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Swift和OC对比"; sourceTree = "<group>"; };
 		044BB53A22F5CCC90013D197 /* PrefixHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixHeader.swift; sourceTree = "<group>"; };
 		044D17CB22F9A3B600152B18 /* PropertyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyController.swift; sourceTree = "<group>"; };
+		044F1D1C22FAE079004FFFF6 /* BasicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicController.swift; sourceTree = "<group>"; };
 		04C48D4122F2F9180062E4BF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		04C48D4722F2FA070062E4BF /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		04C48D4922F2FA220062E4BF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		044B91E822F869A900564D69 /* Syntax */ = {
 			isa = PBXGroup;
 			children = (
+				044F1D1C22FAE079004FFFF6 /* BasicController.swift */,
 				044B91F022F86A2C00564D69 /* StructAndClassController.swift */,
 				044B91EC22F869FB00564D69 /* EnumerationController.swift */,
 				044B91F222F86C0E00564D69 /* SubscriptController.swift */,
@@ -478,6 +481,7 @@
 				044B91D822F8660B00564D69 /* AppDelegate.swift in Sources */,
 				044B91F122F86A2C00564D69 /* StructAndClassController.swift in Sources */,
 				044B91F522F86E1900564D69 /* ExtensionController.swift in Sources */,
+				044F1D1D22FAE079004FFFF6 /* BasicController.swift in Sources */,
 				044B91EB22F869E500564D69 /* SyntaxBaseController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

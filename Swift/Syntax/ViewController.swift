@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     lazy var dataSource: [[String: String]] = {
         
         let dicArr = [
+            ["The Basics": "BasicController"],
             ["Enumeration": "EnumerationController"],
             ["Structures and Classes": "StructAndClassController"],
             ["Properties": "PropertyController"],
