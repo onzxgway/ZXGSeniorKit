@@ -164,9 +164,45 @@ class Lexus {
 }
 
 
-// MARK: - 错误处理
-
 // MARK: - 断言和先决条件
+
+/*
+ 
+ 断言 和 先决条件的异同：
+        1.相同点：功能完全相同。
+        2.不同点：
+            Assert只在开发版本中奏效。
+            precondition不仅在开发版本中奏效，release版本中依然奏效。
+ */
+class AssertAnd {
+    
+    // 断言一
+    func alertBreak(_ para: Int) -> Void {
+        assert(para >= 0, "参数必须大于零") // 有断言信息
+        assert(para <= 100) // 没有断言信息
+        print("exeute!!!")
+    }
+    
+    // 断言二
+    func alertB(_ age: Int) -> Void {
+        if age > 10 {
+            print("You can ride the roller-coaster or the ferris wheel.")
+        }
+        else if age > 0 {
+            print("You can ride the ferris wheel.")
+        }
+        else {
+            assertionFailure("A person's age can't be less than zero.")
+        }
+    }
+    
+    // 先决条件
+    func preF(_ para: Int) -> Void {
+        precondition(para > 0, "para must be greater than zero.")
+        print("exeute!!!")
+    }
+}
+
 
 class BasicController: SyntaxBaseController {
 
@@ -177,7 +213,9 @@ class BasicController: SyntaxBaseController {
         
 //        AirPlane.init().msg()
         
-        Lexus.init("山下中暑", origin: "1956", location: "🇯🇵").japan()
+//        Lexus.init("山下中暑", origin: "1956", location: "🇯🇵").japan()
+        
+        AssertAnd.init().preF(0)
     }
 
 }
