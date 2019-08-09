@@ -23,10 +23,14 @@ class ViewController: UIViewController {
         
         let dicArr = [
             ["The Basics": "BasicController"],
+            ["Collection Types": "CollectionTypeController"],
             ["Enumeration": "EnumerationController"],
             ["Structures and Classes": "StructAndClassController"],
             ["Properties": "PropertyController"],
+            ["Methods": "MethodController"],
             ["Subscripts": "SubscriptController"],
+            ["Initialization": "InitController"],
+            ["Deinitialization": "DeinitController"],
             ["Extensions": "ExtensionController"],
             ["Protocols": "ProtocolController"]
         ]

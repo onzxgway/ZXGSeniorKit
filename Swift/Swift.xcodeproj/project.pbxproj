@@ -38,6 +38,10 @@
 		04F3B08622EDBB17002FB0F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F3B07D22EDBB16002FB0F3 /* Assets.xcassets */; };
 		04F3B08922EDBB17002FB0F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3B08222EDBB16002FB0F3 /* AppDelegate.swift */; };
 		04F3B08D22EDBE51002FB0F3 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3B08C22EDBE51002FB0F3 /* CustomTabBarController.swift */; };
+		04FB707722FDA01F0045B9CF /* CollectionTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB707622FDA01F0045B9CF /* CollectionTypeController.swift */; };
+		04FB707922FDB7C50045B9CF /* MethodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB707822FDB7C50045B9CF /* MethodController.swift */; };
+		04FB707B22FDB9180045B9CF /* InitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB707A22FDB9180045B9CF /* InitController.swift */; };
+		04FB707D22FDB9600045B9CF /* DeinitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB707C22FDB9600045B9CF /* DeinitController.swift */; };
 		CA69B75431D2872C42BB03A5 /* libPods-U17_Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC72C9A7E18E96B58D6A551 /* libPods-U17_Demo.a */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +97,10 @@
 		04F3B08222EDBB16002FB0F3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F3B08322EDBB16002FB0F3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04F3B08C22EDBE51002FB0F3 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		04FB707622FDA01F0045B9CF /* CollectionTypeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTypeController.swift; sourceTree = "<group>"; };
+		04FB707822FDB7C50045B9CF /* MethodController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodController.swift; sourceTree = "<group>"; };
+		04FB707A22FDB9180045B9CF /* InitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitController.swift; sourceTree = "<group>"; };
+		04FB707C22FDB9600045B9CF /* DeinitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeinitController.swift; sourceTree = "<group>"; };
 		5E10AA84B50F98CEC9DE8BB3 /* Pods-U17_Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-U17_Demo.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-U17_Demo/Pods-U17_Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		9BC72C9A7E18E96B58D6A551 /* libPods-U17_Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-U17_Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F40DD44708FA2EAF35288413 /* Pods-U17_Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-U17_Demo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-U17_Demo/Pods-U17_Demo.release.xcconfig"; sourceTree = "<group>"; };
@@ -160,12 +168,16 @@
 			isa = PBXGroup;
 			children = (
 				044F1D1C22FAE079004FFFF6 /* BasicController.swift */,
-				044B91F022F86A2C00564D69 /* StructAndClassController.swift */,
+				04FB707622FDA01F0045B9CF /* CollectionTypeController.swift */,
 				044B91EC22F869FB00564D69 /* EnumerationController.swift */,
+				044B91F022F86A2C00564D69 /* StructAndClassController.swift */,
+				044D17CB22F9A3B600152B18 /* PropertyController.swift */,
+				04FB707822FDB7C50045B9CF /* MethodController.swift */,
 				044B91F222F86C0E00564D69 /* SubscriptController.swift */,
+				04FB707A22FDB9180045B9CF /* InitController.swift */,
+				04FB707C22FDB9600045B9CF /* DeinitController.swift */,
 				044B91F422F86E1900564D69 /* ExtensionController.swift */,
 				044B91F622F86F3200564D69 /* ProtocolController.swift */,
-				044D17CB22F9A3B600152B18 /* PropertyController.swift */,
 			);
 			path = Syntax;
 			sourceTree = "<group>";
@@ -475,13 +487,17 @@
 			files = (
 				044B91DA22F8660B00564D69 /* ViewController.swift in Sources */,
 				044B91F722F86F3200564D69 /* ProtocolController.swift in Sources */,
+				04FB707722FDA01F0045B9CF /* CollectionTypeController.swift in Sources */,
 				044D17CC22F9A3B600152B18 /* PropertyController.swift in Sources */,
+				04FB707D22FDB9600045B9CF /* DeinitController.swift in Sources */,
 				044B91F322F86C0E00564D69 /* SubscriptController.swift in Sources */,
 				044B91ED22F869FB00564D69 /* EnumerationController.swift in Sources */,
 				044B91D822F8660B00564D69 /* AppDelegate.swift in Sources */,
 				044B91F122F86A2C00564D69 /* StructAndClassController.swift in Sources */,
+				04FB707B22FDB9180045B9CF /* InitController.swift in Sources */,
 				044B91F522F86E1900564D69 /* ExtensionController.swift in Sources */,
 				044F1D1D22FAE079004FFFF6 /* BasicController.swift in Sources */,
+				04FB707922FDB7C50045B9CF /* MethodController.swift in Sources */,
 				044B91EB22F869E500564D69 /* SyntaxBaseController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
