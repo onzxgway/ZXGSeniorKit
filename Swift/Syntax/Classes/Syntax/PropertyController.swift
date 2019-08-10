@@ -10,7 +10,7 @@ import UIKit
 
 /*
     属性
-        定义：将值与特定的类、结构体或枚举关联。
+        定义：将值与特定的类型关联。
         分类：
             1. 按照关联
                 * 实例属性
@@ -244,7 +244,6 @@ class PropertyController: SyntaxBaseController {
         使用注意点：
             1.只能是变量（因为计算属性的值是可变的）
  
- 
     二者相同点：
         1，都可继承重写。
         2，从外部看都是属性，都可以通过点语法调用。
@@ -254,7 +253,6 @@ class PropertyController: SyntaxBaseController {
     属性观察器：
         1.懒加载之外的存储属性 + 继承的存储属性
         2.继承的计算属性
- 
  */
 
 /*
