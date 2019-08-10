@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         let dicArr = [
             ["The Basics": "BasicController"],
             ["Collection Types": "CollectionTypeController"],
+            ["Functions": "FunctionController"],
             ["Enumeration": "EnumerationController"],
             ["Structures and Classes": "StructAndClassController"],
             ["Properties": "PropertyController"],
