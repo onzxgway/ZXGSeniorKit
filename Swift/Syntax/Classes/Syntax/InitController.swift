@@ -110,6 +110,9 @@ class SurveyQuestion {
     总结：
         类默认构造器：1.所有的存储属性赋了默认值 + 2.没有提供任何自定义的构造器
         结构体默认构造器：1.没有提供任何自定义的构造器
+ 
+        类只会提供一个默认构造器
+        结构体： 所有存储属性都有默认值时，会有一个默认构造器+一个逐一成员构造器，否则只有一个逐一成员构造器。
  */
 
 // 会提供默认构造器
@@ -123,6 +126,137 @@ struct AnHui {
     let area: Double = 17.8
     var citys: Int = 12
     var peoples: Int
+}
+
+// MARK: - 值类型的构造器代理
+/*
+    注意：
+    在原始定义中，没有自定义构造器的前提下，才会生产默认构造器和成员构造器。扩展中有自定义构造器对原始类中默认构造器的产生没有影响。
+ */
+
+struct ISize {
+    var width, height: Double
+}
+
+struct IPoint {
+    var x = 0.0, y = 0.0
+}
+
+struct Area {
+    var length = 10.0
+    var width: Double
+}
+
+struct IRect {
+    var origin = IPoint.init()
+    var size = ISize.init(width: 0.0, height: 0.0)
+    
+    //    init() {}
+    //
+    //    init(origin: Point, size: Size) {
+    //        self.origin = origin
+    //        self.size = size
+    //    }
+    
+}
+
+extension Rect {
+    init(center: Point, size: Size) {
+        let originX = center.x - size.width * 0.5
+        let originY = center.y - size.height * 0.5
+        self.init(origin: Point.init(x: originX, y: originY), size: size)
+    }
+}
+
+
+// MARK: - 类的继承和构造过程
+/*
+ 类里面的所有存储属性，包括所有继承自父类的属性，都必须在构造过程中设置初始值。
+ 
+ 指定构造器、便利构造器。
+ 
+ 规则一：指定构造器必须调用其直接父类的指定构造器。
+ 规则二：便利构造器必须调用同类中的其他构造器。
+ 规则三：便利构造器最后必须调用指定构造器。
+ 
+ 两段式构造过程： Swift中类的构造过程包含两个阶段。第一阶段，类中的每个存储属性赋一个初始值。当每个存储型属性的初始值被赋值后，第二阶段开始，它给每个类一个机会在新实例准备使用之前进一步自定义它们的存储型属性。
+
+ 
+    构造器的继承和重写：
+ 
+ */
+
+class Vehicle {
+    var numberOfWheels = 0
+    var description: String {
+        return "\(numberOfWheels) wheels"
+    }
+    // 默认构造器（如果有的话）总是指定构造器
+}
+
+class Bicycle: Vehicle {
+    override init() {
+        super.init()
+        
+        numberOfWheels = 2
+    }
+}
+
+// 如果子类的构造器没有在阶段 2 过程中做自定义操作，并且父类有一个无参数的指定构造器，你可以在所有子类的存储属性赋值之后省略 super.init() 的调用。
+class Hoverboard: Vehicle {
+    var color: String
+    init(color: String) {
+        self.color = color
+        // super.init() 在这里被隐式调用
+    }
+    
+    override var description: String {
+        return "\(super.description) in a beautiful \(color)"
+    }
+}
+
+// MARK: - 指定构造器和便利构造器实践
+/*
+    构造器的自动继承：
+     子类在默认的情况下不会继承父类的构造器。但是如果满足特定条件的话，父类的构造器是可以被自动继承的。
+     假设你为子类中引入的所有新属性都提供了默认值，以下 2 个规则将适用：
+     1.如果子类没有定义任何指定构造器，它将自动继承父类所有的指定构造器。
+     2.如果子类提供了所有父类指定构造器的实现——无论是通过规则 1 继承过来的，还是提供了自定义实现——它将自动继承父类所有的便利构造器。
+ */
+class Food {
+    var name: String
+    
+    // 指定构造器
+    init(name: String) {
+        self.name = name
+    }
+    
+    // 便利构造器
+    convenience init() {
+        self.init(name: "[Unnamed]")
+    }
+}
+
+class RecipeIngredient: Food {
+    var quantity: Int
+    
+    init(name: String, quantity: Int) {
+        self.quantity = quantity
+        super.init(name: name)
+    }
+
+    override convenience init(name: String) {
+        self.init(name: name, quantity: 1)
+    }
+}
+
+class ShoppingLiIt: RecipeIngredient {
+    var purchased = false
+    var description: String {
+        var output = "\(quantity) x \(name)"
+        output += purchased ? " ✔" : " ✘"
+        return output
+    }
 }
 
 class InitController: SyntaxBaseController {
@@ -143,6 +277,8 @@ class InitController: SyntaxBaseController {
         
 //        let item = ShoppingListItem()
 //        AnHui.init(citys: <#Int#>, peoples: 111)
+        
+        
     }
 
 }
