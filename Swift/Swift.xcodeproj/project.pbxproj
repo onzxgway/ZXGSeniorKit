@@ -23,6 +23,7 @@
 		044D17CC22F9A3B600152B18 /* PropertyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D17CB22F9A3B600152B18 /* PropertyController.swift */; };
 		044D9ED022FEA3F1007F2E0E /* FunctionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D9ECF22FEA3F1007F2E0E /* FunctionController.swift */; };
 		044F1D1D22FAE079004FFFF6 /* BasicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F1D1C22FAE079004FFFF6 /* BasicController.swift */; };
+		0452D83F230AC30200A29BFF /* ClosureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452D83E230AC30200A29BFF /* ClosureController.swift */; };
 		04C48D4222F2F9180062E4BF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C48D4122F2F9180062E4BF /* BaseViewController.swift */; };
 		04C48D4822F2FA070062E4BF /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C48D4722F2FA070062E4BF /* PageViewController.swift */; };
 		04C48D4A22F2FA220062E4BF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C48D4922F2FA220062E4BF /* HomeViewController.swift */; };
@@ -79,6 +80,7 @@
 		044D17CB22F9A3B600152B18 /* PropertyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyController.swift; sourceTree = "<group>"; };
 		044D9ECF22FEA3F1007F2E0E /* FunctionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionController.swift; sourceTree = "<group>"; };
 		044F1D1C22FAE079004FFFF6 /* BasicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicController.swift; sourceTree = "<group>"; };
+		0452D83E230AC30200A29BFF /* ClosureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureController.swift; sourceTree = "<group>"; };
 		04C48D4122F2F9180062E4BF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		04C48D4722F2FA070062E4BF /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		04C48D4922F2FA220062E4BF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				044F1D1C22FAE079004FFFF6 /* BasicController.swift */,
 				04FB707622FDA01F0045B9CF /* CollectionTypeController.swift */,
 				044D9ECF22FEA3F1007F2E0E /* FunctionController.swift */,
+				0452D83E230AC30200A29BFF /* ClosureController.swift */,
 				044B91EC22F869FB00564D69 /* EnumerationController.swift */,
 				044B91F022F86A2C00564D69 /* StructAndClassController.swift */,
 				044D17CB22F9A3B600152B18 /* PropertyController.swift */,
@@ -491,6 +494,7 @@
 				044B91DA22F8660B00564D69 /* ViewController.swift in Sources */,
 				044B91F722F86F3200564D69 /* ProtocolController.swift in Sources */,
 				04FB707722FDA01F0045B9CF /* CollectionTypeController.swift in Sources */,
+				0452D83F230AC30200A29BFF /* ClosureController.swift in Sources */,
 				044D17CC22F9A3B600152B18 /* PropertyController.swift in Sources */,
 				04FB707D22FDB9600045B9CF /* DeinitController.swift in Sources */,
 				044B91F322F86C0E00564D69 /* SubscriptController.swift in Sources */,

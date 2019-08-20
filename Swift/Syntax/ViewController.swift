@@ -25,6 +25,7 @@ class ViewController: UIViewController {
             ["The Basics": "BasicController"],
             ["Collection Types": "CollectionTypeController"],
             ["Functions": "FunctionController"],
+            ["Closures": "ClosureController"],
             ["Enumeration": "EnumerationController"],
             ["Structures and Classes": "StructAndClassController"],
             ["Properties": "PropertyController"],
