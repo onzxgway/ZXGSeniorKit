@@ -23,6 +23,7 @@ import UIKit
         六：自动闭包
             自动闭包是一种自动创建的闭包，用于包装传递给函数作为参数的表达式。
  */
+
 class Closures {
     // 字面量的方式声明一个名称为names的不可变字符串数组。
     let names = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]

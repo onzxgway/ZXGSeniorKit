@@ -31,8 +31,10 @@ class ViewController: UIViewController {
             ["Properties": "PropertyController"],
             ["Methods": "MethodController"],
             ["Subscripts": "SubscriptController"],
+            ["Inheritance": "InheritanceController"],
             ["Initialization": "InitController"],
             ["Deinitialization": "DeinitController"],
+            ["Error Handling": "ErrorHandlingController"],
             ["Extensions": "ExtensionController"],
             ["Protocols": "ProtocolController"]
         ]
