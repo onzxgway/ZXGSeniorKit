@@ -14,14 +14,6 @@ import UIKit
     3.指定清理操作
  */
 
-/*
-    关键知识点：
-        1.什么是错误？
-            答：Swift中遵循了Error协议的类型的实例表示错误。
-        2.什么是throwing函数？
-            答：一个标有 throws 关键字的函数被称作 throwing 函数。
- */
-
 // MARK: - 1.表示与抛出错误
 /*
     Swift中使用遵守Error协议的类型值表示错误。
@@ -114,14 +106,40 @@ class ErrorHandlingController: SyntaxBaseController {
  */
 class TestDemoClass {
     
-    /*
+    /**
+     throwing 函数: throws修饰的函数就是throwing函数
         1.一个 throwing 函数可以在其内部抛出错误，并将错误传递到函数被调用时的作用域。
         2.只有 throwing 函数可以传递错误。任何在某个非 throwing 函数内部抛出的错误只能在函数内部处理。
      */
     func canThrowErrors() throws -> Void {
+        throw ClassError.init()
+    }
+    
+    func canotThrowErrors() -> Void {
+        
+        do {
+            throw StructError.init()
+        } catch {
+            print(error.localizedDescription)
+        }
+        
         
     }
     
+    func launch() throws -> Void {
+        try canThrowErrors()
+    }
+    
+    func launch1() {
+        /*
+            如果抛出了错误的话，res == nil，
+         */
+        let res = try? canThrowErrors()
+        /*
+         如果抛出了错误的话，系统会崩溃
+         */
+        let ddd = try! canThrowErrors()
+    }
 }
 
 struct Item {
@@ -212,4 +230,5 @@ class TestOne {
             二.do-catch处理
             三.try?
             四.try!
+        推荐使用 后两种。
  */
