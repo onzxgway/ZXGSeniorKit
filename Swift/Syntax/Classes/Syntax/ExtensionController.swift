@@ -13,7 +13,6 @@ class ExtensionController: SyntaxBaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
 }
@@ -27,7 +26,7 @@ class ExtensionController: SyntaxBaseController {
     区别：* category有名称，Swift的extension没有名称。
  
  功能：
-     1.可以把代码进行模块化区分，把功能性相同的代码放到一个扩展中。这样代码层次就非常的清晰明了。
+    1.可以把代码进行模块化区分，把功能性相同的代码放到一个扩展中。这样代码层次就非常的清晰明了。
      2.添加计算实例属性和计算类型属性。
      3.定义实例方法和类型方法。
      4.提供新的构造方法。
@@ -70,3 +69,16 @@ extension ExtensionController {
         }
     }
 }
+
+// MARK: - 第一次总结 20190828
+/*
+     1.什么是 Extensions（扩展）？
+        答：给已有类型添加新功能。
+     2.具体功能点？
+        答： 一.代码划分模块。
+            二.添加计算属性。
+            三.添加方法。
+            四.添加下标。
+            五.添加构造方法。
+            六.遵守协议。
+ */

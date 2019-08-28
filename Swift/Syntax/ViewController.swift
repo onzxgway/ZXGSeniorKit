@@ -35,6 +35,7 @@ class ViewController: UIViewController {
             ["Initialization": "InitController"],
             ["Deinitialization": "DeinitController"],
             ["Error Handling": "ErrorHandlingController"],
+            ["Nested Types": "NestedTypesController"],
             ["Extensions": "ExtensionController"],
             ["Protocols": "ProtocolController"]
         ]
