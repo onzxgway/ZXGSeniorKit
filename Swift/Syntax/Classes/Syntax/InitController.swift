@@ -109,7 +109,6 @@ class SurveyQuestion {
  
     总结：
         类默认构造器：1.所有的存储属性赋了默认值 + 2.没有提供任何自定义的构造器
-        结构体默认构造器：1.没有提供任何自定义的构造器
  
         类只会提供一个默认构造器
         结构体： 所有存储属性都有默认值时，会有一个默认构造器+一个逐一成员构造器，否则只有一个逐一成员构造器。
@@ -259,26 +258,214 @@ class ShoppingLiIt: RecipeIngredient {
     }
 }
 
-class InitController: SyntaxBaseController {
+// MARK: - 可失败构造器
+/*
+     * 枚举类型的可失败构造器
+     * 带原始值的枚举类型的可失败构造器
+     * 构造失败的传递
+     * 重写一个可失败构造器
+     * init!可失败构造器
+ */
+// 基本语法
+// 定义：会创建一个类型为自身类型的可选类型的对象。
+// 语法：init?
+struct Animal {
+    var species: String = "Kobe"
+    init?(species: String) {
+        if species.isEmpty {
+            return nil
+        }
+        self.species = species
+    }
+    func run(target location: String) -> Void {
+        print("\(species) run to \(location)")
+    }
+}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+// 枚举类型的可失败构造器
+enum Province {
+    case AnHui, JiangSu, ZheJiang
+    init?(_ name: String) {
+        switch name {
+        case "A":
+            self = .AnHui
+        case "J":
+            self = .JiangSu
+        case "Z":
+            self = .ZheJiang
+        default:
+            return nil
+        }
+    }
+}
 
-        let f = Fahrenheit.init()
-        print("\(f.location) temperature is \(f.temperature)° Fahrenheit")
+// 带原始值的枚举类型的可失败构造器
+enum City: String {
+    case SuZhou = "s", HangZhou = "h", NanJing = "n"
+    // 默认自动生成可失败构造器
+}
+// 非可失败构造器没有返回值
+// 构造失败的传递
+class Product {
+    var name: String?
+    init?(name: String) {
+        if name.isEmpty { return nil } // 只有可失败构造器才能返回nil
+        self.name = name
+    }
+    
+    convenience init?() {
+        self.init(name: "[Unnamed]")
+    }
+}
+
+class CartItem: Product {
+    let quantity: Int
+    
+    init?(name: String, quantity: Int) {
+        if quantity < 0 { return nil }
+        self.quantity = quantity
         
-        let boilingPointOfWater = Celsius(fromFahrenheit: 212.0)
-        print("boilingPointOfWater is \(boilingPointOfWater)")
-        let freezingPointOfWater = Celsius(fromKelvin: 273.15)
-        print("freezingPointOfWater is \(freezingPointOfWater)")
-        
-//        Color.init(white: 156.0)
-//        Color.init(188.0)
-        
-//        let item = ShoppingListItem()
-//        AnHui.init(citys: <#Int#>, peoples: 111)
-        
+        super.init(name: name)
+    }
+}
+
+// 重写一个可失败构造器
+/*
+    可失败构造器 可被子类重写为 可失败构造器和不可失败构造器
+    不可失败构造器只能被子类重写为不可失败构造器。
+ */
+class Document {
+    var name: String?
+    init() {
         
     }
+    init?(name: String) {
+        if name.isEmpty { return nil }
+        self.name = name
+    }
+}
+// 重写为 可失败构造器
+class AutomaticallyNamedDocument: Document {
 
+    override init() {
+        super.init()
+    }
+    
+    override init?(name: String) {
+        if name.isEmpty {
+            super.init(name: "[Unnamed]")
+        }
+        else {
+            super.init(name: name)
+        }
+    }
+}
+// 重写为 不可失败构造器
+class UntitledDocument: Document {
+    override init(name: String) {
+        if name.isEmpty {
+            super.init(name: "[Unnamed]")!
+        }
+        else {
+            super.init(name: name)!
+        }
+    }
+}
+
+// init!可失败构造器
+/*
+    隐式解包的可失败构造器
+    init!与init? 可以互相代理，可以互相重写。
+    init 可以代理到 init!，不过，一旦 init! 构造失败，则会触发一个断言。
+ */
+class Vechile {
+    var branch: String?
+    init!(_ branch: String) {
+        if branch.isEmpty { return nil }
+        self.branch = branch
+    }
+    convenience init() {
+        self.init("[AoTuo]")
+    }
+}
+
+class Benzs: Vechile {
+    override init?(_ branch: String) {
+        super.init(branch)
+    }
+}
+
+// MARK: - 必要构造器
+/*
+ 1.所有子类必须实现该构造器。
+ 2.子类重写父类构造器时，子类的构造器前也要添加required修饰符，表明该构造器要求也应用于继承链后面的子类。有required关键字时候，不需要override。
+ 注意：如果子类继承的构造器能满足必要构造器的要求，则无需在子类中显示提供必要的构造器的实现。
+ */
+class AClass {
+    required init() {
+        
+    }
+}
+
+final class ASubClass: AClass {
+    required init() {
+
+    }
+}
+
+// MARK: - 通过闭包或者函数设置属性的默认值
+// 基类：没有继承于任何类的类 或者 没有父类的类称为基类
+/*
+ 如果使用闭包或者函数来设置属性的默认值，请记住在闭包执行时，实例的其他部分都还没有初始化。这意味着你不能在闭包里面访问其他属性，即使这些属性有默认值。同样，你也不能使用隐式的self属性，或者调用任何实例方法。
+ */
+class DemoTClass {
+    let someProperty = {
+        return ""
+    }()
+    var age = 18.0
+}
+
+struct Chessboard {
+    let boardColors: [Bool] = {
+        var temporaryBoard = [Bool]()
+        var isBlack = false
+        for i in 1...8 {
+            for j in 1...8 {
+                temporaryBoard.append(isBlack)
+                isBlack = !isBlack
+            }
+            isBlack = !isBlack
+        }
+        
+        return temporaryBoard
+    }()
+    
+}
+
+class InitController: SyntaxBaseController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+//        let f = Fahrenheit.init()
+//        print("\(f.location) temperature is \(f.temperature)° Fahrenheit")
+//
+//        let boilingPointOfWater = Celsius(fromFahrenheit: 212.0)
+//        print("boilingPointOfWater is \(boilingPointOfWater)")
+//        let freezingPointOfWater = Celsius(fromKelvin: 273.15)
+//        print("freezingPointOfWater is \(freezingPointOfWater)")
+        
+        //        Color.init(white: 156.0)
+        //        Color.init(188.0)
+        
+        //        let item = ShoppingListItem()
+        //        AnHui.init(citys: <#Int#>, peoples: 111)
+        
+//        let res = City.init(rawValue: "x")
+//        print(res)
+        
+        let vechile = Vechile.init("BMW")
+        print(vechile!.branch)
+    }
+    
 }
