@@ -27,6 +27,7 @@
 		0452D841230C316200A29BFF /* InheritanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452D840230C316200A29BFF /* InheritanceController.swift */; };
 		0452D843230D790B00A29BFF /* ErrorHandlingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452D842230D790B00A29BFF /* ErrorHandlingController.swift */; };
 		04B148FC2316B4B100ED58CC /* NestedTypesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B148FB2316B4B100ED58CC /* NestedTypesController.swift */; };
+		04B1499C2327E79900ED58CC /* TypeCastingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B1499B2327E79900ED58CC /* TypeCastingController.swift */; };
 		04C48D4222F2F9180062E4BF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C48D4122F2F9180062E4BF /* BaseViewController.swift */; };
 		04C48D4822F2FA070062E4BF /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C48D4722F2FA070062E4BF /* PageViewController.swift */; };
 		04C48D4A22F2FA220062E4BF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C48D4922F2FA220062E4BF /* HomeViewController.swift */; };
@@ -87,6 +88,7 @@
 		0452D840230C316200A29BFF /* InheritanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InheritanceController.swift; sourceTree = "<group>"; };
 		0452D842230D790B00A29BFF /* ErrorHandlingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandlingController.swift; sourceTree = "<group>"; };
 		04B148FB2316B4B100ED58CC /* NestedTypesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedTypesController.swift; sourceTree = "<group>"; };
+		04B1499B2327E79900ED58CC /* TypeCastingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCastingController.swift; sourceTree = "<group>"; };
 		04C48D4122F2F9180062E4BF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		04C48D4722F2FA070062E4BF /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		04C48D4922F2FA220062E4BF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				04FB707A22FDB9180045B9CF /* InitController.swift */,
 				04FB707C22FDB9600045B9CF /* DeinitController.swift */,
 				0452D842230D790B00A29BFF /* ErrorHandlingController.swift */,
+				04B1499B2327E79900ED58CC /* TypeCastingController.swift */,
 				04B148FB2316B4B100ED58CC /* NestedTypesController.swift */,
 				044B91F422F86E1900564D69 /* ExtensionController.swift */,
 				044B91F622F86F3200564D69 /* ProtocolController.swift */,
@@ -517,6 +520,7 @@
 				04B148FC2316B4B100ED58CC /* NestedTypesController.swift in Sources */,
 				044F1D1D22FAE079004FFFF6 /* BasicController.swift in Sources */,
 				044D9ED022FEA3F1007F2E0E /* FunctionController.swift in Sources */,
+				04B1499C2327E79900ED58CC /* TypeCastingController.swift in Sources */,
 				04FB707922FDB7C50045B9CF /* MethodController.swift in Sources */,
 				044B91EB22F869E500564D69 /* SyntaxBaseController.swift in Sources */,
 			);

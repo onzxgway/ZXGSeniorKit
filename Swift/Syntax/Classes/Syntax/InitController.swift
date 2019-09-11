@@ -464,8 +464,8 @@ class InitController: SyntaxBaseController {
 //        let res = City.init(rawValue: "x")
 //        print(res)
         
-        let vechile = Vechile.init("BMW")
-        print(vechile!.branch)
+//        let vechile = Vechile.init("BMW")
+//        print(vechile!.branch)
     }
     
 }
