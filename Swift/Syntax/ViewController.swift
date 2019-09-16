@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         
         let dicArr = [
             ["The Basics": "BasicController"],
+            ["Strings and Characters": "StringsAndCharactersController"],
             ["Collection Types": "CollectionTypeController"],
             ["Functions": "FunctionController"],
             ["Closures": "ClosureController"],
@@ -38,7 +39,9 @@ class ViewController: UIViewController {
             ["Type Casting": "TypeCastingController"],
             ["Nested Types": "NestedTypesController"],
             ["Extensions": "ExtensionController"],
-            ["Protocols": "ProtocolController"]
+            ["Protocols": "ProtocolController"],
+            ["Generics": "GenericsController"],
+            ["MemorySafety": "MemorySafetyController"],
         ]
         
         return dicArr

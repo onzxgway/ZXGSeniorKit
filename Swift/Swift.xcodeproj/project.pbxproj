@@ -26,6 +26,9 @@
 		0452D83F230AC30200A29BFF /* ClosureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452D83E230AC30200A29BFF /* ClosureController.swift */; };
 		0452D841230C316200A29BFF /* InheritanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452D840230C316200A29BFF /* InheritanceController.swift */; };
 		0452D843230D790B00A29BFF /* ErrorHandlingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452D842230D790B00A29BFF /* ErrorHandlingController.swift */; };
+		0454762B232E4121003BCB5C /* GenericsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454762A232E4121003BCB5C /* GenericsController.swift */; };
+		0454762D232E47C9003BCB5C /* MemorySafetyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454762C232E47C9003BCB5C /* MemorySafetyController.swift */; };
+		0454762F232FA78E003BCB5C /* StringsAndCharactersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454762E232FA78E003BCB5C /* StringsAndCharactersController.swift */; };
 		04B148FC2316B4B100ED58CC /* NestedTypesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B148FB2316B4B100ED58CC /* NestedTypesController.swift */; };
 		04B1499C2327E79900ED58CC /* TypeCastingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B1499B2327E79900ED58CC /* TypeCastingController.swift */; };
 		04C48D4222F2F9180062E4BF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C48D4122F2F9180062E4BF /* BaseViewController.swift */; };
@@ -87,6 +90,9 @@
 		0452D83E230AC30200A29BFF /* ClosureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureController.swift; sourceTree = "<group>"; };
 		0452D840230C316200A29BFF /* InheritanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InheritanceController.swift; sourceTree = "<group>"; };
 		0452D842230D790B00A29BFF /* ErrorHandlingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandlingController.swift; sourceTree = "<group>"; };
+		0454762A232E4121003BCB5C /* GenericsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericsController.swift; sourceTree = "<group>"; };
+		0454762C232E47C9003BCB5C /* MemorySafetyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorySafetyController.swift; sourceTree = "<group>"; };
+		0454762E232FA78E003BCB5C /* StringsAndCharactersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsAndCharactersController.swift; sourceTree = "<group>"; };
 		04B148FB2316B4B100ED58CC /* NestedTypesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedTypesController.swift; sourceTree = "<group>"; };
 		04B1499B2327E79900ED58CC /* TypeCastingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCastingController.swift; sourceTree = "<group>"; };
 		04C48D4122F2F9180062E4BF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				044F1D1C22FAE079004FFFF6 /* BasicController.swift */,
+				0454762E232FA78E003BCB5C /* StringsAndCharactersController.swift */,
 				04FB707622FDA01F0045B9CF /* CollectionTypeController.swift */,
 				044D9ECF22FEA3F1007F2E0E /* FunctionController.swift */,
 				0452D83E230AC30200A29BFF /* ClosureController.swift */,
@@ -196,6 +203,8 @@
 				04B148FB2316B4B100ED58CC /* NestedTypesController.swift */,
 				044B91F422F86E1900564D69 /* ExtensionController.swift */,
 				044B91F622F86F3200564D69 /* ProtocolController.swift */,
+				0454762A232E4121003BCB5C /* GenericsController.swift */,
+				0454762C232E47C9003BCB5C /* MemorySafetyController.swift */,
 			);
 			path = Syntax;
 			sourceTree = "<group>";
@@ -503,11 +512,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0454762D232E47C9003BCB5C /* MemorySafetyController.swift in Sources */,
 				044B91DA22F8660B00564D69 /* ViewController.swift in Sources */,
 				0452D843230D790B00A29BFF /* ErrorHandlingController.swift in Sources */,
 				044B91F722F86F3200564D69 /* ProtocolController.swift in Sources */,
 				04FB707722FDA01F0045B9CF /* CollectionTypeController.swift in Sources */,
 				0452D83F230AC30200A29BFF /* ClosureController.swift in Sources */,
+				0454762F232FA78E003BCB5C /* StringsAndCharactersController.swift in Sources */,
 				044D17CC22F9A3B600152B18 /* PropertyController.swift in Sources */,
 				04FB707D22FDB9600045B9CF /* DeinitController.swift in Sources */,
 				0452D841230C316200A29BFF /* InheritanceController.swift in Sources */,
@@ -520,6 +531,7 @@
 				04B148FC2316B4B100ED58CC /* NestedTypesController.swift in Sources */,
 				044F1D1D22FAE079004FFFF6 /* BasicController.swift in Sources */,
 				044D9ED022FEA3F1007F2E0E /* FunctionController.swift in Sources */,
+				0454762B232E4121003BCB5C /* GenericsController.swift in Sources */,
 				04B1499C2327E79900ED58CC /* TypeCastingController.swift in Sources */,
 				04FB707922FDB7C50045B9CF /* MethodController.swift in Sources */,
 				044B91EB22F869E500564D69 /* SyntaxBaseController.swift in Sources */,
