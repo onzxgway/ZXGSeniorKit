@@ -35,6 +35,7 @@ class ViewController: UIViewController {
             ["Inheritance": "InheritanceController"],
             ["Initialization": "InitController"],
             ["Deinitialization": "DeinitController"],
+            ["Optional Chaining": "OptionalChainingController"],
             ["Error Handling": "ErrorHandlingController"],
             ["Type Casting": "TypeCastingController"],
             ["Nested Types": "NestedTypesController"],
