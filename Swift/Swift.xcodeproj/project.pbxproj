@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0437E3F4233B9843007C58C7 /* AutomaticReferenceCountingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0437E3F3233B9843007C58C7 /* AutomaticReferenceCountingController.swift */; };
 		044B91D822F8660B00564D69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B91D722F8660B00564D69 /* AppDelegate.swift */; };
 		044B91DA22F8660B00564D69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B91D922F8660B00564D69 /* ViewController.swift */; };
 		044B91DD22F8660B00564D69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044B91DB22F8660B00564D69 /* Main.storyboard */; };
@@ -70,6 +71,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0437E3F3233B9843007C58C7 /* AutomaticReferenceCountingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomaticReferenceCountingController.swift; sourceTree = "<group>"; };
 		044B91D522F8660B00564D69 /* Syntax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Syntax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		044B91D722F8660B00564D69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		044B91D922F8660B00564D69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				044B91F422F86E1900564D69 /* ExtensionController.swift */,
 				044B91F622F86F3200564D69 /* ProtocolController.swift */,
 				0454762A232E4121003BCB5C /* GenericsController.swift */,
+				0437E3F3233B9843007C58C7 /* AutomaticReferenceCountingController.swift */,
 				0454762C232E47C9003BCB5C /* MemorySafetyController.swift */,
 			);
 			path = Syntax;
@@ -518,6 +521,7 @@
 				0454762D232E47C9003BCB5C /* MemorySafetyController.swift in Sources */,
 				044B91DA22F8660B00564D69 /* ViewController.swift in Sources */,
 				0452D843230D790B00A29BFF /* ErrorHandlingController.swift in Sources */,
+				0437E3F4233B9843007C58C7 /* AutomaticReferenceCountingController.swift in Sources */,
 				044B91F722F86F3200564D69 /* ProtocolController.swift in Sources */,
 				04FB707722FDA01F0045B9CF /* CollectionTypeController.swift in Sources */,
 				0452D83F230AC30200A29BFF /* ClosureController.swift in Sources */,

@@ -42,6 +42,7 @@ class ViewController: UIViewController {
             ["Extensions": "ExtensionController"],
             ["Protocols": "ProtocolController"],
             ["Generics": "GenericsController"],
+            ["Automatic Reference Counting": "AutomaticReferenceCountingController"],
             ["MemorySafety": "MemorySafetyController"],
         ]
         
