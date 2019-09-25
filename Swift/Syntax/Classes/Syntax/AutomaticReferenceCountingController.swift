@@ -131,6 +131,7 @@ class HTMLElement {
     let text: String?
     
     lazy var asHTML: () -> String = {
+        [unowned self] in
         if let text = self.text {
             return "<\(self.name)>\(text)</\(self.name)>"
         }
@@ -152,6 +153,32 @@ class HTMLElement {
 
 // MARK: - 6.解决闭包的循环强引用
 // 1.定义捕获列表     2.弱引用和无主引用
+
+// 1.定义捕获列表
+class DemoElement {
+    
+    let name: String
+    
+    // 如果闭包有参数列表和返回类型，把捕获列表放在它们前面
+    lazy var someClosure: (Int, String) -> String = {
+        [unowned self] (index: Int, stringToProcess: String) -> String in
+        // 这里是闭包的函数体
+        return ""
+    }
+    
+    // 如果闭包没有指明参数列表或者返回类型，它们会通过上下文推断，那么可以把捕获列表和关键字 in 放在闭包最开始的地方：
+    lazy var anthorClosure: () -> String = {
+        [unowned self] in
+        // 这里是闭包的函数体
+        return ""
+    }
+    
+    init(name: String) {
+        self.name = name
+    }
+}
+
+// 2.弱引用和无主引用
 
 
 class AutomaticReferenceCountingController: SyntaxBaseController {

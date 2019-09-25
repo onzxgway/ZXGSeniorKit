@@ -8,19 +8,19 @@
 
 import UIKit
 
-// MARK: - 内存安全
 /*
-    1.理解内存访问冲突
+    内存安全
+        1.理解内存访问冲突
  */
 
-// MARK: - 理解内存访问冲突
+// MARK: - 1.理解内存访问冲突
 
 class MemorySafetyController: SyntaxBaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
 
 }
