@@ -30,6 +30,7 @@
 		0454762B232E4121003BCB5C /* GenericsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454762A232E4121003BCB5C /* GenericsController.swift */; };
 		0454762D232E47C9003BCB5C /* MemorySafetyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454762C232E47C9003BCB5C /* MemorySafetyController.swift */; };
 		0454762F232FA78E003BCB5C /* StringsAndCharactersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454762E232FA78E003BCB5C /* StringsAndCharactersController.swift */; };
+		047D215E23436E7F004EE51A /* AccessControlController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D215D23436E7F004EE51A /* AccessControlController.swift */; };
 		04B148FC2316B4B100ED58CC /* NestedTypesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B148FB2316B4B100ED58CC /* NestedTypesController.swift */; };
 		04B1499C2327E79900ED58CC /* TypeCastingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B1499B2327E79900ED58CC /* TypeCastingController.swift */; };
 		04C48D4222F2F9180062E4BF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C48D4122F2F9180062E4BF /* BaseViewController.swift */; };
@@ -96,6 +97,7 @@
 		0454762A232E4121003BCB5C /* GenericsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericsController.swift; sourceTree = "<group>"; };
 		0454762C232E47C9003BCB5C /* MemorySafetyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorySafetyController.swift; sourceTree = "<group>"; };
 		0454762E232FA78E003BCB5C /* StringsAndCharactersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsAndCharactersController.swift; sourceTree = "<group>"; };
+		047D215D23436E7F004EE51A /* AccessControlController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessControlController.swift; sourceTree = "<group>"; };
 		04B148FB2316B4B100ED58CC /* NestedTypesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedTypesController.swift; sourceTree = "<group>"; };
 		04B1499B2327E79900ED58CC /* TypeCastingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCastingController.swift; sourceTree = "<group>"; };
 		04C48D4122F2F9180062E4BF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				0454762A232E4121003BCB5C /* GenericsController.swift */,
 				0437E3F3233B9843007C58C7 /* AutomaticReferenceCountingController.swift */,
 				0454762C232E47C9003BCB5C /* MemorySafetyController.swift */,
+				047D215D23436E7F004EE51A /* AccessControlController.swift */,
 			);
 			path = Syntax;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 				0452D841230C316200A29BFF /* InheritanceController.swift in Sources */,
 				044B91F322F86C0E00564D69 /* SubscriptController.swift in Sources */,
 				044B91ED22F869FB00564D69 /* EnumerationController.swift in Sources */,
+				047D215E23436E7F004EE51A /* AccessControlController.swift in Sources */,
 				044B91D822F8660B00564D69 /* AppDelegate.swift in Sources */,
 				044B91F122F86A2C00564D69 /* StructAndClassController.swift in Sources */,
 				04FB707B22FDB9180045B9CF /* InitController.swift in Sources */,

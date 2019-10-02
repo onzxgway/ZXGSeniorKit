@@ -44,6 +44,7 @@ class ViewController: UIViewController {
             ["Generics": "GenericsController"],
             ["Automatic Reference Counting": "AutomaticReferenceCountingController"],
             ["MemorySafety": "MemorySafetyController"],
+            ["Access Control": "AccessControlController"],
         ]
         
         return dicArr
