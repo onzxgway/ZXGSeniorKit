@@ -45,6 +45,7 @@ class ViewController: UIViewController {
             ["Automatic Reference Counting": "AutomaticReferenceCountingController"],
             ["MemorySafety": "MemorySafetyController"],
             ["Access Control": "AccessControlController"],
+            ["Advanced Operators": "AdvancedOperatorsController"],
         ]
         
         return dicArr

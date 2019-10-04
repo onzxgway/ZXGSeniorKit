@@ -85,6 +85,63 @@ func balance(_ x: inout Int, _ y: inout Int) {
 // MARK: -
 // MARK: -
 
+// MARK: - 4.方法里 self 的访问冲突
+struct Player {
+    var name: String
+    var health: Int
+    var energy: Int
+    
+    static let maxHealth = 10
+    
+    mutating func restoreHealth() {// 一个结构体的 mutating 方法会在调用期间对 self 进行写访问。
+        health = Player.maxHealth // 一个对于 self 的写访问会从方法开始直到方法 return。在这种情况下，restoreHealth() 里的其它代码不可以对 Player 实例的属性发起重叠的访问。
+    }
+}
+
+extension Player {
+    mutating func shareHealth(with teammate: inout Player) {
+        balance(&teammate.health, &health)
+    }
+}
+
+// MARK: - 5.属性的访问冲突
+// 全局变量
+var playerInformation = (health: 15, energy: 75)
+var holly = Player(name: "Holly", health: 10, energy: 10)
+
+func temp() {
+    /*
+     balance(&playerInformation.health, &playerInformation.energy) // 错误：playerInformation 的属性访问冲突
+     print(playerInformation)
+     
+     balance(&holly.health, &holly.energy)  // 错误
+     print(holly)
+     */
+    /* 如结构体，元组和枚举的类型都是由多个独立的值组成的，例如结构体的属性或元组的元素。因为它们都是值类型，修改值的任何一部分都是对于整个值的修改，意味着其中一个属性的读或写访问都需要访问整一个值。
+     
+     上面的例子里，传入同一元组的元素对 balance(_:_:) 进行调用，产生了冲突，因为 playerInformation 的访问产生了写访问重叠。playerInformation.health 和 playerInformation.energy 都被作为 in-out 参数传入，意味着 balance(_:_:) 需要在函数调用期间对它们发起写访问。任何情况下，对于元组元素的写访问都需要对整个元组发起写访问。这意味着对于 playerInfomation 发起的两个写访问重叠了，造成冲突。
+     */
+    someFunction()
+}
+
+// 在实践中，大多数对于结构体属性的访问都会安全的重叠。例如，将上面例子里的变量 holly 改为本地变量而非全局变量，编译器就会可以保证这个重叠访问是安全的
+func someFunction() {
+    var oscar = Player(name: "Oscar", health: 10, energy: 10)
+    balance(&oscar.health, &oscar.energy)  // 正常
+    print(oscar)
+    
+    /*
+     限制结构体属性的重叠访问对于保证内存安全不是必要的。保证内存安全是必要的，但因为访问独占权的要求比内存安全还要更严格——意味着即使有些代码违反了访问独占权的原则，也是内存安全的，所以如果编译器可以保证这种非专属的访问是安全的，那 Swift 就会允许这种行为的代码运行。特别是当你遵循下面的原则时，它可以保证结构体属性的重叠访问是安全的：
+     
+        你访问的是实例的存储属性，而不是计算属性或类的属性
+        结构体是本地变量的值，而非全局变量
+        结构体要么没有被闭包捕获，要么只被非逃逸闭包捕获了
+     
+        如果编译器无法保证访问的安全性，它就不会允许那次访问。
+     */
+}
+
+
 class MemorySafetyController: SyntaxBaseController {
 
     override func viewDidLoad() {
@@ -95,4 +152,10 @@ class MemorySafetyController: SyntaxBaseController {
         test_two()
     }
 
+    func test_four() {
+        var oscar = Player(name: "Oscar", health: 10, energy: 10)
+        var maria = Player(name: "Maria", health: 5, energy: 10)
+        oscar.shareHealth(with: &maria)     // 正常
+        //        oscar.shareHealth(with: &oscar)     // 错误：oscar 访问冲突
+    }
 }

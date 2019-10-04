@@ -31,6 +31,7 @@
 		0454762D232E47C9003BCB5C /* MemorySafetyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454762C232E47C9003BCB5C /* MemorySafetyController.swift */; };
 		0454762F232FA78E003BCB5C /* StringsAndCharactersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454762E232FA78E003BCB5C /* StringsAndCharactersController.swift */; };
 		047D215E23436E7F004EE51A /* AccessControlController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D215D23436E7F004EE51A /* AccessControlController.swift */; };
+		047D21602346C9FE004EE51A /* AdvancedOperatorsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D215F2346C9FE004EE51A /* AdvancedOperatorsController.swift */; };
 		04B148FC2316B4B100ED58CC /* NestedTypesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B148FB2316B4B100ED58CC /* NestedTypesController.swift */; };
 		04B1499C2327E79900ED58CC /* TypeCastingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B1499B2327E79900ED58CC /* TypeCastingController.swift */; };
 		04C48D4222F2F9180062E4BF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C48D4122F2F9180062E4BF /* BaseViewController.swift */; };
@@ -98,6 +99,7 @@
 		0454762C232E47C9003BCB5C /* MemorySafetyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorySafetyController.swift; sourceTree = "<group>"; };
 		0454762E232FA78E003BCB5C /* StringsAndCharactersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsAndCharactersController.swift; sourceTree = "<group>"; };
 		047D215D23436E7F004EE51A /* AccessControlController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessControlController.swift; sourceTree = "<group>"; };
+		047D215F2346C9FE004EE51A /* AdvancedOperatorsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedOperatorsController.swift; sourceTree = "<group>"; };
 		04B148FB2316B4B100ED58CC /* NestedTypesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedTypesController.swift; sourceTree = "<group>"; };
 		04B1499B2327E79900ED58CC /* TypeCastingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCastingController.swift; sourceTree = "<group>"; };
 		04C48D4122F2F9180062E4BF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				0437E3F3233B9843007C58C7 /* AutomaticReferenceCountingController.swift */,
 				0454762C232E47C9003BCB5C /* MemorySafetyController.swift */,
 				047D215D23436E7F004EE51A /* AccessControlController.swift */,
+				047D215F2346C9FE004EE51A /* AdvancedOperatorsController.swift */,
 			);
 			path = Syntax;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				04B148FC2316B4B100ED58CC /* NestedTypesController.swift in Sources */,
 				044F1D1D22FAE079004FFFF6 /* BasicController.swift in Sources */,
 				044D9ED022FEA3F1007F2E0E /* FunctionController.swift in Sources */,
+				047D21602346C9FE004EE51A /* AdvancedOperatorsController.swift in Sources */,
 				0454762B232E4121003BCB5C /* GenericsController.swift in Sources */,
 				04E0DCAB23326365003D8420 /* OptionalChainingController.swift in Sources */,
 				04B1499C2327E79900ED58CC /* TypeCastingController.swift in Sources */,
