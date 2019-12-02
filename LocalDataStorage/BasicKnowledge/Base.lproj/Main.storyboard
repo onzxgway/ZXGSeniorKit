@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t2v-Ut-fRG">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BasicKnowledge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fcb-DU-EDT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="101.78571428571428"/>
+        </scene>
+        <!--Over View Controller-->
+        <scene sceneID="TV3-fs-gUp">
+            <objects>
+                <viewController storyboardIdentifier="OverViewController" id="q1d-nn-Cqd" customClass="OverViewController" customModule="BasicKnowledge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S1e-3M-e5L">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zge-zt-jlG">
+                                <rect key="frame" x="87" y="153" width="240" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SandBox" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAD-Bw-9BC">
+                                        <rect key="frame" x="4" y="4" width="114" height="120"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bundle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2x-0A-4rj">
+                                        <rect key="frame" x="122" y="4" width="114" height="120"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="lAD-Bw-9BC" firstAttribute="width" secondItem="i2x-0A-4rj" secondAttribute="width" id="8FD-hQ-Sb9"/>
+                                    <constraint firstAttribute="height" constant="128" id="979-IL-AJH"/>
+                                    <constraint firstAttribute="width" constant="240" id="MQZ-Oa-DCl"/>
+                                    <constraint firstAttribute="trailing" secondItem="i2x-0A-4rj" secondAttribute="trailing" constant="4" id="Mdh-93-x8J"/>
+                                    <constraint firstAttribute="bottom" secondItem="lAD-Bw-9BC" secondAttribute="bottom" constant="4" id="SVP-dk-Hb5"/>
+                                    <constraint firstItem="i2x-0A-4rj" firstAttribute="top" secondItem="zge-zt-jlG" secondAttribute="top" constant="4" id="aKI-rP-rYc"/>
+                                    <constraint firstItem="i2x-0A-4rj" firstAttribute="leading" secondItem="lAD-Bw-9BC" secondAttribute="trailing" constant="4" id="e9l-i4-PfG"/>
+                                    <constraint firstAttribute="bottom" secondItem="i2x-0A-4rj" secondAttribute="bottom" constant="4" id="iDk-55-d0C"/>
+                                    <constraint firstItem="lAD-Bw-9BC" firstAttribute="leading" secondItem="zge-zt-jlG" secondAttribute="leading" constant="4" id="icE-z6-dXb"/>
+                                    <constraint firstItem="lAD-Bw-9BC" firstAttribute="top" secondItem="zge-zt-jlG" secondAttribute="top" constant="4" id="l5f-95-Nlo"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App本地存储" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbi-En-E7s">
+                                <rect key="frame" x="157" y="124" width="100.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="App本地存储" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpv-Ak-Pps">
+                                <rect key="frame" x="167" y="381" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS上一个App对应磁盘上一片独立的、安全的、封闭的存储空间，且该存储区域是其他应用不可访问的。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33H-dQ-iow">
+                                <rect key="frame" x="63" y="329" width="286" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zge-zt-jlG" firstAttribute="centerX" secondItem="S1e-3M-e5L" secondAttribute="centerX" id="9Q7-AZ-B3K"/>
+                            <constraint firstItem="zbi-En-E7s" firstAttribute="centerX" secondItem="S1e-3M-e5L" secondAttribute="centerX" id="BcK-Vw-m18"/>
+                            <constraint firstItem="zge-zt-jlG" firstAttribute="top" secondItem="ynp-uc-4M4" secondAttribute="top" constant="109" id="Ukr-bA-cF0"/>
+                            <constraint firstItem="ynp-uc-4M4" firstAttribute="trailing" secondItem="33H-dQ-iow" secondAttribute="trailing" constant="65" id="V7k-Ll-uQc"/>
+                            <constraint firstItem="zge-zt-jlG" firstAttribute="top" secondItem="zbi-En-E7s" secondAttribute="bottom" constant="8" id="dDL-Et-XaI"/>
+                            <constraint firstItem="33H-dQ-iow" firstAttribute="leading" secondItem="ynp-uc-4M4" secondAttribute="leading" constant="63" id="gOV-M8-Hqd"/>
+                            <constraint firstItem="33H-dQ-iow" firstAttribute="top" secondItem="zge-zt-jlG" secondAttribute="bottom" constant="48" id="lZW-W9-17w"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ynp-uc-4M4"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="asp-yQ-ebT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1842.0289855072465" y="99.776785714285708"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="k65-88-oV9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t2v-Ut-fRG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ncp-xi-K1Z">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fw6-fm-IVb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wDv-Q6-vyH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="101.78571428571428"/>
+        </scene>
+    </scenes>
+</document>
