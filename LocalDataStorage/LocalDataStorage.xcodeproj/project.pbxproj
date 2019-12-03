@@ -20,6 +20,8 @@
 		048ACC2323954A5300080011 /* BundleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048ACC2123954A5300080011 /* BundleController.swift */; };
 		048ACC2423954A5300080011 /* BundleController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048ACC2223954A5300080011 /* BundleController.xib */; };
 		048ACC2623954B0900080011 /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 048ACC2523954B0900080011 /* Resource.bundle */; };
+		048ACC29239683E600080011 /* KeyChainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048ACC27239683E600080011 /* KeyChainController.swift */; };
+		048ACC2A239683E600080011 /* KeyChainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048ACC28239683E600080011 /* KeyChainController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		048ACC2123954A5300080011 /* BundleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleController.swift; sourceTree = "<group>"; };
 		048ACC2223954A5300080011 /* BundleController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BundleController.xib; sourceTree = "<group>"; };
 		048ACC2523954B0900080011 /* Resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resource.bundle; sourceTree = "<group>"; };
+		048ACC27239683E600080011 /* KeyChainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainController.swift; sourceTree = "<group>"; };
+		048ACC28239683E600080011 /* KeyChainController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyChainController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 				048ACC1A239537FF00080011 /* SandboxController.xib */,
 				048ACC2123954A5300080011 /* BundleController.swift */,
 				048ACC2223954A5300080011 /* BundleController.xib */,
+				048ACC27239683E600080011 /* KeyChainController.swift */,
+				048ACC28239683E600080011 /* KeyChainController.xib */,
 			);
 			path = Ctrls;
 			sourceTree = "<group>";
@@ -162,6 +168,7 @@
 				045AB9992393EF4200EAC3D6 /* LaunchScreen.storyboard in Resources */,
 				048ACC1C239537FF00080011 /* SandboxController.xib in Resources */,
 				045AB9962393EF4200EAC3D6 /* Assets.xcassets in Resources */,
+				048ACC2A239683E600080011 /* KeyChainController.xib in Resources */,
 				048ACC2623954B0900080011 /* Resource.bundle in Resources */,
 				048ACC2423954A5300080011 /* BundleController.xib in Resources */,
 				045AB9942393EF3F00EAC3D6 /* Main.storyboard in Resources */,
@@ -178,6 +185,7 @@
 				048ACC2323954A5300080011 /* BundleController.swift in Sources */,
 				045AB9912393EF3F00EAC3D6 /* ViewController.swift in Sources */,
 				048ACC1B239537FF00080011 /* SandboxController.swift in Sources */,
+				048ACC29239683E600080011 /* KeyChainController.swift in Sources */,
 				045AB98D2393EF3F00EAC3D6 /* AppDelegate.swift in Sources */,
 				048ACC2023953E2300080011 /* BackupTool.m in Sources */,
 				045AB9A023952E4600EAC3D6 /* OverViewController.swift in Sources */,

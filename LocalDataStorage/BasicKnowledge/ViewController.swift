@@ -70,6 +70,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         } else if indexPath.row == 2 {
             let deskVC = BundleController.init()
             navigationController?.pushViewController(deskVC, animated: true)
+        } else if indexPath.row == 3 {
+           let deskVC = KeyChainController.init()
+           navigationController?.pushViewController(deskVC, animated: true)
         }
         
     }
