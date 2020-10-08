@@ -48,7 +48,6 @@ class ErrorHandlingController: SyntaxBaseController {
 //        }
         
         processFile(filename: "mov")
-        
     }
     
     func throwTest1() throws -> Void {
@@ -116,14 +115,11 @@ class TestDemoClass {
     }
     
     func canotThrowErrors() -> Void {
-        
         do {
             throw StructError.init()
         } catch {
             print(error.localizedDescription)
         }
-        
-        
     }
     
     func launch() throws -> Void {
@@ -134,11 +130,11 @@ class TestDemoClass {
         /*
             如果抛出了错误的话，res == nil，
          */
-        let res = try? canThrowErrors()
+        _ = try? canThrowErrors()
         /*
          如果抛出了错误的话，系统会崩溃
          */
-        let ddd = try! canThrowErrors()
+        _ = try! canThrowErrors()
     }
 }
 
@@ -232,3 +228,30 @@ class TestOne {
             四.try!
         推荐使用 后两种。
  */
+
+// MARK: - 第二次 20191223
+// 错误：准守了Error协议的类型实例表示错误。
+class BeiJing: Error {
+    
+}
+
+struct NanJing: Error {
+    
+}
+
+enum ShangHai: Error {
+    case PuDong
+}
+
+// throwing函数：throws修饰的函数称为throwing函数
+func throwing() throws -> String {
+    throw BeiJing()
+}
+
+func launch() {
+    do {
+       _ = try throwing()
+    } catch {
+        print(error)
+    }
+}

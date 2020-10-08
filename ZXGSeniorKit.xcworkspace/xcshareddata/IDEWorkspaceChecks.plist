@@ -4,5 +4,17 @@
 <dict>
 	<key>IDEDidComputeMac32BitWarning</key>
 	<true/>
+    	<key>FILEHEADER</key>
+    	<string>   
+	//   ___FILENAME___
+	//   ___PACKAGENAME___
+	//   
+	//   Created  by Brook on ___DATE___
+	//   Modified by YourName
+	//   ___COPYRIGHT___
+	//   
+   	</string>
 </dict>
 </plist>
+
+
