@@ -59,7 +59,6 @@
     return [self.lalalala description];
 }
 
-
 - (void)randomDelay:(double)maxDuration {
     NSTimeInterval randomWait = arc4random_uniform(maxDuration * USEC_PER_SEC);
     usleep(randomWait);

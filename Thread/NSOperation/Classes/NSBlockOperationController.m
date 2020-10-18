@@ -27,6 +27,7 @@
     
 //    [self method1];
 //    [self method2];
+    [self method3];
 }
 
 #pragma mark - 需求一：当viewDidLoad时，在当前线程调用_block, 使用NSBlockOperation实现？
@@ -72,30 +73,30 @@
             NSLog(@"4---%@", [NSThread currentThread]); // 打印当前线程
         }
     }];
-    [op addExecutionBlock:^{
-        for (int i = 0; i < 2; i++) {
-            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
-            NSLog(@"5---%@", [NSThread currentThread]); // 打印当前线程
-        }
-    }];
-    [op addExecutionBlock:^{
-        for (int i = 0; i < 2; i++) {
-            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
-            NSLog(@"6---%@", [NSThread currentThread]); // 打印当前线程
-        }
-    }];
-    [op addExecutionBlock:^{
-        for (int i = 0; i < 2; i++) {
-            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
-            NSLog(@"7---%@", [NSThread currentThread]); // 打印当前线程
-        }
-    }];
-    [op addExecutionBlock:^{
-        for (int i = 0; i < 2; i++) {
-            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
-            NSLog(@"8---%@", [NSThread currentThread]); // 打印当前线程
-        }
-    }];
+//    [op addExecutionBlock:^{
+//        for (int i = 0; i < 2; i++) {
+//            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
+//            NSLog(@"5---%@", [NSThread currentThread]); // 打印当前线程
+//        }
+//    }];
+//    [op addExecutionBlock:^{
+//        for (int i = 0; i < 2; i++) {
+//            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
+//            NSLog(@"6---%@", [NSThread currentThread]); // 打印当前线程
+//        }
+//    }];
+//    [op addExecutionBlock:^{
+//        for (int i = 0; i < 2; i++) {
+//            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
+//            NSLog(@"7---%@", [NSThread currentThread]); // 打印当前线程
+//        }
+//    }];
+//    [op addExecutionBlock:^{
+//        for (int i = 0; i < 2; i++) {
+//            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
+//            NSLog(@"8---%@", [NSThread currentThread]); // 打印当前线程
+//        }
+//    }];
     
     // 3.调用 start 方法开始执行操作
     [op start];
@@ -105,7 +106,7 @@
 
 #pragma mark - 需求三：A + B + C操作执行完成之后，再执行D + E操作？
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self doIt1];
+    [self doIt];
 }
 // 需求三： 方式一： NSBlockOperation封装A + B + C操作，kvo监听isFinished属性，YES的话再执行封装D + E操作的NSBlockOperation对象。
 - (void)doIt {
@@ -128,19 +129,19 @@
     }];
     
     // 监听NSOperation状态
-    [blockOperation addObserver:self forKeyPath:@"isFinished" options:NSKeyValueObservingOptionNew context:nil];
+    [blockOperation addObserver:self forKeyPath:@"finished" options:NSKeyValueObservingOptionNew context:nil];
     
     // 队列
     [self.queue addOperation:blockOperation];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    if ([keyPath isEqualToString:@"isFinished"]) {
-        [self performDMehtod];
+    if ([keyPath isEqualToString:@"finished"] && [change valueForKey:NSKeyValueChangeNewKey]) {
+        [self performMehtod];
     }
 }
 
-- (void)performDMehtod {
+- (void)performMehtod {
     
     NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
         [NSThread sleepForTimeInterval:1.f];
@@ -215,6 +216,34 @@
         _queue = [[NSOperationQueue alloc] init];
     }
     return _queue;
+}
+
+- (void)method3 {
+    // 实例化4个操作
+    NSBlockOperation *operationOne = [NSBlockOperation blockOperationWithBlock:^{
+            NSLog(@"1- %@",[NSThread currentThread]);
+        }];
+    NSBlockOperation *operationTwo = [NSBlockOperation blockOperationWithBlock:^{
+            NSLog(@"2- %@",[NSThread currentThread]);
+        }];
+    NSBlockOperation *operationThree = [NSBlockOperation blockOperationWithBlock:^{
+            NSLog(@"3- %@",[NSThread currentThread]);
+        }];
+    NSBlockOperation *operationFour = [NSBlockOperation blockOperationWithBlock:^{
+            NSLog(@"4- %@",[NSThread currentThread]);
+        }];
+        
+    // 给操作添加依赖
+    [operationTwo addDependency:operationOne];
+    [operationThree addDependency:operationTwo];
+    [operationFour addDependency:operationThree];
+//    [operationOne addDependency: operationFour]; // 一定不能出现循环依赖
+    
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    [queue addOperation:operationOne];
+    [[NSOperationQueue mainQueue] addOperation:operationTwo];
+    [queue addOperation:operationThree];
+    [queue addOperation:operationFour];
 }
 
 @end

@@ -19,8 +19,8 @@
     self.navigationItem.title = @"NSOperationQueue";
     
 //    [self queueKinds];
-    [self method1];
-//    [self maxConcurrentOperationCount];
+//    [self method1];
+    [self maxConcurrentOperationCount];
 }
 
 // 队列种类
@@ -123,7 +123,6 @@
  maxConcurrentOperationCount 为1时，队列为串行队列。只能串行执行。
  
  maxConcurrentOperationCount 大于1时，队列为并发队列。操作并发执行，当然这个值不应超过系统限制，即使自己设置一个很大的值，系统也会自动调整为min{自己设定的值，系统设定的默认最大值}。
- 
  */
 - (void)maxConcurrentOperationCount {
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];

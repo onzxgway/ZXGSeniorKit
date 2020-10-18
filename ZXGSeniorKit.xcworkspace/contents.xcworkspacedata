@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:block/block.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:/Users/zhuxianguo/Documents/Github/ZXGSeniorKit/Swift/Swift.xcodeproj">
    </FileRef>
    <FileRef

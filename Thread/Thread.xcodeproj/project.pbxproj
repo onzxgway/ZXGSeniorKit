@@ -34,13 +34,23 @@
 		04289E9222A01915008C8CFB /* NSInvocationOperationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04289E9122A01915008C8CFB /* NSInvocationOperationController.m */; };
 		04289E9522A01974008C8CFB /* NSCustomOperationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04289E9422A01974008C8CFB /* NSCustomOperationController.m */; };
 		04289E9822A019BF008C8CFB /* NSCustomOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04289E9722A019BF008C8CFB /* NSCustomOperation.m */; };
+		0450790D253B2808001CE25A /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0450790C253B2808001CE25A /* DemoViewController.m */; };
+		04507910253C1E01001CE25A /* OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0450790F253C1E01001CE25A /* OtherViewController.m */; };
+		04507919253C315A001CE25A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04507918253C315A001CE25A /* AppDelegate.m */; };
+		0450791C253C315A001CE25A /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0450791B253C315A001CE25A /* SceneDelegate.m */; };
+		0450791F253C315A001CE25A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0450791E253C315A001CE25A /* ViewController.m */; };
+		04507922253C315A001CE25A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04507920253C315A001CE25A /* Main.storyboard */; };
+		04507924253C315B001CE25A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04507923253C315B001CE25A /* Assets.xcassets */; };
+		04507927253C315B001CE25A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04507925253C315B001CE25A /* LaunchScreen.storyboard */; };
+		0450792A253C315B001CE25A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04507929253C315B001CE25A /* main.m */; };
+		04507930253C7322001CE25A /* ttViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0450792F253C7322001CE25A /* ttViewController.m */; };
 		0464772422A3E08E00212E05 /* NSOperationQueueController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0464772322A3E08E00212E05 /* NSOperationQueueController.m */; };
 		0464772722A4BEB200212E05 /* NSOperationOtherController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0464772622A4BEB200212E05 /* NSOperationOtherController.m */; };
 		04FABDB622A4DD9000DA6DE9 /* NSDeadOperationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FABDB522A4DD9000DA6DE9 /* NSDeadOperationController.m */; };
 		04FABDC022A5315900DA6DE9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FABDBF22A5315900DA6DE9 /* ViewController.m */; };
 		04FABDC322A531A300DA6DE9 /* TestCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FABDC122A531A300DA6DE9 /* TestCellModel.m */; };
 		04FABDCA22A5338200DA6DE9 /* GCDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FABDC522A5338100DA6DE9 /* GCDBaseViewController.m */; };
-		04FABDCB22A5338200DA6DE9 /* GCDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04FABDC822A5338200DA6DE9 /* GCDViewController.xib */; };
+		04FABDCB22A5338200DA6DE9 /* GCDBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04FABDC822A5338200DA6DE9 /* GCDBaseViewController.xib */; };
 		04FABDCC22A5338200DA6DE9 /* GCDBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FABDC922A5338200DA6DE9 /* GCDBaseTableViewController.m */; };
 		04FABDD022A534BA00DA6DE9 /* GCDAPITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FABDCF22A534BA00DA6DE9 /* GCDAPITableViewController.m */; };
 		04FABDD722A5370F00DA6DE9 /* GCDAPIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FABDD522A5370F00DA6DE9 /* GCDAPIViewController.m */; };
@@ -107,6 +117,24 @@
 		04289E9422A01974008C8CFB /* NSCustomOperationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSCustomOperationController.m; sourceTree = "<group>"; };
 		04289E9622A019BF008C8CFB /* NSCustomOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSCustomOperation.h; sourceTree = "<group>"; };
 		04289E9722A019BF008C8CFB /* NSCustomOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSCustomOperation.m; sourceTree = "<group>"; };
+		0450790B253B2808001CE25A /* DemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		0450790C253B2808001CE25A /* DemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		0450790E253C1E01001CE25A /* OtherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OtherViewController.h; sourceTree = "<group>"; };
+		0450790F253C1E01001CE25A /* OtherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OtherViewController.m; sourceTree = "<group>"; };
+		04507915253C315A001CE25A /* DeadThread.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeadThread.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04507917253C315A001CE25A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		04507918253C315A001CE25A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0450791A253C315A001CE25A /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		0450791B253C315A001CE25A /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		0450791D253C315A001CE25A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0450791E253C315A001CE25A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		04507921253C315A001CE25A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04507923253C315B001CE25A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04507926253C315B001CE25A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		04507928253C315B001CE25A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04507929253C315B001CE25A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0450792E253C7322001CE25A /* ttViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ttViewController.h; sourceTree = "<group>"; };
+		0450792F253C7322001CE25A /* ttViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ttViewController.m; sourceTree = "<group>"; };
 		0464772222A3E08E00212E05 /* NSOperationQueueController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSOperationQueueController.h; sourceTree = "<group>"; };
 		0464772322A3E08E00212E05 /* NSOperationQueueController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSOperationQueueController.m; sourceTree = "<group>"; };
 		0464772522A4BEB200212E05 /* NSOperationOtherController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSOperationOtherController.h; sourceTree = "<group>"; };
@@ -120,7 +148,7 @@
 		04FABDC522A5338100DA6DE9 /* GCDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDBaseViewController.m; sourceTree = "<group>"; };
 		04FABDC622A5338100DA6DE9 /* GCDBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDBaseTableViewController.h; sourceTree = "<group>"; };
 		04FABDC722A5338100DA6DE9 /* GCDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDBaseViewController.h; sourceTree = "<group>"; };
-		04FABDC822A5338200DA6DE9 /* GCDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCDViewController.xib; sourceTree = "<group>"; };
+		04FABDC822A5338200DA6DE9 /* GCDBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCDBaseViewController.xib; sourceTree = "<group>"; };
 		04FABDC922A5338200DA6DE9 /* GCDBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDBaseTableViewController.m; sourceTree = "<group>"; };
 		04FABDCD22A533BC00DA6DE9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		04FABDCE22A534BA00DA6DE9 /* GCDAPITableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDAPITableViewController.h; sourceTree = "<group>"; };
@@ -173,6 +201,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2157DB8784C6A84F0DE10A80 /* libPods-GCD.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04507912253C315A001CE25A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,8 +306,28 @@
 				0464772622A4BEB200212E05 /* NSOperationOtherController.m */,
 				04FABDB422A4DD9000DA6DE9 /* NSDeadOperationController.h */,
 				04FABDB522A4DD9000DA6DE9 /* NSDeadOperationController.m */,
+				0450790B253B2808001CE25A /* DemoViewController.h */,
+				0450790C253B2808001CE25A /* DemoViewController.m */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		04507916253C315A001CE25A /* DeadThread */ = {
+			isa = PBXGroup;
+			children = (
+				04507917253C315A001CE25A /* AppDelegate.h */,
+				04507918253C315A001CE25A /* AppDelegate.m */,
+				0450791A253C315A001CE25A /* SceneDelegate.h */,
+				0450791B253C315A001CE25A /* SceneDelegate.m */,
+				0450791D253C315A001CE25A /* ViewController.h */,
+				0450791E253C315A001CE25A /* ViewController.m */,
+				04507920253C315A001CE25A /* Main.storyboard */,
+				04507923253C315B001CE25A /* Assets.xcassets */,
+				04507925253C315B001CE25A /* LaunchScreen.storyboard */,
+				04507928253C315B001CE25A /* Info.plist */,
+				04507929253C315B001CE25A /* main.m */,
+			);
+			path = DeadThread;
 			sourceTree = "<group>";
 		};
 		04801482229FD93100397DC7 = {
@@ -281,6 +336,7 @@
 				04289E2E229FDACB008C8CFB /* NSThread */,
 				04289E48229FDAEB008C8CFB /* NSOperation */,
 				04289E62229FDAF9008C8CFB /* GCD */,
+				04507916253C315A001CE25A /* DeadThread */,
 				0480148C229FD93100397DC7 /* Products */,
 				82E7C0B2B8A61486BDA05209 /* Pods */,
 				B07DB9EC9BE8B49ED19CCC23 /* Frameworks */,
@@ -293,6 +349,7 @@
 				04289E2D229FDACB008C8CFB /* NSThread.app */,
 				04289E47229FDAEB008C8CFB /* NSOperation.app */,
 				04289E61229FDAF9008C8CFB /* GCD.app */,
+				04507915253C315A001CE25A /* DeadThread.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -306,7 +363,7 @@
 				04FABDC922A5338200DA6DE9 /* GCDBaseTableViewController.m */,
 				04FABDC722A5338100DA6DE9 /* GCDBaseViewController.h */,
 				04FABDC522A5338100DA6DE9 /* GCDBaseViewController.m */,
-				04FABDC822A5338200DA6DE9 /* GCDViewController.xib */,
+				04FABDC822A5338200DA6DE9 /* GCDBaseViewController.xib */,
 				04FABDCE22A534BA00DA6DE9 /* GCDAPITableViewController.h */,
 				04FABDCF22A534BA00DA6DE9 /* GCDAPITableViewController.m */,
 				04FABDD422A5370F00DA6DE9 /* GCDAPIViewController.h */,
@@ -322,6 +379,10 @@
 				04FABDE622A5634A00DA6DE9 /* SemaphoreViewController.m */,
 				04FABDE822A5670300DA6DE9 /* Person.h */,
 				04FABDE922A5670300DA6DE9 /* Person.m */,
+				0450790E253C1E01001CE25A /* OtherViewController.h */,
+				0450790F253C1E01001CE25A /* OtherViewController.m */,
+				0450792E253C7322001CE25A /* ttViewController.h */,
+				0450792F253C7322001CE25A /* ttViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -409,6 +470,23 @@
 			productReference = 04289E61229FDAF9008C8CFB /* GCD.app */;
 			productType = "com.apple.product-type.application";
 		};
+		04507914253C315A001CE25A /* DeadThread */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0450792B253C315B001CE25A /* Build configuration list for PBXNativeTarget "DeadThread" */;
+			buildPhases = (
+				04507911253C315A001CE25A /* Sources */,
+				04507912253C315A001CE25A /* Frameworks */,
+				04507913253C315A001CE25A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DeadThread;
+			productName = DeadThread;
+			productReference = 04507915253C315A001CE25A /* DeadThread.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -426,6 +504,9 @@
 					};
 					04289E60229FDAF9008C8CFB = {
 						CreatedOnToolsVersion = 9.3;
+					};
+					04507914253C315A001CE25A = {
+						CreatedOnToolsVersion = 11.5;
 					};
 				};
 			};
@@ -445,6 +526,7 @@
 				04289E2C229FDACB008C8CFB /* NSThread */,
 				04289E46229FDAEB008C8CFB /* NSOperation */,
 				04289E60229FDAF9008C8CFB /* GCD */,
+				04507914253C315A001CE25A /* DeadThread */,
 			);
 		};
 /* End PBXProject section */
@@ -478,7 +560,17 @@
 				04FABDD822A5370F00DA6DE9 /* GCDAPIViewController.xib in Resources */,
 				04289E6D229FDAF9008C8CFB /* Assets.xcassets in Resources */,
 				04289E6B229FDAF9008C8CFB /* Main.storyboard in Resources */,
-				04FABDCB22A5338200DA6DE9 /* GCDViewController.xib in Resources */,
+				04FABDCB22A5338200DA6DE9 /* GCDBaseViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04507913253C315A001CE25A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04507927253C315B001CE25A /* LaunchScreen.storyboard in Resources */,
+				04507924253C315B001CE25A /* Assets.xcassets in Resources */,
+				04507922253C315A001CE25A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,6 +710,7 @@
 				04289E8F22A018DC008C8CFB /* NSBlockOperationController.m in Sources */,
 				04289E59229FDAEB008C8CFB /* main.m in Sources */,
 				0464772422A3E08E00212E05 /* NSOperationQueueController.m in Sources */,
+				0450790D253B2808001CE25A /* DemoViewController.m in Sources */,
 				04289E4B229FDAEB008C8CFB /* AppDelegate.m in Sources */,
 				04289E9222A01915008C8CFB /* NSInvocationOperationController.m in Sources */,
 				0464772722A4BEB200212E05 /* NSOperationOtherController.m in Sources */,
@@ -637,6 +730,7 @@
 				04FABDD722A5370F00DA6DE9 /* GCDAPIViewController.m in Sources */,
 				04FABDEA22A5670300DA6DE9 /* Person.m in Sources */,
 				04289E73229FDAF9008C8CFB /* main.m in Sources */,
+				04507930253C7322001CE25A /* ttViewController.m in Sources */,
 				04FABDCC22A5338200DA6DE9 /* GCDBaseTableViewController.m in Sources */,
 				04FABDE122A5631600DA6DE9 /* ApplyViewController.m in Sources */,
 				04FABDE722A5634A00DA6DE9 /* SemaphoreViewController.m in Sources */,
@@ -645,8 +739,20 @@
 				04FABDC022A5315900DA6DE9 /* ViewController.m in Sources */,
 				04FABDCA22A5338200DA6DE9 /* GCDBaseViewController.m in Sources */,
 				04FABDC322A531A300DA6DE9 /* TestCellModel.m in Sources */,
+				04507910253C1E01001CE25A /* OtherViewController.m in Sources */,
 				04FABDDE22A55E2700DA6DE9 /* GroupViewController.m in Sources */,
 				04FABDDB22A55A9000DA6DE9 /* GCDOverviewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04507911253C315A001CE25A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0450791F253C315A001CE25A /* ViewController.m in Sources */,
+				04507919253C315A001CE25A /* AppDelegate.m in Sources */,
+				0450792A253C315B001CE25A /* main.m in Sources */,
+				0450791C253C315A001CE25A /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -697,6 +803,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				04289E6F229FDAF9008C8CFB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		04507920253C315A001CE25A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04507921253C315A001CE25A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		04507925253C315B001CE25A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04507926253C315B001CE25A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -813,6 +935,43 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "---.GCD";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0450792C253C315B001CE25A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DeadThread/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "---.DeadThread";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0450792D253C315B001CE25A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DeadThread/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "---.DeadThread";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -954,6 +1113,15 @@
 			buildConfigurations = (
 				04289E75229FDAF9008C8CFB /* Debug */,
 				04289E76229FDAF9008C8CFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0450792B253C315B001CE25A /* Build configuration list for PBXNativeTarget "DeadThread" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0450792C253C315B001CE25A /* Debug */,
+				0450792D253C315B001CE25A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -30,6 +30,9 @@
     [_safeAry addObject:@"2"];
     [_safeAry addObject:@"3"];
     _queue = dispatch_queue_create("concurrentQueue", DISPATCH_QUEUE_CONCURRENT);
+    
+//    [self barrier_One];
+//    [self dispatch_barrier_async];
 }
 
 #pragma mark - ========== dispatch_barrier_async 应用场景一 ==========
@@ -39,7 +42,7 @@
   */
 - (void)barrier_one {
     
-    dispatch_queue_t queue = dispatch_queue_create("testRWAry", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_queue_t queue = dispatch_queue_create("com.barrier.concurrent", DISPATCH_QUEUE_CONCURRENT);
     for (int i = 0; i < 20; i++) {
         // 写
         dispatch_async(queue, ^{
@@ -51,76 +54,10 @@
             NSLog(@"%d::%@", i, [self indexTo:i]);
         });
     }
-    
-//        dispatch_barrier_async(queue, ^{
-    //        for (int i = 0; i < self.dict.count; i++) {
-    //            NSLog(@"%d::%@", i, [self indexTo:i]);
-    //        }
-    
-//            NSLog(@"%@", self.dict);
-//        });
 }
-
-#pragma mark - ========== dispatch_barrier_async 应用场景二 ==========
-/**
- 多线程来操作可变数组mutableAry，肯定会出错，因为集合都是线程不安全的。
- 解决方案：使用dispatch_barrier_async。 只要涉及到写操作（要做保护）
- */
-- (void)barrier_two {
-        
-    Person *p = [[Person alloc] init];
-    p.queue = dispatch_queue_create("abbb", DISPATCH_QUEUE_CONCURRENT);
-    [self updateContact:p contacts:self.dict];
-    
-}
-
-- (void)updateContact:(Person *)person contacts:(NSDictionary *)contacts {
-    
-//        for (NSInteger i = 0; i < contacts.allKeys.count; ++i) {
-//            NSString *key = [contacts.allKeys objectAtIndex:i];
-//            NSString *value = [contacts objectForKey:key];
-//            dispatch_async(rwQueue, ^{
-//                [person setProperty:key email:value];
-//                NSLog(@"%@", person);
-//            });
-//        }
-    //    dispatch_barrier_async(rwQueue, ^{
-    //        NSLog(@"==> Final %@",person);
-    //    });
-    
-    
-    dispatch_group_t group = dispatch_group_create();
-    for (NSInteger i = 0; i < contacts.allKeys.count; ++i) {
-        NSString *key = [contacts.allKeys objectAtIndex:i];
-        NSString *value = [contacts objectForKey:key];
-        
-        dispatch_group_async(group, _queue, ^{
-            [person setProperty:key email:value];
-        });
-        
-    }
-    dispatch_group_notify(group, _queue, ^{
-        NSLog(@"==> Final %@", person);
-    });
-}
-
-
-- (NSMutableDictionary *)dict {
- if (!_dict) {
-     _dict = [@{
-         @"Goodguy" : @"crafttang@gmail.com",
-         @"Leijun" : @"leijun@mi.com",
-         @"Yuchengdong" : @"yuchengdong@huawei.com",
-         @"Luoyonghao" : @"luoyonghao@smartisan.com",
-         } mutableCopy];
-     }
-     return _dict;
-}
-
 
 // 写 保证只有一个在操作（避免了同时多个写操作导致的问题）
 - (void)addObject:(NSString *)object {
-    
     dispatch_barrier_async(_queue, ^{
         if (object != nil) {
             [_safeAry addObject:object];
@@ -140,9 +77,62 @@
     return result;
 }
 
+#pragma mark - ========== dispatch_barrier_async 应用场景二 ==========
+/**
+ 多线程来操作可变数组mutableAry，肯定会出错，因为集合都是线程不安全的。
+ 解决方案：使用dispatch_barrier_async。 只要涉及到写操作（要做保护）
+ */
+- (void)barrier_two {
+    Person *p = [[Person alloc] init];
+    p.queue = dispatch_queue_create("abbb", DISPATCH_QUEUE_CONCURRENT);
+    [self updateContact:p contacts:self.dict];
+}
+
+/**
+dispatch_barrier_async 与 dispatch_barrier_sync
+
+共同点：
+1、等待在它前面插入队列的任务先执行完
+2、等待他们自己的任务执行完再执行后面的任务
+不同点：
+1、dispatch_barrier_sync将自己的任务插入到队列的时候，需要等待自己的任务结束之后才会继续插入被写在它后面的任务，然后执行它们
+2、dispatch_barrier_async将自己的任务插入到队列之后，不会等待自己的任务结束，它会继续把后面的任务插入到队列，然后等待自己的任务结束后才执行后面任务。
+
+用途：
+在多个异步操作完成之后，统一的对非线程安全的对象进行更新操作
+*/
+- (void)updateContact:(Person *)person contacts:(NSDictionary *)contacts {
+    
+    dispatch_group_t group = dispatch_group_create();
+    for (NSInteger i = 0; i < contacts.allKeys.count; ++i) {
+        NSString *key = [contacts.allKeys objectAtIndex:i];
+        NSString *value = [contacts objectForKey:key];
+        
+        dispatch_group_async(group, _queue, ^{
+            [person setProperty:key email:value];
+        });
+        
+    }
+    dispatch_group_notify(group, _queue, ^{
+        NSLog(@"==> Final %@", person);
+    });
+}
+
+- (NSMutableDictionary *)dict {
+ if (!_dict) {
+     _dict = [@{
+         @"Goodguy" : @"crafttang@gmail.com",
+         @"Leijun" : @"leijun@mi.com",
+         @"Yuchengdong" : @"yuchengdong@huawei.com",
+         @"Luoyonghao" : @"luoyonghao@smartisan.com",
+         } mutableCopy];
+     }
+     return _dict;
+}
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [self barrier_one];
-    [self barrier_two];
+    [self barrier_one];
+//    [self barrier_two];
 }
 
 // 隔断方法：当前面的写入操作全部完成之后，再执行后面的读取任务。当然也可以用Dispatch Group和dispatch_set_target_queue,只是比较而言 dispatch_barrier_async 会更加顺滑
@@ -201,23 +191,9 @@
     
 }
 
-/**
- dispatch_barrier_async 与 dispatch_barrier_sync
- 
- 共同点：
- 1、等待在它前面插入队列的任务先执行完
- 2、等待他们自己的任务执行完再执行后面的任务
- 不同点：
- 1、dispatch_barrier_sync将自己的任务插入到队列的时候，需要等待自己的任务结束之后才会继续插入被写在它后面的任务，然后执行它们
- 2、dispatch_barrier_async将自己的任务插入到队列之后，不会等待自己的任务结束，它会继续把后面的任务插入到队列，然后等待自己的任务结束后才执行后面任务。
- 
- 用途：
- 在多个异步操作完成之后，统一的对非线程安全的对象进行更新操作
- */
-
 // 栅栏
 - (void)barrier_One {
-    dispatch_queue_t queue = dispatch_queue_create("", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_queue_t queue = dispatch_queue_create("com.app.concurrent", DISPATCH_QUEUE_CONCURRENT);
     
     dispatch_async(queue, ^{
         NSLog(@"分界线前：taskOne");

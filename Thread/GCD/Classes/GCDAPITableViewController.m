@@ -12,6 +12,7 @@
 #import "ApplyViewController.h"
 #import "BarrierViewController.h"
 #import "SemaphoreViewController.h"
+#import "OtherViewController.h"
 
 @interface GCDAPITableViewController ()
 
@@ -79,6 +80,9 @@
     }
     else if ([vc.selectorStr isEqualToString:@"dispatch_barrier_async"]) {
         [self.navigationController pushViewController:[BarrierViewController new] animated:YES];
+    }
+    else if ([vc.selectorStr isEqualToString:@"dispatch_after"] || [vc.selectorStr isEqualToString:@"dispatch_queue_inactive"] ) {
+        [self.navigationController pushViewController:[OtherViewController new] animated:YES];
     }
     else {
         [self.navigationController pushViewController:vc animated:YES];

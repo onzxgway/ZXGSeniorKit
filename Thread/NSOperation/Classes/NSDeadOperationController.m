@@ -29,7 +29,6 @@
 // NSThread 实现
 - (void)method1 {
     [NSThread detachNewThreadSelector:@selector(ThreadOne) toTarget:self withObject:nil];
-    
 }
 
 // 该方式 endThread: 方法不会被执行。必须如下ThreadOne

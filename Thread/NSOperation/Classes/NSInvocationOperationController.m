@@ -19,9 +19,9 @@
     [super viewDidLoad];
     
 //    [self method1];
-//    [self method2];
-      [self method3];
-    
+    [self method2];
+//    [self method3];
+//    [self demo];
 }
 
 - (void)method1 {
@@ -37,10 +37,9 @@
     });
 }
 
-#pragma mark - 需求一：把name:age:sex:方法放在当前线程去执行，用NSInvocationOperation实现？
+#pragma mark - 需求一：把name:age:sex:方法放在子线程去执行，用NSInvocationOperation实现？
+// 需求一：使用NSOperation实现
 - (void)method2 {
-    // 需求一：使用NSOperation实现
-    
     // 方法签名 （方法的对象结构，相关的结构信息：返回值，调用者，方法名，参数）
     NSMethodSignature *signature = [self methodSignatureForSelector:@selector(name:age:sex:)];
     
@@ -56,7 +55,8 @@
      argument 4: {@} 0x0
      */
     self.invocation.target = self;
-    self.invocation.selector = @selector(name:age:sex:); //和签名的seletor要对应起来
+    self.invocation.selector = @selector(name:age:sex:);
+    // 和签名的seletor要对应起来
     // 配置参数
     NSString *name = @"kobe";
     NSString *age = @"40";
@@ -66,10 +66,12 @@
     [self.invocation setArgument:&sex atIndex:4];
     //    [self.invocation invoke]; // 调用方法
     
-    self.operation = [[NSInvocationOperation alloc] initWithInvocation:self.invocation];
+    NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithInvocation:self.invocation];
     
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    [queue addOperation:operation];
     // 调用 start 方法开始执行操作
-    [self.operation start]; // 在当前线程中执行， 相当于 [self name:name age:age sex:sex];
+//    [operation start]; // 在当前线程中执行， 相当于 [self name:name age:age sex:sex];
 }
 
 // 这个方法是一个耗时业务
@@ -91,23 +93,31 @@
 }
 
 /**
- * 使用子类 NSInvocationOperation
+  使用子类 NSInvocationOperation
  */
 - (void)useInvocationOperation {
-    
     // 1.创建 NSInvocationOperation 对象
-    NSInvocationOperation *op = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(task) object:nil];
-    
+    NSInvocationOperation *op1 = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(taskMethod:) object:@2];
     // 2.调用 start 方法开始执行操作
-    [op start];
+    [op1 start];
 }
 
-
-//
-- (void)task {
-    for (int i = 0; i < 2; i++) {
+- (void)taskMethod:(NSNumber *)count {
+    for (int i = 0; i < count.intValue; i++) {
         [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
-        NSLog(@"1---%@", [NSThread currentThread]); // 打印当前线程
+        NSLog(@"---%@", [NSThread currentThread]); // 打印当前线程
+    }
+}
+
+- (void)demo {
+    // 默认最大并发数是-1，队列属于并发队列
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    for (int i = 0; i < 6; ++i) {
+        // 创建操作
+        NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:
+        @selector(taskMethod:) object:@1];
+        // 操作添加到队列
+        [queue addOperation: operation];
     }
 }
 

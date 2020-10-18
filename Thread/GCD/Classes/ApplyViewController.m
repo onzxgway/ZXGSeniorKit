@@ -29,7 +29,6 @@
 // dispatch_apply将任务按照指定的次数追加到队列中，并等待全部队列任务执行结束。
 // apply 相当于 同步队列组， 重复
 - (void)apply_One {
-    
     dispatch_queue_t queue = dispatch_queue_create("testRWAry", DISPATCH_QUEUE_CONCURRENT);
     
     /**
@@ -50,27 +49,24 @@
 }
 
 - (void)apply_Two {
-    
     /**
-     如果在for循环中使用 dispatch_async， 需要管理好线程的数量，否则会发生线程爆炸或死锁。
+     如果在for循环中使用 dispatch_async，需要管理好线程的数量，否则会发生线程爆炸或死锁。
      而dispatch_apply是由GCD管理并发的，可以碧避免上述情况发生。
      */
-    dispatch_queue_t concurrentQueue = dispatch_queue_create("concurrentqueue", DISPATCH_QUEUE_CONCURRENT);
-    // 有问题的情况，可能会死锁
-    for (int i = 0; i < 999 ; i++) {
-        dispatch_async(concurrentQueue, ^{
-            NSLog(@"wrong %d",i);
-            // do something hard
-        });
-    }
+    dispatch_queue_t queue = dispatch_queue_create("concurrentqueue", DISPATCH_QUEUE_CONCURRENT);
+//    // 有问题的情况，可能会死锁
+//    for (int i = 0; i < 999 ; i++) {
+//        dispatch_async(queue, ^{
+//            NSLog(@"thread: %@", [NSThread currentThread]);
+//        });
+//    }
     
-    //    // 会优化很多，能够利用GCD管理，
-    //    dispatch_apply(999, concurrentQueue, ^(size_t i){
-    //        NSLog(@"correct %zu",i);
-    //        //do something hard
-    //    });
-    //    当前线程会阻塞在这里，等待上述任务执行结束之后，当前线程才会继续往下执行。
+    // 正确方式
+    dispatch_apply(999, queue, ^(size_t i){
+        NSLog(@"correct %zu", i);
+    });
     
+    // 当前线程会阻塞在这里，等待上述任务执行结束之后，当前线程才会继续往下执行。
     NSLog(@"Done!");
 }
 

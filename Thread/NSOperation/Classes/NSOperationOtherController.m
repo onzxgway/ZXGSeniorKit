@@ -20,7 +20,6 @@
     [super viewDidLoad];
     
 //    [self method1];
-    
     [self method2];
 }
 /**

@@ -21,7 +21,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
+    [self dispatch_semaphore];
 }
 
 // semaphore使用场景：一个界面执行多个网络请求
@@ -69,7 +69,7 @@
 - (void)dispatch_semaphore {
     NSLog(@"__BEGIN:%@__", [NSThread currentThread]);
     // 创建信号量，参数：信号量的初值，如果小于0则会返回NULL
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     
     dispatch_async(queue, ^{

@@ -8,16 +8,15 @@
 
 #import "NSCustomOperation.h"
 
-@implementation NSCustomOperation {
-    NSTimer *_timer;
-}
+@implementation NSCustomOperation
+
 @synthesize finished = _finished;
 
 - (void)main {
     if (!self.isCancelled) {
         for (int i = 0; i < 2; i++) {
             [NSThread sleepForTimeInterval:2];
-            NSLog(@"1---%@", [NSThread currentThread]);
+            NSLog(@"---%@---", [NSThread currentThread]);
         }
     }
     _finished = YES;
@@ -25,8 +24,6 @@
 
 - (void)start {
     // 异常处理
-    NSLog(@"%@", [NSThread currentThread]);
-    
     if (self.isFinished) {
         return;
     }
@@ -37,9 +34,8 @@
     [self main];
 }
 
-/*
-如有 dealloc 没被执行，就是因为self的状态为未完成状态 _finished = NO；
- */
+
+// 如果 dealloc 没被执行，就是因为 _finished = NO
 - (void)dealloc{
     NSLog(@"%s", __func__);
 }

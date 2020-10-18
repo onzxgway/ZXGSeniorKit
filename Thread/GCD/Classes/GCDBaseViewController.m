@@ -185,7 +185,7 @@ _Pragma("clang diagnostic pop") \
 - (void)syncAndSerial {
     NSLog(@"__BEGIN:%@__", [NSThread currentThread]);
     
-    dispatch_queue_t queue = dispatch_queue_create("com.app.concurrent", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.app.serial", DISPATCH_QUEUE_SERIAL);
     
     // 第一个任务
     dispatch_sync(queue, ^{
@@ -222,7 +222,7 @@ _Pragma("clang diagnostic pop") \
 - (void)asyncAndSerial {
     NSLog(@"__BEGIN:%@__", [NSThread currentThread]);
     
-    dispatch_queue_t queue = dispatch_queue_create("com.app.concurrent", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.app.serial", DISPATCH_QUEUE_SERIAL);
     
     // 第一个任务
     dispatch_async(queue, ^{
@@ -293,12 +293,12 @@ _Pragma("clang diagnostic pop") \
 
 // 同步执行 ➕ 主队列（在子线程中正常执行）
 - (void)othersyncAndMain {
-    NSLog(@"__BEGIN:%@__", [NSThread currentThread]);
-    
     dispatch_queue_t concurrentQueue = dispatch_get_global_queue(0, 0);
     dispatch_queue_t queue = dispatch_get_main_queue();
     
     dispatch_async(concurrentQueue, ^{
+        NSLog(@"__BEGIN:%@__", [NSThread currentThread]);
+        
         // 第一个任务
         dispatch_sync(queue, ^{
             
@@ -325,9 +325,9 @@ _Pragma("clang diagnostic pop") \
             
             NSLog(@"----执行第三个任务---当前线程%@",[NSThread currentThread]);
         });
+        
+        NSLog(@"__END:%@__", [NSThread currentThread]);
     });
-    
-    NSLog(@"__END:%@__", [NSThread currentThread]);
 }
 
 // 异步执行 ➕ 主队列

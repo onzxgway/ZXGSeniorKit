@@ -12,12 +12,12 @@
     NSThread *_threadTwo;
 }
 
+
 @end
 
 @implementation NSThreadOverviewController
 
 /**
- 
  NSThread是pthread面向对象的封装。
  
  NSThread实例是线程对象,对应一个线程。
@@ -25,7 +25,6 @@
     可以重复调用main方法。
  */
 /**
- 
  常用：  1.[NSThread currentThread]    获取当前线程对象
         2.[NSThread sleepForTimeInterval:]; 进入休眠状态
         3.[NSThread sleepUntilDate:]
@@ -40,7 +39,8 @@
     self.titleLab.text = @"NSThread是pthread面向对象的封装。";
 
 //    [self classMethod];
-    [self instanceMethod];
+//    [self instanceMethod];
+    [self backgroundMethod];
     
 }
 
@@ -65,8 +65,14 @@
     
     _threadTwo = [[NSThread alloc] initWithTarget:self selector:@selector(printCount:) object:@88];
     _threadTwo.name = @"threadTwo";
+    _threadTwo.qualityOfService = NSQualityOfServiceDefault;
     [_threadTwo start];
     
+}
+
+// 隐式创建
+- (void)backgroundMethod {
+    [self performSelectorInBackground:@selector(printName:) withObject:@"James"];
 }
 
 - (void)printName:(NSString *)name {
@@ -95,15 +101,15 @@
  cancel方法的作用是： 状态标识
  */
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [_threadTwo cancel];
+//    [_threadTwo cancel];
 }
 
 // 需求：用NSThread实现三个线程任务A，B，C，然后三个任务结束之后，执行D任务
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self doIt];
+    [self demo];
 }
 
-- (void)doIt {
+- (void)demo {
     
     NSThread *one = [[NSThread alloc] initWithBlock:^{
         [NSThread sleepForTimeInterval:1.f];
@@ -118,38 +124,37 @@
         NSLog(@"%@ work C done.", [NSThread currentThread]);
     }];
     
-//    // 监听状态
-//    [one addObserver:self forKeyPath:@"isFinished" options:NSKeyValueObservingOptionNew context:nil];
-//    // 监听状态
-//    [two addObserver:self forKeyPath:@"isFinished" options:NSKeyValueObservingOptionNew context:nil];
-//    // 监听状态
-//    [three addObserver:self forKeyPath:@"isFinished" options:NSKeyValueObservingOptionNew context:nil];
-    
     [one start];
     [two start];
     [three start];
     
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    static int count = 0;
-    if ([keyPath isEqualToString:@"isFinished"] && [change valueForKey:NSKeyValueChangeNewKey]) {
-        count ++;
-        [self performDMehtod];
-        NSLog(@"%@ observeValueForKeyPath", [NSThread currentThread]);
-    }
-}
-
-- (void)performDMehtod {
-    [NSThread detachNewThreadWithBlock:^{
-        NSLog(@"%@ work D done.", [NSThread currentThread]);
-    }];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+    // 监听状态
+    [one addObserver:self forKeyPath:@"isFinished" options:NSKeyValueObservingOptionNew context:nil];
+    // 监听状态
+    [two addObserver:self forKeyPath:@"finished" options:NSKeyValueObservingOptionNew context:nil];
+    // 监听状态
+    [three addObserver:self forKeyPath:@"finished" options:NSKeyValueObservingOptionNew context:nil];
     
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"finished"] && [change valueForKey:NSKeyValueChangeNewKey]) {
+        static int count = 0;
+        count ++;
+        if (count == 3) {
+            [self performMehtod];
+        }
+    }
+}
+
+- (void)performMehtod {
+    [NSThread detachNewThreadWithBlock:^{
+        NSLog(@"%@ work D done.", [NSThread currentThread]);
+    }];
+    
+    [NSThread detachNewThreadWithBlock:^{
+        NSLog(@"%@ work E done.", [NSThread currentThread]);
+    }];
+}
 
 @end

@@ -15,6 +15,7 @@
 #import "NSOperationQueueController.h"
 #import "NSOperationOtherController.h"
 #import "NSDeadOperationController.h"
+#import "DemoViewController.h"
 
 @interface ViewController ()
 
@@ -48,7 +49,7 @@
     i21.targetClass = NSBlockOperationController.class;
     TestCellModel *i23 = [TestCellModel new];
     i23.title = @"NSInvocationOperation";
-    i23.targetClass = NSInvocationOperationController.class;
+    i23.targetClass = DemoViewController.class;
     TestCellModel *i22 = [TestCellModel new];
     i22.title = @"NSCustomOperation";
     i22.targetClass = NSCustomOperationController.class;
