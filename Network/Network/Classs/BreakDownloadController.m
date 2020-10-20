@@ -22,6 +22,7 @@ static NSString *const ImageURL = @"https://timgsa.baidu.com/timg?image&quality=
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColorRandomColor;
+    self.navigationItem.title = @"断点下载";
     
     NSString *fileName = @"smile";
     NSString *filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];

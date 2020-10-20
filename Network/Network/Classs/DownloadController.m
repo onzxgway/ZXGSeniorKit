@@ -21,10 +21,11 @@ static NSString *const ImageURL = @"https://timgsa.baidu.com/timg?image&quality=
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationItem.title = @"断点下载";
+    self.navigationItem.title = @"下载";
     
+    NSString *fileName = @"smile.png"; // 文件名称 通过md5 生成一个唯一文件名
     NSString *docuPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-    _fullPath = [docuPath stringByAppendingPathComponent:@"smile.png"];
+    _fullPath = [docuPath stringByAppendingPathComponent:fileName];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -64,7 +65,7 @@ totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
 }
 
 // 文件下载完成
-// @param location 文件下载到沙盒的路径
+// @param location 文件下载到沙盒下tmp目录中，系统会自动清洗
 - (void)URLSession:(NSURLSession *)session
       downloadTask:(NSURLSessionDownloadTask *)downloadTask
 didFinishDownloadingToURL:(NSURL *)location {
