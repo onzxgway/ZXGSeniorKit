@@ -11,6 +11,7 @@
 #import "CellModel.h"
 #import "BreakDownloadController.h"
 #import "UploadController.h"
+#import "InputStreamUploadController.h"
 
 @interface ViewController ()
 
@@ -54,7 +55,12 @@
     i31.rowHeight = 44.f;
     i31.title = @"Upload Image";
     i31.targetClass = UploadController.class;
-    m3.cellModelArray = @[i31].mutableCopy;
+    
+    CellModel *i32 = [CellModel new];
+    i32.rowHeight = 44.f;
+    i32.title = @"InputStream Upload Image";
+    i32.targetClass = InputStreamUploadController.class;
+    m3.cellModelArray = @[i31, i32].mutableCopy;
 
 //    EMBaseTableViewSectionModel *m4 = [EMBaseTableViewSectionModel new];
 //    CellModel *i41 = [CellModel new];

@@ -84,8 +84,10 @@
    4.NSURLSessionTask 实例 开始。
 */
 /**
+    请求头：
+        1.分界线
     请求体由三个部分组成：
-        1.初始和结束边界 2.属性 3.文件数据
+        1.初始和结束边界 2.属性 3.文件数据 4.结束边界
 */
 // 文件上传
 - (void)uploadImage {
@@ -100,7 +102,7 @@
     // 1 开始边界
     NSString *beginBoundary = [NSString stringWithFormat:@"--%@\r\n", bounary];
     [bodyData appendData:[beginBoundary dataUsingEncoding:NSUTF8StringEncoding]];
-    // 2 属性 name和服务的name要匹配,相当于服务获取图片的key
+    // 2 属性 name和服务的name要匹配，相当于获取服务图片的key
     //  filename 服务器图片文件命名
     NSString *serverFileKey = @"image";
     NSString *serverFileName = @"101.png";
