@@ -78,6 +78,7 @@
     
      NSInputStream *inputsteam = [[NSInputStream alloc] initWithData:bodyData];
      [request setHTTPBodyStream:inputsteam]; // 请求的时候，系统底层会对NSInputStream执行read操作
+    request.HTTPMethod = @"POST";
      
      NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:nil];
      
