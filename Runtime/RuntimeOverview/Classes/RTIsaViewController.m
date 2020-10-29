@@ -23,14 +23,14 @@
 
     self.detailLab.text = @"// 获取isa指针 \n object_getClass(id _Nullable obj) \n\n // 修改isa指针 \n object_setClass(id _Nullable obj, Class _Nonnull cls) ";
     
-    [self ClassStruct];
-    [self testFunc];
+//    [self ClassStruct];
+    [self allocateClass];
 }
 
 // 动态创建类
-- (void)testFunc {
+- (void)allocateClass {
     
-    // 创建一个UIView的子类CustomView。
+    // 创建一个名为CustomView的类，它是UIView的子类。
     Class cusV = objc_allocateClassPair(UIView.class, "CustomView", 0);
     
     // 为CustomView类添加report方法
@@ -42,12 +42,11 @@
     // 注册该类
     objc_registerClassPair(cusV);
     
-    
     // 创建CustomView实例
     id obj =  [[cusV alloc] init];
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored  "-Wundeclared-selector"
-    [obj performSelectorOnMainThread:@selector(report) withObject:nil waitUntilDone:NO];
+    [obj performSelector:@selector(report)];
 #pragma clang diagnostic pop
     
 }
@@ -99,11 +98,6 @@ void report(id self, SEL _cmd) {
         struct objc_protocol_list * _Nullable protocols OBJC2_UNAVAILABLE;
 #endif
     } OBJC2_UNAVAILABLE;
-    
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
     
 }
 

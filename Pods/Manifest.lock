@@ -34,6 +34,7 @@ PODS:
     - SDWebImage (~> 4.3.3)
 
 DEPENDENCIES:
+  - AFNetworking (~> 3.0)
   - ZXGCommontKit (from `../ZXGCommontKit`)
 
 SPEC REPOS:
@@ -56,6 +57,6 @@ SPEC CHECKSUMS:
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   ZXGCommontKit: f96998a22e7949cec3218e695383eca0d7b949a3
 
-PODFILE CHECKSUM: b1edadb7c2ec4bf4d47b0d35a2e743159f4de2dc
+PODFILE CHECKSUM: 05b196d5b75ba594f2698f59efe01d5e36c627c3
 
 COCOAPODS: 1.9.3

@@ -8,6 +8,7 @@
 
 #import "DownloadController.h"
 
+// 普通下载
 @interface DownloadController ()<NSURLSessionDownloadDelegate>
 
 @end

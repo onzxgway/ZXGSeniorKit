@@ -8,6 +8,7 @@
 
 #import "InputStreamUploadController.h"
 
+// 文件上传 使用NSInputStream
 @interface InputStreamUploadController ()<NSURLSessionDelegate>
 
 @end

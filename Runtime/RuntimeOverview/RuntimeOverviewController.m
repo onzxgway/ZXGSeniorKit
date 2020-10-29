@@ -10,13 +10,13 @@
 #import "EMBaseTableViewCellModel.h"
 #import "RTOverviewViewController.h"
 #import "RTIsaViewController.h"
-#import "RTClassViewController.h"
 #import "SELIMPMethodController.h"
 #import "MethodCalledController.h"
 #import "AddMemberController.h"
 #import "ExChangeMethodController.h"
 #import "ApplyViewController.h"
 #import "KVOViewController.h"
+#import "CTMClassViewController.h"
 
 @interface RuntimeOverviewController ()
 
@@ -54,7 +54,7 @@
     
     EMBaseTableViewCellModel *i13 = [EMBaseTableViewCellModel new];
     i13.title = @"Class";
-    i13.targetClass = RTClassViewController.class;
+    i13.targetClass = CTMClassViewController.class;
     
     EMBaseTableViewCellModel *i14 = [EMBaseTableViewCellModel new];
     i14.title = @"SEL IMP Method";

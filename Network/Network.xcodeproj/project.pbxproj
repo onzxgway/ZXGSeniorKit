@@ -19,11 +19,23 @@
 		0410EC9E253DC4D9001AF3A8 /* BreakDownloadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0410EC9D253DC4D9001AF3A8 /* BreakDownloadController.m */; };
 		0410ECA1253DDB2D001AF3A8 /* UploadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0410ECA0253DDB2D001AF3A8 /* UploadController.m */; };
 		0410ECDD2541AA23001AF3A8 /* InputStreamUploadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0410ECDC2541AA23001AF3A8 /* InputStreamUploadController.m */; };
-		75CF2850093CC4BFB0B8972E /* libPods-Network.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D596CFC211A504FD8289E18 /* libPods-Network.a */; };
+		0410ECE62545A08E001AF3A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0410ECE52545A08E001AF3A8 /* AppDelegate.m */; };
+		0410ECE92545A08E001AF3A8 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0410ECE82545A08E001AF3A8 /* SceneDelegate.m */; };
+		0410ECEC2545A08E001AF3A8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0410ECEB2545A08E001AF3A8 /* ViewController.m */; };
+		0410ECEF2545A08E001AF3A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0410ECED2545A08E001AF3A8 /* Main.storyboard */; };
+		0410ECF12545A090001AF3A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0410ECF02545A090001AF3A8 /* Assets.xcassets */; };
+		0410ECF42545A090001AF3A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0410ECF22545A090001AF3A8 /* LaunchScreen.storyboard */; };
+		0410ECF72545A090001AF3A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0410ECF62545A090001AF3A8 /* main.m */; };
+		0410ECFE2545A5E0001AF3A8 /* CTMNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0410ECFD2545A5E0001AF3A8 /* CTMNetworkManager.m */; };
+		0410ED012545B080001AF3A8 /* CTMRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0410ED002545B080001AF3A8 /* CTMRequest.m */; };
+		0410ED062546E1DE001AF3A8 /* CTMMD5Encrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 0410ED052546E1DE001AF3A8 /* CTMMD5Encrypt.m */; };
+		0410ED092546E73E001AF3A8 /* CTMNetworkLocalCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0410ED082546E73E001AF3A8 /* CTMNetworkLocalCache.m */; };
+		1CD27ED46012073CC48FC0E4 /* libPods-CTMNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC522760D5112B7ED6E6A0D2 /* libPods-CTMNetwork.a */; };
+		3D68038F2F365D1E18614A68 /* libPods-NSURLSession.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2654E6128015677D717BCBFC /* libPods-NSURLSession.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0410EC78253DAECA001AF3A8 /* Network.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Network.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0410EC78253DAECA001AF3A8 /* NSURLSession.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSURLSession.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0410EC7B253DAECA001AF3A8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0410EC7C253DAECA001AF3A8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0410EC7E253DAECA001AF3A8 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
@@ -46,9 +58,33 @@
 		0410ECA0253DDB2D001AF3A8 /* UploadController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UploadController.m; sourceTree = "<group>"; };
 		0410ECDB2541AA23001AF3A8 /* InputStreamUploadController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputStreamUploadController.h; sourceTree = "<group>"; };
 		0410ECDC2541AA23001AF3A8 /* InputStreamUploadController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputStreamUploadController.m; sourceTree = "<group>"; };
-		0F8626294E831D810A0E599C /* Pods-Network.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network.release.xcconfig"; path = "Target Support Files/Pods-Network/Pods-Network.release.xcconfig"; sourceTree = "<group>"; };
-		3AD4F267C1C1BE1FC8A54EB7 /* Pods-Network.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network.debug.xcconfig"; path = "Target Support Files/Pods-Network/Pods-Network.debug.xcconfig"; sourceTree = "<group>"; };
-		7D596CFC211A504FD8289E18 /* libPods-Network.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Network.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0410ECE22545A08E001AF3A8 /* CTMNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTMNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0410ECE42545A08E001AF3A8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0410ECE52545A08E001AF3A8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0410ECE72545A08E001AF3A8 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		0410ECE82545A08E001AF3A8 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		0410ECEA2545A08E001AF3A8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0410ECEB2545A08E001AF3A8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0410ECEE2545A08E001AF3A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0410ECF02545A090001AF3A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0410ECF32545A090001AF3A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0410ECF52545A090001AF3A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0410ECF62545A090001AF3A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0410ECFC2545A5E0001AF3A8 /* CTMNetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTMNetworkManager.h; sourceTree = "<group>"; };
+		0410ECFD2545A5E0001AF3A8 /* CTMNetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTMNetworkManager.m; sourceTree = "<group>"; };
+		0410ECFF2545B080001AF3A8 /* CTMRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTMRequest.h; sourceTree = "<group>"; };
+		0410ED002545B080001AF3A8 /* CTMRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTMRequest.m; sourceTree = "<group>"; };
+		0410ED032546D958001AF3A8 /* prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = prefix.pch; sourceTree = "<group>"; };
+		0410ED042546E1DE001AF3A8 /* CTMMD5Encrypt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTMMD5Encrypt.h; sourceTree = "<group>"; };
+		0410ED052546E1DE001AF3A8 /* CTMMD5Encrypt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTMMD5Encrypt.m; sourceTree = "<group>"; };
+		0410ED072546E73E001AF3A8 /* CTMNetworkLocalCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTMNetworkLocalCache.h; sourceTree = "<group>"; };
+		0410ED082546E73E001AF3A8 /* CTMNetworkLocalCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTMNetworkLocalCache.m; sourceTree = "<group>"; };
+		2548ECB5616AF184048A3000 /* Pods-NSURLSession.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NSURLSession.release.xcconfig"; path = "Target Support Files/Pods-NSURLSession/Pods-NSURLSession.release.xcconfig"; sourceTree = "<group>"; };
+		2654E6128015677D717BCBFC /* libPods-NSURLSession.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NSURLSession.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3242D1954CB29506E93330F5 /* Pods-CTMNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CTMNetwork.debug.xcconfig"; path = "Target Support Files/Pods-CTMNetwork/Pods-CTMNetwork.debug.xcconfig"; sourceTree = "<group>"; };
+		62038C6CB2D2CDB39854A4A3 /* Pods-CTMNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CTMNetwork.release.xcconfig"; path = "Target Support Files/Pods-CTMNetwork/Pods-CTMNetwork.release.xcconfig"; sourceTree = "<group>"; };
+		85B4E81CB9296EF793AD8603 /* Pods-NSURLSession.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NSURLSession.debug.xcconfig"; path = "Target Support Files/Pods-NSURLSession/Pods-NSURLSession.debug.xcconfig"; sourceTree = "<group>"; };
+		CC522760D5112B7ED6E6A0D2 /* libPods-CTMNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CTMNetwork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +92,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75CF2850093CC4BFB0B8972E /* libPods-Network.a in Frameworks */,
+				3D68038F2F365D1E18614A68 /* libPods-NSURLSession.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0410ECDF2545A08E001AF3A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CD27ED46012073CC48FC0E4 /* libPods-CTMNetwork.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,7 +110,8 @@
 		0410EC6F253DAECA001AF3A8 = {
 			isa = PBXGroup;
 			children = (
-				0410EC7A253DAECA001AF3A8 /* Network */,
+				0410EC7A253DAECA001AF3A8 /* NSURLSession */,
+				0410ECE32545A08E001AF3A8 /* CTMNetwork */,
 				0410EC79253DAECA001AF3A8 /* Products */,
 				0CD0A1756602C11073570EF0 /* Pods */,
 				1FBA4622434B3B83AAEBB85E /* Frameworks */,
@@ -76,12 +121,13 @@
 		0410EC79253DAECA001AF3A8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0410EC78253DAECA001AF3A8 /* Network.app */,
+				0410EC78253DAECA001AF3A8 /* NSURLSession.app */,
+				0410ECE22545A08E001AF3A8 /* CTMNetwork.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0410EC7A253DAECA001AF3A8 /* Network */ = {
+		0410EC7A253DAECA001AF3A8 /* NSURLSession */ = {
 			isa = PBXGroup;
 			children = (
 				0410EC94253DAF65001AF3A8 /* Classs */,
@@ -98,7 +144,7 @@
 				0410EC9B253DC0E2001AF3A8 /* PrefixHeader.pch */,
 				0410EC8D253DAECE001AF3A8 /* main.m */,
 			);
-			path = Network;
+			path = NSURLSession;
 			sourceTree = "<group>";
 		};
 		0410EC94253DAF65001AF3A8 /* Classs */ = {
@@ -118,11 +164,48 @@
 			path = Classs;
 			sourceTree = "<group>";
 		};
+		0410ECE32545A08E001AF3A8 /* CTMNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				0410ECFB2545A3CE001AF3A8 /* CTMNetwork */,
+				0410ECE42545A08E001AF3A8 /* AppDelegate.h */,
+				0410ECE52545A08E001AF3A8 /* AppDelegate.m */,
+				0410ECE72545A08E001AF3A8 /* SceneDelegate.h */,
+				0410ECE82545A08E001AF3A8 /* SceneDelegate.m */,
+				0410ECEA2545A08E001AF3A8 /* ViewController.h */,
+				0410ECEB2545A08E001AF3A8 /* ViewController.m */,
+				0410ECED2545A08E001AF3A8 /* Main.storyboard */,
+				0410ECF02545A090001AF3A8 /* Assets.xcassets */,
+				0410ECF22545A090001AF3A8 /* LaunchScreen.storyboard */,
+				0410ECF52545A090001AF3A8 /* Info.plist */,
+				0410ECF62545A090001AF3A8 /* main.m */,
+				0410ED032546D958001AF3A8 /* prefix.pch */,
+			);
+			path = CTMNetwork;
+			sourceTree = "<group>";
+		};
+		0410ECFB2545A3CE001AF3A8 /* CTMNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				0410ECFC2545A5E0001AF3A8 /* CTMNetworkManager.h */,
+				0410ECFD2545A5E0001AF3A8 /* CTMNetworkManager.m */,
+				0410ECFF2545B080001AF3A8 /* CTMRequest.h */,
+				0410ED002545B080001AF3A8 /* CTMRequest.m */,
+				0410ED042546E1DE001AF3A8 /* CTMMD5Encrypt.h */,
+				0410ED052546E1DE001AF3A8 /* CTMMD5Encrypt.m */,
+				0410ED072546E73E001AF3A8 /* CTMNetworkLocalCache.h */,
+				0410ED082546E73E001AF3A8 /* CTMNetworkLocalCache.m */,
+			);
+			path = CTMNetwork;
+			sourceTree = "<group>";
+		};
 		0CD0A1756602C11073570EF0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3AD4F267C1C1BE1FC8A54EB7 /* Pods-Network.debug.xcconfig */,
-				0F8626294E831D810A0E599C /* Pods-Network.release.xcconfig */,
+				3242D1954CB29506E93330F5 /* Pods-CTMNetwork.debug.xcconfig */,
+				62038C6CB2D2CDB39854A4A3 /* Pods-CTMNetwork.release.xcconfig */,
+				85B4E81CB9296EF793AD8603 /* Pods-NSURLSession.debug.xcconfig */,
+				2548ECB5616AF184048A3000 /* Pods-NSURLSession.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -131,7 +214,8 @@
 		1FBA4622434B3B83AAEBB85E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7D596CFC211A504FD8289E18 /* libPods-Network.a */,
+				CC522760D5112B7ED6E6A0D2 /* libPods-CTMNetwork.a */,
+				2654E6128015677D717BCBFC /* libPods-NSURLSession.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -139,23 +223,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0410EC77253DAECA001AF3A8 /* Network */ = {
+		0410EC77253DAECA001AF3A8 /* NSURLSession */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0410EC91253DAECE001AF3A8 /* Build configuration list for PBXNativeTarget "Network" */;
+			buildConfigurationList = 0410EC91253DAECE001AF3A8 /* Build configuration list for PBXNativeTarget "NSURLSession" */;
 			buildPhases = (
-				C399EDE8F9B792399F38EC7B /* [CP] Check Pods Manifest.lock */,
+				79A9A0F3955B34F0A7031729 /* [CP] Check Pods Manifest.lock */,
 				0410EC74253DAECA001AF3A8 /* Sources */,
 				0410EC75253DAECA001AF3A8 /* Frameworks */,
 				0410EC76253DAECA001AF3A8 /* Resources */,
-				971C1E8C8E2C219A52C62698 /* [CP] Copy Pods Resources */,
+				3DB97B84AD56A705357999DF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Network;
+			name = NSURLSession;
 			productName = Network;
-			productReference = 0410EC78253DAECA001AF3A8 /* Network.app */;
+			productReference = 0410EC78253DAECA001AF3A8 /* NSURLSession.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0410ECE12545A08E001AF3A8 /* CTMNetwork */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0410ECFA2545A090001AF3A8 /* Build configuration list for PBXNativeTarget "CTMNetwork" */;
+			buildPhases = (
+				83EAFE9A4A0E48FC21ED56F9 /* [CP] Check Pods Manifest.lock */,
+				0410ECDE2545A08E001AF3A8 /* Sources */,
+				0410ECDF2545A08E001AF3A8 /* Frameworks */,
+				0410ECE02545A08E001AF3A8 /* Resources */,
+				C503F8CCA8EFC137C313A4C2 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CTMNetwork;
+			productName = CTMNetwork;
+			productReference = 0410ECE22545A08E001AF3A8 /* CTMNetwork.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -168,6 +271,9 @@
 				ORGANIZATIONNAME = "朱献国";
 				TargetAttributes = {
 					0410EC77253DAECA001AF3A8 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					0410ECE12545A08E001AF3A8 = {
 						CreatedOnToolsVersion = 11.5;
 					};
 				};
@@ -185,7 +291,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0410EC77253DAECA001AF3A8 /* Network */,
+				0410EC77253DAECA001AF3A8 /* NSURLSession */,
+				0410ECE12545A08E001AF3A8 /* CTMNetwork */,
 			);
 		};
 /* End PBXProject section */
@@ -201,27 +308,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0410ECE02545A08E001AF3A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0410ECF42545A090001AF3A8 /* LaunchScreen.storyboard in Resources */,
+				0410ECF12545A090001AF3A8 /* Assets.xcassets in Resources */,
+				0410ECEF2545A08E001AF3A8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		971C1E8C8E2C219A52C62698 /* [CP] Copy Pods Resources */ = {
+		3DB97B84AD56A705357999DF /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Network/Pods-Network-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-NSURLSession/Pods-NSURLSession-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Network/Pods-Network-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-NSURLSession/Pods-NSURLSession-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Network/Pods-Network-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NSURLSession/Pods-NSURLSession-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C399EDE8F9B792399F38EC7B /* [CP] Check Pods Manifest.lock */ = {
+		79A9A0F3955B34F0A7031729 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -236,11 +353,50 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Network-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-NSURLSession-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83EAFE9A4A0E48FC21ED56F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CTMNetwork-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C503F8CCA8EFC137C313A4C2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CTMNetwork/Pods-CTMNetwork-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CTMNetwork/Pods-CTMNetwork-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CTMNetwork/Pods-CTMNetwork-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -262,6 +418,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0410ECDE2545A08E001AF3A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0410ED062546E1DE001AF3A8 /* CTMMD5Encrypt.m in Sources */,
+				0410ED012545B080001AF3A8 /* CTMRequest.m in Sources */,
+				0410ECEC2545A08E001AF3A8 /* ViewController.m in Sources */,
+				0410ECFE2545A5E0001AF3A8 /* CTMNetworkManager.m in Sources */,
+				0410ECE62545A08E001AF3A8 /* AppDelegate.m in Sources */,
+				0410ECF72545A090001AF3A8 /* main.m in Sources */,
+				0410ED092546E73E001AF3A8 /* CTMNetworkLocalCache.m in Sources */,
+				0410ECE92545A08E001AF3A8 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -277,6 +448,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				0410EC8A253DAECE001AF3A8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		0410ECED2545A08E001AF3A8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0410ECEE2545A08E001AF3A8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0410ECF22545A090001AF3A8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0410ECF32545A090001AF3A8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -396,13 +583,13 @@
 		};
 		0410EC92253DAECE001AF3A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3AD4F267C1C1BE1FC8A54EB7 /* Pods-Network.debug.xcconfig */;
+			baseConfigurationReference = 85B4E81CB9296EF793AD8603 /* Pods-NSURLSession.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Network/PrefixHeader.pch;
-				INFOPLIST_FILE = Network/Info.plist;
+				GCC_PREFIX_HEADER = NSURLSession/PrefixHeader.pch;
+				INFOPLIST_FILE = NSURLSession/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -415,18 +602,56 @@
 		};
 		0410EC93253DAECE001AF3A8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0F8626294E831D810A0E599C /* Pods-Network.release.xcconfig */;
+			baseConfigurationReference = 2548ECB5616AF184048A3000 /* Pods-NSURLSession.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Network/PrefixHeader.pch;
-				INFOPLIST_FILE = Network/Info.plist;
+				GCC_PREFIX_HEADER = NSURLSession/PrefixHeader.pch;
+				INFOPLIST_FILE = NSURLSession/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "---.Network";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0410ECF82545A090001AF3A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3242D1954CB29506E93330F5 /* Pods-CTMNetwork.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CTMNetwork/prefix.pch;
+				INFOPLIST_FILE = CTMNetwork/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "---.CTMNetwork";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0410ECF92545A090001AF3A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62038C6CB2D2CDB39854A4A3 /* Pods-CTMNetwork.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CTMNetwork/prefix.pch;
+				INFOPLIST_FILE = CTMNetwork/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "---.CTMNetwork";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -444,11 +669,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0410EC91253DAECE001AF3A8 /* Build configuration list for PBXNativeTarget "Network" */ = {
+		0410EC91253DAECE001AF3A8 /* Build configuration list for PBXNativeTarget "NSURLSession" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0410EC92253DAECE001AF3A8 /* Debug */,
 				0410EC93253DAECE001AF3A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0410ECFA2545A090001AF3A8 /* Build configuration list for PBXNativeTarget "CTMNetwork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0410ECF82545A090001AF3A8 /* Debug */,
+				0410ECF92545A090001AF3A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

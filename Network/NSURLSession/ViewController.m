@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"Network";
+    self.navigationItem.title = @"原生网络";
         
     [self prepareData];
 }

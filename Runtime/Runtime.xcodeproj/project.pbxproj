@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0410ED0C25497CE4001AF3A8 /* CTMClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0410ED0B25497CE4001AF3A8 /* CTMClassViewController.m */; };
+		0410ED0F25497D67001AF3A8 /* CTMObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0410ED0E25497D67001AF3A8 /* CTMObject.m */; };
 		0413CF332297D343007A7661 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0413CF322297D343007A7661 /* AppDelegate.m */; };
 		0413CF362297D343007A7661 /* RuntimeOverviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0413CF352297D343007A7661 /* RuntimeOverviewController.m */; };
 		0413CF392297D343007A7661 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0413CF372297D343007A7661 /* Main.storyboard */; };
@@ -15,7 +17,6 @@
 		0413CF412297D344007A7661 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0413CF402297D344007A7661 /* main.m */; };
 		0413CF492297DC64007A7661 /* RuntimeBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0413CF482297DC64007A7661 /* RuntimeBaseViewController.m */; };
 		0413CF522297E4E3007A7661 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0413CF512297E4E3007A7661 /* README.md */; };
-		044ADAF1229AAD2B00803109 /* RTClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044ADAF0229AAD2B00803109 /* RTClassViewController.m */; };
 		044ADAF4229AB5D400803109 /* DemoClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 044ADAF3229AB5D400803109 /* DemoClass.m */; };
 		044ADAF9229B87FB00803109 /* one.png in Resources */ = {isa = PBXBuildFile; fileRef = 044ADAF8229B87FB00803109 /* one.png */; };
 		044ADAFC229BCB6600803109 /* SELIMPMethodController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044ADAFB229BCB6600803109 /* SELIMPMethodController.m */; };
@@ -39,6 +40,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0410ED0A25497CE4001AF3A8 /* CTMClassViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTMClassViewController.h; sourceTree = "<group>"; };
+		0410ED0B25497CE4001AF3A8 /* CTMClassViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTMClassViewController.m; sourceTree = "<group>"; };
+		0410ED0D25497D67001AF3A8 /* CTMObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTMObject.h; sourceTree = "<group>"; };
+		0410ED0E25497D67001AF3A8 /* CTMObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTMObject.m; sourceTree = "<group>"; };
 		0413CF2F2297D343007A7661 /* RuntimeOverview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RuntimeOverview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0413CF312297D343007A7661 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0413CF322297D343007A7661 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -53,8 +58,6 @@
 		0413CF472297DC64007A7661 /* RuntimeBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeBaseViewController.h; sourceTree = "<group>"; };
 		0413CF482297DC64007A7661 /* RuntimeBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeBaseViewController.m; sourceTree = "<group>"; };
 		0413CF512297E4E3007A7661 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		044ADAEF229AAD2B00803109 /* RTClassViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTClassViewController.h; sourceTree = "<group>"; };
-		044ADAF0229AAD2B00803109 /* RTClassViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTClassViewController.m; sourceTree = "<group>"; };
 		044ADAF2229AB5D400803109 /* DemoClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoClass.h; sourceTree = "<group>"; };
 		044ADAF3229AB5D400803109 /* DemoClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoClass.m; sourceTree = "<group>"; };
 		044ADAF8229B87FB00803109 /* one.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = one.png; sourceTree = "<group>"; };
@@ -181,8 +184,10 @@
 				045271F22299443600038414 /* RTOverviewViewController.m */,
 				045271F4229976DA00038414 /* RTIsaViewController.h */,
 				045271F5229976DA00038414 /* RTIsaViewController.m */,
-				044ADAEF229AAD2B00803109 /* RTClassViewController.h */,
-				044ADAF0229AAD2B00803109 /* RTClassViewController.m */,
+				0410ED0A25497CE4001AF3A8 /* CTMClassViewController.h */,
+				0410ED0B25497CE4001AF3A8 /* CTMClassViewController.m */,
+				0410ED0D25497D67001AF3A8 /* CTMObject.h */,
+				0410ED0E25497D67001AF3A8 /* CTMObject.m */,
 				044ADAF2229AB5D400803109 /* DemoClass.h */,
 				044ADAF3229AB5D400803109 /* DemoClass.m */,
 				04636481229EA4520067D1A1 /* KVODemoClass.h */,
@@ -387,12 +392,13 @@
 				0413CF362297D343007A7661 /* RuntimeOverviewController.m in Sources */,
 				04636483229EA4520067D1A1 /* KVODemoClass.m in Sources */,
 				0413CF492297DC64007A7661 /* RuntimeBaseViewController.m in Sources */,
+				0410ED0C25497CE4001AF3A8 /* CTMClassViewController.m in Sources */,
 				045271F6229976DA00038414 /* RTIsaViewController.m in Sources */,
 				0463647A229E43D90067D1A1 /* ExChangeMethodController.m in Sources */,
-				044ADAF1229AAD2B00803109 /* RTClassViewController.m in Sources */,
 				044ADAF4229AB5D400803109 /* DemoClass.m in Sources */,
 				0413CF412297D344007A7661 /* main.m in Sources */,
 				044ADAFF229C09E300803109 /* MethodCalledController.m in Sources */,
+				0410ED0F25497D67001AF3A8 /* CTMObject.m in Sources */,
 				0480C78A229D415800E83FE0 /* AddMemberController.m in Sources */,
 				044ADAFC229BCB6600803109 /* SELIMPMethodController.m in Sources */,
 				04636480229EA2B30067D1A1 /* KVOViewController.m in Sources */,

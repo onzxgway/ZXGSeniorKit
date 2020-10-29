@@ -23,7 +23,6 @@
     self.titleLab.text = @"";
     self.descLab.text = @"";
     self.detailLab.text = @"";
-    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

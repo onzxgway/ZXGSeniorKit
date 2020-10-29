@@ -45,11 +45,6 @@
      */
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
-}
-
 /*
     方法交换
 */

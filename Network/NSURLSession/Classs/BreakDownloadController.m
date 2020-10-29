@@ -8,6 +8,7 @@
 
 #import "BreakDownloadController.h"
 
+// 断点下载
 @interface BreakDownloadController ()<NSURLSessionTaskDelegate>
 
 @end

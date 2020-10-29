@@ -9,17 +9,17 @@
 #import "SELIMPMethodController.h"
 #import <objc/message.h>
 #import "DemoClass.h"
+#import "CTMObject.h"
 
 @interface SELIMPMethodController ()
 
 @end
 
 void funcTest(id self, SEL _cmd) {
-    NSLog(@"funcTest:%@__%@", self, NSStringFromSelector(_cmd));
+    NSLog(@"funcTest:%@ --> %@", self, NSStringFromSelector(_cmd));
 }
 
 @implementation SELIMPMethodController
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,9 +28,9 @@ void funcTest(id self, SEL _cmd) {
     self.descLab.text = @"";
     self.detailLab.text = @"";
     
-//    [self learn];
+    [self learn];
 //    [self gogogo];
-    [self doIt:@"zxg" age:@18];
+//    [self doIt:@"zxg" age:@18];
 }
 
 /**
@@ -46,6 +46,8 @@ void funcTest(id self, SEL _cmd) {
     // self 和 _cmd 是隐式参数
     NSLog(@"id:%@ -- SEL:%@", self, NSStringFromSelector(_cmd));
 }
+
+
 - (void)doIt:(NSString *)name age:(NSNumber *)age {
     NSLog(@"id:%@ -- SEL:%@", self, NSStringFromSelector(_cmd));
     NSLog(@"name:%@ -- age:%@", name, [age stringValue]);
@@ -68,23 +70,25 @@ void funcTest(id self, SEL _cmd) {
     
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored  "-Wundeclared-selector"
-    BOOL res = class_addMethod(self.class, @selector(dddd), (IMP)funcTest, "");
-    if (res) {
-        [self performSelectorOnMainThread:@selector(dddd) withObject:nil waitUntilDone:NO];
-    }
+
+    // 添加Method
+    class_addMethod(CTMObject.class, @selector(newMethod), (IMP)funcTest, "");
     
-//    class_addIvar(Class  _Nullable __unsafe_unretained cls, const char * _Nonnull name, size_t size, uint8_t alignment, const char * _Nullable types)
+    // 添加Ivar
+    class_addIvar(CTMObject.class, "_newIvar", sizeof(NSString *), log2(sizeof(NSString *)), "@");
     
-//    class_addProperty(Class  _Nullable __unsafe_unretained cls, const char * _Nonnull name, const objc_property_attribute_t * _Nullable attributes, unsigned int attributeCount)
+    // 添加Property
+    objc_property_attribute_t type = { "T", [[NSString stringWithFormat:@"@\"%@\"", NSStringFromClass(NSString.class)] UTF8String]};
+    objc_property_attribute_t ownership = { "&", "N" };
+    objc_property_attribute_t backingivar  = { "V", [[NSString stringWithFormat:@"_%@", @"newProperty"] UTF8String]};
+    objc_property_attribute_t attrs[] = { type, ownership, backingivar };
+    class_addProperty(CTMObject.class, "newProperty", attrs, 3);
     
-//    class_addProtocol(Class  _Nullable __unsafe_unretained cls, Protocol * _Nonnull protocol)
+    // 添加Protocol
+    class_addProtocol(CTMObject.class, @protocol(CTMObjectDelegate4));
     
 #pragma clang diagnostic pop
     
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
 }
 
 @end

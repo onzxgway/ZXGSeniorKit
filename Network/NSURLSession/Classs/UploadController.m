@@ -10,6 +10,7 @@
 
 #define UploadImageURL @"http://www.8pmedu.com/themes/jianmo/img/upload.php"
 
+// 文件上传
 @interface UploadController ()<NSURLSessionDelegate>
 
 @end
