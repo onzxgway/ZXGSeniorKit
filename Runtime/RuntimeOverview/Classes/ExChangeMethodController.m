@@ -16,31 +16,36 @@
 @implementation ExChangeMethodController
 
 + (void)load {
-    // 方式一
-//    [self methodOne];
-    [self methodTwo];
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [self methodOne];
+        [self methodTwo];
+        [self methodThree];
+    });
 }
 
-// 方式一 : 需要交换两个方法的实现 场景使用
+// 1.交换两个方法的实现
 + (void)methodOne {
-    
     Method method1 = class_getInstanceMethod(self.class, @selector(viewWillAppear:));
     Method method2 = class_getInstanceMethod(self.class, @selector(__viewWillAppear:));
-    
     method_exchangeImplementations(method1, method2);
 }
 
-// 方式二 : 给一个方法设置其实现方式 场景使用
+- (void)__viewWillAppear:(BOOL)animated {
+    NSLog(@"交换两个方法的实现");
+    [self __viewWillAppear:YES];
+}
+
+// 2.给方法设置实现方式
 + (void)methodTwo {
     
-    Method method = class_getInstanceMethod(self.class, @selector(viewWillAppear:));
+    Method method = class_getInstanceMethod(self.class, @selector(viewDidAppear:));
     
     void(*originalIMP)(id self, SEL _cmd) = nil;
     originalIMP = (typeof(originalIMP))method_getImplementation(method);
     
     id block = ^(id self, SEL _cmd) {
-        NSLog(@"方式二 将要显示");
-        
+        NSLog(@"给方法设置实现方式");
         originalIMP(self, _cmd);
     };
     
@@ -48,11 +53,22 @@
     method_setImplementation(method, newIMP);
 }
 
-- (void)__viewWillAppear:(BOOL)animated {
+// 3.替换方法定义
++ (void)methodThree {
+    Method replaceMethod = class_getInstanceMethod(self.class, @selector(kobe));
     
-    NSLog(@"方式一 将要显示");
+    class_replaceMethod(self.class, @selector(james), method_getImplementation(replaceMethod), method_getTypeEncoding(replaceMethod));
     
-    [self __viewWillAppear:YES];
+    id obj = [[self.class alloc] init];
+    [obj james];
+}
+
+- (void)kobe {
+    NSLog(@"kobe 替换方法定义");
+}
+
+- (void)james {
+    NSLog(@"james 替换方法定义");
 }
 
 @end

@@ -13,7 +13,9 @@
 
 @end
 
-@implementation RTIsaViewController
+@implementation RTIsaViewController {
+    Class _clazz;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,24 +33,47 @@
 - (void)allocateClass {
     
     // 创建一个名为CustomView的类，它是UIView的子类。
-    Class cusV = objc_allocateClassPair(UIView.class, "CustomView", 0);
+    _clazz = objc_allocateClassPair(UIView.class, "CustomView", 0);
     
     // 为CustomView类添加report方法
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored  "-Wundeclared-selector"
-    class_addMethod(cusV, @selector(report), (IMP)report, "v@:");
+    class_addMethod(_clazz, @selector(report), (IMP)report, "v@:");
 #pragma clang diagnostic pop
     
-    // 注册该类
-    objc_registerClassPair(cusV);
+    // 2.2 为CustomObj类添加_name、_age成员变量
+    /**
+     类添加成员变量
+     param 被操作类
+     param 成员变量名称
+     param 变量内存所占大小
+     param 变量对齐方式
+     param 变量类型编码
+     */
+    /*
+     优点：动态添加的Ivar，能够通过遍历Ivars得到我们所添加的属性。
+     缺点：已存在的class中不能添加Ivar，所有必须通过objc_allocateClassPair动态创建一个class，才能调用class_addIvar添加Ivar，最后通过objc_registerClassPair注册class。
+     */
+    NSString *iVarName1 = @"_name";
+    BOOL resOne = class_addIvar(_clazz, [iVarName1 UTF8String], sizeof(NSString *), log2(sizeof(NSString *)), @encode(NSString *));
+    NSLog(@"%@", resOne ? @"ivar 添加成功": @"ivar 添加失败");
     
+    // 注册该类 注册之后，不能再添加成员变量了
+    objc_registerClassPair(_clazz);
+    
+    [self auth];
+}
+
+- (void)auth {
     // 创建CustomView实例
-    id obj =  [[cusV alloc] init];
+    id obj =  [[_clazz alloc] init];
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored  "-Wundeclared-selector"
     [obj performSelector:@selector(report)];
 #pragma clang diagnostic pop
     
+    [obj setValue:@"kobe" forKey:@"_name"];
+    NSLog(@"%@", [obj valueForKey:@"_name"]);
 }
 
 void report(id self, SEL _cmd) {
