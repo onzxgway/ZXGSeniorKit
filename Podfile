@@ -10,7 +10,7 @@ def totalPods
 end
 
 # target数组 如果有新的target直接加入该数组
-Runtime = ['RuntimeOverview']
+Runtime = ['RuntimeOverview', 'RuntimeApplyScene']
 Runtime.each do |t|
     target t do
         project 'Runtime/Runtime.project'

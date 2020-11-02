@@ -112,7 +112,6 @@
     EMBaseTableViewSectionModel *secModel = [self.dataSource objectAtIndex:indexPath.section];
     EMBaseTableViewCellModel *cellModel = [secModel.cellModelArray objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:[cellModel.targetClass new] animated:YES];
-    
 }
 
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
