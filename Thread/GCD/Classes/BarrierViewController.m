@@ -31,7 +31,7 @@
     [_safeAry addObject:@"3"];
     _queue = dispatch_queue_create("concurrentQueue", DISPATCH_QUEUE_CONCURRENT);
     
-//    [self barrier_One];
+    [self barrier_One];
 //    [self dispatch_barrier_async];
 }
 

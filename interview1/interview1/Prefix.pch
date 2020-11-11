@@ -1,0 +1,14 @@
+//
+//  Prefix.pch
+//  interview1
+//
+//  Created by 朱献国 on 2020/11/10.
+//  Copyright © 2020 朱献国. All rights reserved.
+//
+
+#ifndef Prefix_pch
+#define Prefix_pch
+
+#import "ZXGCommonKit.h"
+
+#endif /* Prefix_pch */
