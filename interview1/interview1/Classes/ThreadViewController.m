@@ -124,4 +124,26 @@
     
 }
 
+#pragma mark - Delegate、Notification和KVO比较各自的优缺点
+/*
+ 1 效率问题：（模块之间的通讯）。
+    delegate最高，直接调用。
+    先到通知中心注册，Notification发送消息之后（通知队列处理后）再发送出去
+    KVO {通过set方法进行处理(在set方法里面添加消息处理方法)}属性监听（属性改变set）
+ 
+ 2 delegate 一对一，Notification，KVO一对多。
+
+ 3 delegate是可以有返回值的，而Notification、KVO在消息处理完之后就不管了，没有返回值。
+ */
+
+#pragma mark - 使用GCD如何实现这个需求：A、B、C 三个任务并发，完成后执行任务 D。
+/*
+ 
+ 1.队列组 dispatch_group_t
+    
+ 2.栅栏 dispatch_barrier_async
+ 
+ */
+
+
 @end
