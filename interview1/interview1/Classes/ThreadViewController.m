@@ -89,6 +89,7 @@
     // 串行队列，当前只有这个任务在执行
     
     obj = [obj copy]; //obj mutable 用copy 防止对象是mutable.再添加的过程中防止本身的可变操作
+    // dispatch_barrier_async一定要搭配自定义的队列，不能搭配系统提供的全局并发队列，否则dispatch_barrier_async作用和dispatch_async一样。
     dispatch_barrier_async(_queue, ^{
         if (obj != nil) {
             [_eocAry addObject:obj];

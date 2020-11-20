@@ -22,7 +22,7 @@ class SandboxController: UIViewController {
             - 2.Preferences (iTunes同步设备时会备份该目录)
                 ：保存应用的所有偏好设置
         tmp
-            ：保存应用运行时所需要的临时数据或文件，使用完毕后再文件会从该目录删除。
+            ：保存应用运行时所需要的临时数据或文件，使用完毕后文件会从该目录删除。
                 （例如断点下载）
     */
     
@@ -84,6 +84,7 @@ class SandboxController: UIViewController {
     */
     // 网络请求的系统缓存会以db的形式存在Caches中
     func library_caches_2() {
+        
         let userDefaults = UserDefaults.standard
         userDefaults.set("kobe", forKey: "Key1")
         userDefaults.set("james", forKey: "Key2")

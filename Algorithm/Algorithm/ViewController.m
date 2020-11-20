@@ -1,15 +1,16 @@
 //
 //  ViewController.m
-//  interview1
+//  Algorithm
 //
-//  Created by 朱献国 on 2020/11/10.
+//  Created by 朱献国 on 2020/11/16.
 //  Copyright © 2020 朱献国. All rights reserved.
 //
 
 #import "ViewController.h"
 #import "TestCellModel.h"
-#import "ThreadViewController.h"
-#import "NetworkViewController.h"
+#import "EMBaseTableViewSectionModel.h"
+#import "BubbleViewController.h"
+#import "DataStructureViewController.h"
 
 @interface ViewController ()
 
@@ -26,13 +27,13 @@
     
     EMBaseTableViewSectionModel *m1 = [EMBaseTableViewSectionModel new];
     TestCellModel *i11 = [TestCellModel new];
-    i11.title = @"面试题线程部分专题";
-    i11.targetClass = ThreadViewController.class;
+    i11.title = @"冒泡排序";
+    i11.targetClass = BubbleViewController.class;
     
     TestCellModel *i12 = [TestCellModel new];
-    i12.title = @"面试题网络部分专题";
-    i12.targetClass = NetworkViewController.class;
-//
+    i12.title = @"数据结构";
+    i12.targetClass = DataStructureViewController.class;
+
 //    TestCellModel *i13 = [TestCellModel new];
 //    i13.title = @"Class";
 //    i13.targetClass = RTClassViewController.class;
@@ -88,5 +89,6 @@
 - (UITableViewStyle)tableViewStyle {
     return UITableViewStyleGrouped;
 }
+
 
 @end

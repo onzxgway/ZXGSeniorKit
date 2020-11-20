@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  interview1
+//  Algorithm
 //
-//  Created by 朱献国 on 2020/11/10.
+//  Created by 朱献国 on 2020/11/16.
 //  Copyright © 2020 朱献国. All rights reserved.
 //
 
@@ -17,7 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
     return YES;
 }
 

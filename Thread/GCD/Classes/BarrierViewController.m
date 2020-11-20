@@ -31,7 +31,7 @@
     [_safeAry addObject:@"3"];
     _queue = dispatch_queue_create("concurrentQueue", DISPATCH_QUEUE_CONCURRENT);
     
-    [self barrier_One];
+    [self barrier_one];
 //    [self dispatch_barrier_async];
 }
 
@@ -131,7 +131,7 @@ dispatch_barrier_async 与 dispatch_barrier_sync
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self barrier_one];
+    [self barrier_One];
 //    [self barrier_two];
 }
 

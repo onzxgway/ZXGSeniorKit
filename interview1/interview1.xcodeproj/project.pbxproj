@@ -16,6 +16,7 @@
 		04F1BFAA255ACF18002C537D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1BFA9255ACF18002C537D /* main.m */; };
 		04F1BFB4255AD140002C537D /* TestCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1BFB3255AD140002C537D /* TestCellModel.m */; };
 		04F1BFB7255AD1C6002C537D /* ThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1BFB6255AD1C6002C537D /* ThreadViewController.m */; };
+		04F1BFBB255FAA73002C537D /* NetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1BFBA255FAA73002C537D /* NetworkViewController.m */; };
 		309877A5C78736DE2491F6D5 /* libPods-interview1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E8CA57B92A8B2893D367F4 /* libPods-interview1.a */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,8 @@
 		04F1BFB3255AD140002C537D /* TestCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCellModel.m; sourceTree = "<group>"; };
 		04F1BFB5255AD1C6002C537D /* ThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadViewController.h; sourceTree = "<group>"; };
 		04F1BFB6255AD1C6002C537D /* ThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadViewController.m; sourceTree = "<group>"; };
+		04F1BFB9255FAA73002C537D /* NetworkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkViewController.h; sourceTree = "<group>"; };
+		04F1BFBA255FAA73002C537D /* NetworkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkViewController.m; sourceTree = "<group>"; };
 		29F33AD7FBDC0F2EAE3A9AD3 /* Pods-interview1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-interview1.debug.xcconfig"; path = "Target Support Files/Pods-interview1/Pods-interview1.debug.xcconfig"; sourceTree = "<group>"; };
 		AE29E7134060814AE7D6E97C /* Pods-interview1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-interview1.release.xcconfig"; path = "Target Support Files/Pods-interview1/Pods-interview1.release.xcconfig"; sourceTree = "<group>"; };
 		C9E8CA57B92A8B2893D367F4 /* libPods-interview1.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-interview1.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +102,8 @@
 				04F1BFB3255AD140002C537D /* TestCellModel.m */,
 				04F1BFB5255AD1C6002C537D /* ThreadViewController.h */,
 				04F1BFB6255AD1C6002C537D /* ThreadViewController.m */,
+				04F1BFB9255FAA73002C537D /* NetworkViewController.h */,
+				04F1BFBA255FAA73002C537D /* NetworkViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 			files = (
 				04F1BFB7255AD1C6002C537D /* ThreadViewController.m in Sources */,
 				04F1BFB4255AD140002C537D /* TestCellModel.m in Sources */,
+				04F1BFBB255FAA73002C537D /* NetworkViewController.m in Sources */,
 				04F1BF9F255ACF15002C537D /* ViewController.m in Sources */,
 				04F1BF99255ACF15002C537D /* AppDelegate.m in Sources */,
 				04F1BFAA255ACF18002C537D /* main.m in Sources */,
