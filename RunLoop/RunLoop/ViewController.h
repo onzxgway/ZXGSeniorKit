@@ -6,10 +6,9 @@
 //  Copyright © 2020 朱献国. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "EMBaseTableViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : EMBaseTableViewController
 
 
 @end
-
