@@ -46,6 +46,8 @@
 		0463649A229EB4790067D1A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04636499229EB4790067D1A1 /* main.m */; };
 		0480C78A229D415800E83FE0 /* AddMemberController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480C789229D415800E83FE0 /* AddMemberController.m */; };
 		049439CD229802A3003A3704 /* EMBaseTableViewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 049439CC229802A3003A3704 /* EMBaseTableViewCellModel.m */; };
+		04F1C0DB25846AB8002C537D /* ForwardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1C0DA25846AB8002C537D /* ForwardViewController.m */; };
+		04F1C0DF258474E2002C537D /* ForwardObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1C0DE258474E2002C537D /* ForwardObject.m */; };
 		779F51B9BD37747715FEB930 /* libPods-RuntimeApplyScene.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C971F767C633E6C1ED9604 /* libPods-RuntimeApplyScene.a */; };
 		B40DC5DA07F3B9DD10782576 /* libPods-RuntimeOverview.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BC073E80004D4B44DB183A /* libPods-RuntimeOverview.a */; };
 /* End PBXBuildFile section */
@@ -125,6 +127,10 @@
 		0480C789229D415800E83FE0 /* AddMemberController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddMemberController.m; sourceTree = "<group>"; };
 		049439CB229802A3003A3704 /* EMBaseTableViewCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EMBaseTableViewCellModel.h; sourceTree = "<group>"; };
 		049439CC229802A3003A3704 /* EMBaseTableViewCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EMBaseTableViewCellModel.m; sourceTree = "<group>"; };
+		04F1C0D925846AB8002C537D /* ForwardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForwardViewController.h; sourceTree = "<group>"; };
+		04F1C0DA25846AB8002C537D /* ForwardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForwardViewController.m; sourceTree = "<group>"; };
+		04F1C0DD258474E2002C537D /* ForwardObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForwardObject.h; sourceTree = "<group>"; };
+		04F1C0DE258474E2002C537D /* ForwardObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForwardObject.m; sourceTree = "<group>"; };
 		15F1E09AB5B13D00D56139F5 /* Pods-RuntimeOverview.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RuntimeOverview.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-RuntimeOverview/Pods-RuntimeOverview.debug.xcconfig"; sourceTree = "<group>"; };
 		5894F5B567A629FF6690DD6D /* Pods-RuntimeOverview.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RuntimeOverview.release.xcconfig"; path = "../Pods/Target Support Files/Pods-RuntimeOverview/Pods-RuntimeOverview.release.xcconfig"; sourceTree = "<group>"; };
 		75BC073E80004D4B44DB183A /* libPods-RuntimeOverview.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RuntimeOverview.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,6 +266,10 @@
 				0463647C229EA1830067D1A1 /* ApplyViewController.m */,
 				0463647E229EA2B30067D1A1 /* KVOViewController.h */,
 				0463647F229EA2B30067D1A1 /* KVOViewController.m */,
+				04F1C0D925846AB8002C537D /* ForwardViewController.h */,
+				04F1C0DA25846AB8002C537D /* ForwardViewController.m */,
+				04F1C0DD258474E2002C537D /* ForwardObject.h */,
+				04F1C0DE258474E2002C537D /* ForwardObject.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -493,7 +503,9 @@
 				0413CF362297D343007A7661 /* RuntimeOverviewController.m in Sources */,
 				04636483229EA4520067D1A1 /* KVODemoClass.m in Sources */,
 				0413CF492297DC64007A7661 /* RuntimeBaseViewController.m in Sources */,
+				04F1C0DF258474E2002C537D /* ForwardObject.m in Sources */,
 				0410ED0C25497CE4001AF3A8 /* CTMClassViewController.m in Sources */,
+				04F1C0DB25846AB8002C537D /* ForwardViewController.m in Sources */,
 				045271F6229976DA00038414 /* RTIsaViewController.m in Sources */,
 				0463647A229E43D90067D1A1 /* ExChangeMethodController.m in Sources */,
 				044ADAF4229AB5D400803109 /* DemoClass.m in Sources */,
