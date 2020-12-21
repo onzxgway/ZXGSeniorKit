@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "Animal.h"
+#import "KVCViewController.h"
 
 @interface ViewController ()
 
@@ -29,12 +30,21 @@
     
     [animal removeObserver:self forKeyPath:@"name" context:nil];
     
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setTitle:@"KVC" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [self.view addSubview:btn];
+    btn.frame = CGRectMake(30, 120, 40, 20);
+    [btn addTarget:self action:@selector(kvcEvent) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     NSLog(@"%@", change);
 }
 
-
+- (void)kvcEvent {
+    KVCViewController *ctr = [KVCViewController new];
+    [self.navigationController pushViewController:ctr animated:true];
+}
 
 @end

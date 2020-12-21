@@ -15,6 +15,7 @@
 		04F1C075257C6ED2002C537D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F1C073257C6ED2002C537D /* LaunchScreen.storyboard */; };
 		04F1C078257C6ED2002C537D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1C077257C6ED2002C537D /* main.m */; };
 		04F1C081257C6F15002C537D /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1C080257C6F15002C537D /* Animal.m */; };
+		04F203152590AE31001DF241 /* KVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F203142590AE31001DF241 /* KVCViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		04F1C077257C6ED2002C537D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04F1C07F257C6F15002C537D /* Animal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Animal.h; sourceTree = "<group>"; };
 		04F1C080257C6F15002C537D /* Animal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Animal.m; sourceTree = "<group>"; };
+		04F203132590AE31001DF241 /* KVCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVCViewController.h; sourceTree = "<group>"; };
+		04F203142590AE31001DF241 /* KVCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVCViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 			children = (
 				04F1C07F257C6F15002C537D /* Animal.h */,
 				04F1C080257C6F15002C537D /* Animal.m */,
+				04F203132590AE31001DF241 /* KVCViewController.h */,
+				04F203142590AE31001DF241 /* KVCViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 				04F1C06D257C6ECD002C537D /* ViewController.m in Sources */,
 				04F1C067257C6ECD002C537D /* AppDelegate.m in Sources */,
 				04F1C081257C6F15002C537D /* Animal.m in Sources */,
+				04F203152590AE31001DF241 /* KVCViewController.m in Sources */,
 				04F1C078257C6ED2002C537D /* main.m in Sources */,
 				04F1C06A257C6ECD002C537D /* SceneDelegate.m in Sources */,
 			);
